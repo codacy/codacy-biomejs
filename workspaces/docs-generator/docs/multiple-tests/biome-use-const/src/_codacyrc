@@ -1,0 +1,13 @@
+{
+    "tools": [
+        {
+            "name": "biome",
+            "patterns": [
+                { "patternId": "lint_style_useConst" }
+            ]
+        }
+    ],
+    "files": [
+        "./use-const.js"
+    ]
+}

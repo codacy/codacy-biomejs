@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="no-var.js">
+        <error source="lint_style_noVar" line="4" message="Use let or const instead of var." severity="info" />
+        <error source="lint_style_noVar" line="6" message="Use let or const instead of var." severity="info" />
+    </file>
+</checkstyle>

@@ -1,0 +1,13 @@
+{
+  "name": "codacy",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc --noEmit && node --import=../../register.js src/index.ts"
+  },
+  "type": "module",
+  "dependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}

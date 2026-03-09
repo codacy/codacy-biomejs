@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="no-debugger.js">
+        <error source="lint_suspicious_noDebugger" line="5" message="This is an unexpected use of the debugger statement." severity="warning" />
+    </file>
+</checkstyle>

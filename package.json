@@ -1,0 +1,59 @@
+{
+  "name": "codacy-biomejs",
+  "description": "Biome Tool for Codacy",
+  "keywords": [
+    "codacy",
+    "biome",
+    "javascript",
+    "typescript",
+    "linter"
+  ],
+  "homepage": "https://github.com/codacy/codacy-biomejs#readme",
+  "bugs": {
+    "url": "https://github.com/codacy/codacy-biomejs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codacy/codacy-biomejs.git"
+  },
+  "license": "Apache-2.0",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:docker:dev": "docker build -t codacy-biomejs:dev .",
+    "init": "npm i --legacy-peer-deps && npm i --legacy-peer-deps -ws",
+    "upgrade": "npm install --legacy-peer-deps -ws --root",
+    "postupgrade": "npm start -w docs-generator"
+  },
+  "type": "module",
+  "workspaces": [
+    "workspaces/docs-generator",
+    "workspaces/codacy",
+    "lib"
+  ],
+  "files": [
+    "workspaces/docs-generator/src",
+    "workspaces/codacy/src",
+    "lib"
+  ],
+  "dependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/fs-extra": "11.0.4",
+    "@types/glob": "8.1.0",
+    "@types/jest": "29.5.14",
+    "@types/node": "22.15.3",
+    "codacy": "^0.0.1",
+    "jest": "29.7.0",
+    "npm-check-updates": "18.0.1",
+    "ts-node": "10.9.2",
+    "tsx": "4.19.4",
+    "typescript": "5.8.3"
+  },
+  "devDependencies": {
+    "codacy-seed": "2.2.6",
+    "tsconfig-paths": "4.2.0",
+    "tslib": "2.8.1"
+  }
+}

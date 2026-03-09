@@ -1,0 +1,3196 @@
+{
+  "name": "biome",
+  "version": "1.9.4",
+  "patterns": [
+    {
+      "patternId": "lint_a11y_noAccessKey",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_performance_noAccumulatingSpread",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noAdjacentSpacesInRegex",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noAlert",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noAmbiguousAnchorText",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noApproximativeNumericConstant",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noArguments",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noAriaHiddenOnFocusable",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noAriaUnsupportedElements",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noArrayIndexKey",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noAssignInExpressions",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noAsyncPromiseExecutor",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noAutofocus",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_performance_noAwaitInLoops",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noBannedTypes",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_performance_noBarrelFile",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noBeforeInteractiveScriptOutsideDocument",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noBiomeFirstException",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noBitwiseOperators",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_security_noBlankTarget",
+      "level": "Error",
+      "category": "Security",
+      "scanType": "SAST",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noCatchAssign",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noChildrenProp",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noClassAssign",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noCommaOperator",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noCommentText",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noCommonJs",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noCompareNegZero",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noConditionalExpect",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noConfusingLabels",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noConfusingVoidType",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noConsole",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noConstAssign",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noConstEnum",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noConstantBinaryExpressions",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noConstantCondition",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noConstantMathMinMaxClamp",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noConstructorReturn",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noContinue",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noControlCharactersInRegex",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_security_noDangerouslySetInnerHtmlWithChildren",
+      "level": "Error",
+      "category": "Security",
+      "scanType": "SAST",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_security_noDangerouslySetInnerHtml",
+      "level": "Error",
+      "category": "Security",
+      "scanType": "SAST",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDebugger",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noDefaultExport",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_performance_noDelete",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noDeprecatedImports",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noDeprecatedMediaType",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noDescendingSpecificity",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noDistractingElements",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noDivRegex",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noDocumentCookie",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDocumentImportInPage",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noDoneCallback",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noDoubleEquals",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noDuplicateArgumentNames",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateAtImportRules",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noDuplicateAttributes",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateCase",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateClassMembers",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateCustomProperties",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateDependencies",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateElseIf",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noDuplicateEnumValueNames",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noDuplicateEnumValues",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noDuplicateFieldDefinitionNames",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateFields",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateFontNames",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noDuplicateGraphqlOperationName",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noDuplicateInputFieldNames",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateJsxProps",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateObjectKeys",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateParameters",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateProperties",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateSelectorsKeyframeBlock",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noDuplicateTestHooks",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noDuplicateVariableNames",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noDuplicatedSpreadProps",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_performance_noDynamicNamespaceImportAccess",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noEmptyBlockStatements",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noEmptyBlock",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noEmptyCharacterClassInRegex",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noEmptyInterface",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noEmptyPattern",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noEmptySource",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noEmptyTypeParameters",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noEnum",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noEqualsToNull",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noEvolvingTypes",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noExcessiveClassesPerFile",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noExcessiveCognitiveComplexity",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noExcessiveLinesPerFile",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noExcessiveLinesPerFunction",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noExcessiveNestedTestSuites",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noExplicitAny",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noExportedImports",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noExportsInTest",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noExtraBooleanCast",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noExtraNonNullAssertion",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noFallthroughSwitchClause",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noFlatMapIdentity",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noFloatingClasses",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noFloatingPromises",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noFocusedTests",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noForEach",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noForIn",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noFunctionAssign",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noGlobalAssign",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noGlobalDirnameFilename",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_security_noGlobalEval",
+      "level": "Error",
+      "category": "Security",
+      "scanType": "SAST",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noGlobalIsFinite",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noGlobalIsNan",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noGlobalObjectCalls",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noHeadElement",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noHeadImportInDocument",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noHeaderScope",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noHexColors",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_performance_noImgElement",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noImplicitAnyLet",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noImplicitBoolean",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noImplicitCoercions",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noImportAssign",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noImportCycles",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noImportantInKeyframe",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noImportantStyles",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noIncrementDecrement",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noInferrableTypes",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noInnerDeclarations",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noInteractiveElementToNoninteractiveRole",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noInvalidBuiltinInstantiation",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noInvalidConstructorSuper",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noInvalidDirectionInLinearGradient",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noInvalidGridAreas",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noInvalidPositionAtImportRule",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noInvalidUseBeforeDeclaration",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noIrregularWhitespace",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noJsxLiterals",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noJsxPropsBind",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noLabelVar",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noLabelWithoutControl",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noLeakedRender",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noMagicNumbers",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noMisleadingCharacterClass",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noMisleadingInstantiator",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noMisplacedAssertion",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noMisrefactoredShorthandAssign",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noMissingVarFunction",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noMisusedPromises",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noMultiAssign",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noMultiStr",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_performance_noNamespaceImport",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noNamespace",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noNegationElse",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noNestedComponentDefinitions",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noNestedPromises",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noNestedTernary",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noNextAsyncClientComponent",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noNodejsModules",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noNonNullAssertedOptionalChain",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noNonNullAssertion",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noNoninteractiveElementInteractions",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_noNoninteractiveElementToInteractiveRole",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noNoninteractiveTabindex",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noNonoctalDecimalEscape",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noOctalEscape",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noParameterAssign",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noParameterProperties",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noParametersOnlyUsedInRecursion",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightElementHandle",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightEval",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightForceOption",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightMissingAwait",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightNetworkidle",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightPagePause",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightUselessAwait",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightWaitForNavigation",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightWaitForSelector",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noPlaywrightWaitForTimeout",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_noPositiveTabindex",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noPrecisionLoss",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noPrivateImports",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noProcessEnv",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noProcessGlobal",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noProto",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noPrototypeBuiltins",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noQuickfixBiome",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noQwikUseVisibleTask",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_performance_noReExportAll",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noReactForwardRef",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noReactPropAssignments",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noReactSpecificProps",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noRedeclare",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noRedundantAlt",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noRedundantDefaultExport",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_noRedundantRoles",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noRedundantUseStrict",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noRenderReturnValue",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noRestrictedElements",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noRestrictedGlobals",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noRestrictedImports",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noRestrictedTypes",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noReturnAssign",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noRootType",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noScriptUrl",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_security_noSecrets",
+      "level": "Error",
+      "category": "Security",
+      "scanType": "SAST",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noSelfAssign",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noSelfCompare",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noSetterReturn",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noShadowRestrictedNames",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noShadow",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noShorthandPropertyOverrides",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noShoutyConstants",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noSkippedTests",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noSolidDestructuredProps",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noSparseArray",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noStaticElementInteractions",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noStaticOnlyClass",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noStringCaseMismatch",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noSubstr",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noSuspiciousSemicolonInJsx",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_noSvgWithoutTitle",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noSwitchDeclarations",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noSyncScripts",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noTemplateCurlyInString",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noTernary",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noThenProperty",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noThisInStatic",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noTsIgnore",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noUnassignedVariables",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noUndeclaredDependencies",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noUndeclaredEnvVars",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noUndeclaredVariables",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noUnknownAtRules",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noUnknownAttribute",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noUnknownFunction",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnknownMediaFeatureName",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnknownProperty",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnknownPseudoClass",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnknownPseudoElement",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnknownTypeSelector",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnknownUnit",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnmatchableAnbSelector",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noUnnecessaryConditions",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noUnreachableSuper",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnreachable",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnresolvedImports",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noUnsafeDeclarationMerging",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnsafeFinally",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noUnsafeNegation",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnsafeOptionalChaining",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noUnusedExpressions",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noUnusedFunctionParameters",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnusedImports",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnusedLabels",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noUnusedPrivateClassMembers",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noUnusedTemplateLiteral",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noUnusedVariables",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_performance_noUnwantedPolyfillio",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessCatchBinding",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noUselessCatch",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessConstructor",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessContinue",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noUselessElse",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noUselessEmptyExport",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessEscapeInRegex",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noUselessEscapeInString",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessFragments",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessLabel",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessLoneBlockStatements",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_noUselessRegexBackrefs",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessRename",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noUselessReturn",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noUselessStringConcat",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_noUselessStringRaw",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessSwitchCase",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessTernary",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessThisAlias",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessTypeConstraint",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessUndefinedInitialization",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noUselessUndefined",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_noValueAtRule",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noVar",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noVoidElementsWithChildren",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noVoidTypeReturn",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_noVoid",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noVueArrowFuncInWatch",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noVueDataObjectDeclaration",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noVueDuplicateKeys",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noVueOptionsApi",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noVueRefAsOperand",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_noVueReservedKeys",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noVueReservedProps",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_noVueSetupPropsReactivityLoss",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_noVueVIfWithVFor",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_noWith",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_noYodaExpression",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useAdjacentOverloadSignatures",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useAltText",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useAnchorContent",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useAriaActivedescendantWithTabindex",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useAriaPropsForRole",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useAriaPropsSupportedByRole",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useArrayLiterals",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useArraySome",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useArraySortCompare",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_useArrowFunction",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useAsConstAssertion",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useAtIndex",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useAwaitThenable",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useAwait",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useBiomeIgnoreFolder",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useBlockStatements",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_useButtonType",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useCollapsedElseIf",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useCollapsedIf",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useComponentExportOnlyModules",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useConsistentArrayType",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useConsistentArrowReturn",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useConsistentBuiltinInstantiation",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useConsistentCurlyBraces",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useConsistentEnumValueType",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useConsistentGraphqlDescriptions",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useConsistentMemberAccessibility",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useConsistentMethodSignatures",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useConsistentObjectDefinitions",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useConsistentTypeDefinitions",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useConst",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_useDateNow",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useDefaultParameterLast",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useDefaultSwitchClauseLast",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useDefaultSwitchClause",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useDeprecatedDate",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useDeprecatedReason",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useDestructuring",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useEnumInitializers",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useErrorCause",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useErrorMessage",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_useExhaustiveDependencies",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useExhaustiveSwitchCases",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useExpect",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useExplicitLengthCheck",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useExplicitType",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useExponentiationOperator",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useExportType",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useExportsLast",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useFilenamingConvention",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useFind",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_useFlatMap",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useFocusableInteractive",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useForOf",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useFragmentSyntax",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_useGenericFontNames",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_useGetterReturn",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useGlobalThis",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useGoogleFontDisplay",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_performance_useGoogleFontPreconnect",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useGraphqlNamedOperations",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useGraphqlNamingConvention",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useGroupedAccessorPairs",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useGuardForIn",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_useHeadingContent",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useHookAtTopLevel",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useHtmlLang",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useIframeTitle",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useImageSize",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useImportExtensions",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useImportType",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_useIndexOf",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useInlineScriptId",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useInputName",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useIsArray",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useIsNan",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_suspicious_useIterableCallbackReturn",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useJsonImportAttributes",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_useJsxKeyInIterable",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useKeyWithClickEvents",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useKeyWithMouseEvents",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useLiteralEnumMembers",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_useLiteralKeys",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useLoneAnonymousOperation",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useLoneExecutableDefinition",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_useMaxParams",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_useMediaCaption",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useNamedCaptureGroup",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useNamespaceKeyword",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useNamingConvention",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useNodeAssertStrict",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useNodejsImportProtocol",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useNullishCoalescing",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useNumberNamespace",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useNumberToFixedDigitsArgument",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_useNumericLiterals",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useNumericSeparators",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useObjectSpread",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_useOptionalChain",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useParseIntRadix",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_usePlaywrightValidDescribeCallback",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_useQwikClasslist",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useQwikMethodUsage",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useQwikValidLexicalScope",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useReactFunctionComponents",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useReadonlyClassProperties",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_useRegexLiterals",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useRegexpExec",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useRequiredScripts",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useScopedStyles",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useSelfClosingElements",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_useSemanticElements",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useShorthandAssign",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useShorthandFunctionType",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_useSimpleNumberKeys",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_complexity_useSimplifiedLogicExpression",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_useSingleJsDocAsterisk",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useSingleVarDeclarator",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_performance_useSolidForComponent",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useSortedClasses",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useSpread",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useStaticResponseMethods",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_suspicious_useStrictMode",
+      "level": "Warning",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useSymbolDescription",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useTemplate",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_style_useThrowNewError",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useThrowOnlyError",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_performance_useTopLevelRegex",
+      "level": "Warning",
+      "category": "Performance",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useTrimStartEnd",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useUnicodeRegex",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_style_useUnifiedTypeSignatures",
+      "level": "Info",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_useUniqueElementIds",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_a11y_useValidAnchor",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useValidAriaProps",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useValidAriaRole",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useValidAriaValues",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useValidAutocomplete",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useValidForDirection",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_a11y_useValidLang",
+      "level": "Warning",
+      "category": "Compatibility",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_correctness_useValidTypeof",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useVueConsistentDefinePropsDeclaration",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueConsistentVBindStyle",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueConsistentVOnStyle",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueDefineMacrosOrder",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueHyphenatedAttributes",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueMultiWordComponentNames",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueVForKey",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidTemplateRoot",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVBind",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVCloak",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVElseIf",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVElse",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVHtml",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVIf",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVOn",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVOnce",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVPre",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueValidVText",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_nursery_useVueVapor",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_complexity_useWhile",
+      "level": "Warning",
+      "category": "CodeStyle",
+      "parameters": [],
+      "enabled": false
+    },
+    {
+      "patternId": "lint_correctness_useYield",
+      "level": "Error",
+      "category": "ErrorProne",
+      "parameters": [],
+      "enabled": true
+    }
+  ]
+}
