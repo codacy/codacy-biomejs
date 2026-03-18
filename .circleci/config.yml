@@ -8,7 +8,7 @@ workflows:
   compile_test_deploy:
     jobs:
       - codacy/checkout_and_version:
-          release_branch: main
+          release_branch: master
       - codacy/shell:
           name: publish_docker_local
           cmd: |
@@ -29,7 +29,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - master
       - codacy/tag_version:
           name: tag_version
           context: CodacyAWS
