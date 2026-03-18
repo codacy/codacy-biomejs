@@ -1,6 +1,6 @@
 {
   "name": "biome",
-  "version": "1.9.4",
+  "version": "2.4.7",
   "patterns": [
     {
       "patternId": "lint_a11y_noAccessKey",
@@ -571,6 +571,13 @@
       "category": "ErrorProne",
       "parameters": [],
       "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_noEmptyObjectKeys",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
     },
     {
       "patternId": "lint_correctness_noEmptyPattern",
@@ -1583,6 +1590,13 @@
       "enabled": true
     },
     {
+      "patternId": "lint_nursery_noTopLevelLiterals",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
       "patternId": "lint_suspicious_noTsIgnore",
       "level": "Warning",
       "category": "ErrorProne",
@@ -2164,6 +2178,13 @@
       "enabled": false
     },
     {
+      "patternId": "lint_nursery_useBaseline",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
+    },
+    {
       "patternId": "lint_suspicious_useBiomeIgnoreFolder",
       "level": "Warning",
       "category": "ErrorProne",
@@ -2561,6 +2582,13 @@
       "category": "CodeStyle",
       "parameters": [],
       "enabled": true
+    },
+    {
+      "patternId": "lint_nursery_useImportsFirst",
+      "level": "Warning",
+      "category": "BestPractice",
+      "parameters": [],
+      "enabled": false
     },
     {
       "patternId": "lint_complexity_useIndexOf",

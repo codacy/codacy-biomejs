@@ -19,16 +19,13 @@ async function runBiome(args: string[]): Promise<string> {
       maxBuffer: MAX_BUFFER,
     })
     return stdout
-  } catch (err) {
+  } catch (err: any) {
+    
     // Biome exits with code 1 when it finds lint issues — stdout still has valid JSON
-    if (
-      err &&
-      typeof err === "object" &&
-      "stdout" in err &&
-      typeof (err as { stdout: unknown }).stdout === "string"
-    ) {
+    if (typeof (err as { stdout: unknown }).stdout === "string") {
       return (err as { stdout: string }).stdout
     }
+    console.error("Error running biome:", err.stderr)
     throw err
   }
 }

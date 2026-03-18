@@ -39,7 +39,7 @@
     "lib"
   ],
   "dependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.4.7",
     "@types/fs-extra": "11.0.4",
     "@types/glob": "8.1.0",
     "@types/jest": "29.5.14",

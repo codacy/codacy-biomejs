@@ -26,9 +26,6 @@ interface BiomeConfig {
     enabled: boolean
     rules: BiomeLinterRules
   }
-  files: {
-    ignore: string[]
-  }
   javascript: {
     parser: {
       unsafeParameterDecoratorsEnabled: boolean
@@ -61,7 +58,7 @@ export async function createBiomeConfig(
 }
 
 function generateFilesToAnalyze(srcDirPath: string, codacyrc: Codacyrc): string[] {
-  if (codacyrc.files && codacyrc.files.length > 0) {
+  if (codacyrc.files && codacyrc.files.length > 0 ) {
     return codacyrc.files.map((f) => path.join(srcDirPath, f))
   }
   return [srcDirPath]
@@ -99,15 +96,6 @@ function generateBiomeConfig(patterns: Pattern[]): BiomeConfig {
       enabled: true,
       rules,
     },
-    files: {
-      ignore: [
-        "node_modules/**",
-        "dist/**",
-        "build/**",
-        "bin/**",
-        "vendor/**",
-      ],
-    },
     javascript: {
       parser: {
         unsafeParameterDecoratorsEnabled: true,
@@ -119,6 +107,8 @@ function generateBiomeConfig(patterns: Pattern[]): BiomeConfig {
 function existsBiomeConfigInRepoRoot(srcDirPath: string): boolean {
   return (
     existsSync(path.join(srcDirPath, "biome.json")) ||
-    existsSync(path.join(srcDirPath, "biome.jsonc"))
+    existsSync(path.join(srcDirPath, "biome.jsonc")) ||
+    existsSync(path.join(srcDirPath, ".biome.json")) ||
+    existsSync(path.join(srcDirPath, ".biome.jsonc"))
   )
 }
