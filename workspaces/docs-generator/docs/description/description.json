@@ -568,6 +568,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noEmptyObjectKeys",
+    "title": "Lint: [Nursery] NoEmptyObjectKeys",
+    "description": "Disallow empty keys in JSON objects.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_correctness_noEmptyPattern",
     "title": "Lint: [Correctness] NoEmptyPattern",
     "description": "Disallows empty destructuring patterns.",
@@ -1576,6 +1583,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noTopLevelLiterals",
+    "title": "Lint: [Nursery] NoTopLevelLiterals",
+    "description": "Require the JSON top-level value to be an array or object.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_suspicious_noTsIgnore",
     "title": "Lint: [Suspicious] NoTsIgnore",
     "description": "Prevents the use of the TypeScript directive `@ts-ignore`.",
@@ -2157,6 +2171,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useBaseline",
+    "title": "Lint: [Nursery] UseBaseline",
+    "description": "Disallow CSS properties, values, at-rules, functions, and selectors that are not part of the configured Baseline.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_suspicious_useBiomeIgnoreFolder",
     "title": "Lint: [Suspicious] UseBiomeIgnoreFolder",
     "description": "Promotes the correct usage for ignoring folders in the configuration file.",
@@ -2552,6 +2573,13 @@
     "patternId": "lint_style_useImportType",
     "title": "Lint: [Style] UseImportType",
     "description": "Promotes the use of `import type` for types.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useImportsFirst",
+    "title": "Lint: [Nursery] UseImportsFirst",
+    "description": "Enforce that all imports appear at the top of the module.",
     "timeToFix": 5
   },
   {

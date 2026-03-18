@@ -20,15 +20,13 @@ async function runBiome(args: string[]): Promise<string> {
     })
     return stdout
   } catch (err) {
-    // Biome exits with code 1 when it finds lint issues — stdout still has valid JSON
-    if (
-      err &&
-      typeof err === "object" &&
-      "stdout" in err &&
-      typeof (err as { stdout: unknown }).stdout === "string"
-    ) {
+    
+    //Biome exits with code 1 when it finds lint issues — stdout still has valid JSON
+    if (typeof (err as { stdout: unknown }).stdout === "string") {
       return (err as { stdout: string }).stdout
     }
+    // Todo: we should handle other types of errors (e.g., binary not found, invalid args) 
+    // and return them in a way that Codacy can report them properly instead of just crashing the engine
     throw err
   }
 }
