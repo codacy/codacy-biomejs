@@ -58,10 +58,19 @@ export async function createBiomeConfig(
 }
 
 function generateFilesToAnalyze(srcDirPath: string, codacyrc: Codacyrc): string[] {
+    const defaultFilesToAnalyze = [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.json",
+    "**/*.svelte"
+  ]
   if (codacyrc.files && codacyrc.files.length > 0 ) {
     return codacyrc.files.map((f) => path.join(srcDirPath, f))
+    }else {
+      return defaultFilesToAnalyze.map((f) => path.join(srcDirPath, f))
   }
-  return [srcDirPath]
 }
 
 function generateBiomeConfig(patterns: Pattern[]): BiomeConfig {
