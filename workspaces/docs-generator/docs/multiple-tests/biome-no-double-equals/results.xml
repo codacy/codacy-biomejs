@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <checkstyle version="4.3">
     <file name="no-double-equals.js">
-        <error source="lint_suspicious_noDoubleEquals" line="5" message="Use === instead of ==. == is only allowed when comparing against `null`" severity="warning" />
-        <error source="lint_suspicious_noDoubleEquals" line="13" message="Use === instead of ==. == is only allowed when comparing against `null`" severity="warning" />
+        <error source="lint_suspicious_noDoubleEquals" line="5" message="Using == may be unsafe if you are relying on type coercion." severity="warning" />
+        <error source="lint_suspicious_noDoubleEquals" line="13" message="Using == may be unsafe if you are relying on type coercion." severity="warning" />
     </file>
 </checkstyle>
