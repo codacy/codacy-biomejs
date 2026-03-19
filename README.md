@@ -65,7 +65,7 @@ Biome-specific tests:
 |------|-----------------|
 | `biome-no-double-equals` | `lint_suspicious_noDoubleEquals` |
 | `biome-no-debugger` | `lint_suspicious_noDebugger` |
-| `biome-no-var` | `lint_style_noVar` |
+| `biome-no-var` | `lint_suspicious_noVar` |
 | `biome-use-const` | `lint_style_useConst` |
 
 ## How it works

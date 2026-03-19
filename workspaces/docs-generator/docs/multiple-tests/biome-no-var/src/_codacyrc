@@ -3,7 +3,7 @@
         {
             "name": "biome",
             "patterns": [
-                { "patternId": "lint_style_noVar" }
+                { "patternId": "lint_suspicious_noVar" }
             ]
         }
     ],
