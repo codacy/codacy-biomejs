@@ -59,6 +59,16 @@ export async function createBiomeConfig(
   await fs.writeFile(BIOME_CONFIG_PATH, JSON.stringify(config, null, 2))
   debug(`configCreator: wrote biome config to ${BIOME_CONFIG_PATH}`)
   debug(`configCreator: biome config = ${JSON.stringify(config)}`)
+  
+  // Debug: Read back the file to verify it was written correctly
+  try {
+    const writtenConfig = await fs.readFile(BIOME_CONFIG_PATH, 'utf-8')
+    debug(`configCreator: file contents = ${writtenConfig}`)
+    const dirContents = await fs.readdir(BIOME_CONFIG_DIR)
+    debug(`configCreator: ${BIOME_CONFIG_DIR} contains: ${JSON.stringify(dirContents)}`)
+  } catch (err) {
+    debug(`configCreator: error reading config directory - ${err}`)
+  }
 
   return { configPath: BIOME_CONFIG_DIR, files }
 }

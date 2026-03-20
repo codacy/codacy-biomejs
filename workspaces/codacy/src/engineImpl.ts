@@ -75,6 +75,8 @@ export const engineImpl: Engine = async function (
 
 
   const results = convertResults(biomeOutput).map((r) => r.relativeTo(srcDirPath))
+  debug(`engineImpl: converted ${results.length} results`)
+  debug(`engineImpl: first 5 results = ${JSON.stringify(results.slice(0, 5))}`)
   return results
 }
 
