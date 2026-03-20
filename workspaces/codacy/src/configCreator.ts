@@ -58,7 +58,6 @@ export async function createBiomeConfig(
 }
 
 function generateFilesToAnalyze(srcDirPath: string, codacyrc: Codacyrc): string[] {
-    
   if (codacyrc.files && codacyrc.files.length > 0 ) {
     return codacyrc.files.map((f) => path.join(srcDirPath, f))
     }else {
