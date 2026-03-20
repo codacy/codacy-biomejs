@@ -40,7 +40,12 @@ export async function createBiomeConfig(
   const patterns = codacyrc.tools?.[0]?.patterns ?? []
   const files = generateFilesToAnalyze(srcDirPath, codacyrc)
 
+  debug(`configCreator: patterns.length = ${patterns.length}`)
+  debug(`configCreator: files = ${JSON.stringify(files)}`)
+
   const repoHasBiomeConfig = existsBiomeConfigInRepoRoot(srcDirPath)
+
+  debug(`configCreator: repoHasBiomeConfig = ${repoHasBiomeConfig}`)
 
   if (patterns.length === 0 && repoHasBiomeConfig) {
     // Use the repo's own biome.json
@@ -53,15 +58,22 @@ export async function createBiomeConfig(
   await fs.mkdir(BIOME_CONFIG_DIR, { recursive: true })
   await fs.writeFile(BIOME_CONFIG_PATH, JSON.stringify(config, null, 2))
   debug(`configCreator: wrote biome config to ${BIOME_CONFIG_PATH}`)
+  debug(`configCreator: biome config = ${JSON.stringify(config)}`)
 
   return { configPath: BIOME_CONFIG_DIR, files }
 }
 
 function generateFilesToAnalyze(srcDirPath: string, codacyrc: Codacyrc): string[] {
+  debug(`generateFilesToAnalyze: codacyrc.files = ${JSON.stringify(codacyrc.files)}`)
+  debug(`generateFilesToAnalyze: codacyrc.files?.length = ${codacyrc.files?.length ?? 0}`)
+  
   if (codacyrc.files && codacyrc.files.length > 0 ) {
-    return codacyrc.files.map((f) => path.join(srcDirPath, f))
-    }else {
-      return ["."]
+    const result = codacyrc.files.map((f) => path.join(srcDirPath, f))
+    debug(`generateFilesToAnalyze: mapped files = ${JSON.stringify(result)}`)
+    return result
+  } else {
+    debug(`generateFilesToAnalyze: no files specified, using ["."]`)
+    return ["."]
   }
 }
 
