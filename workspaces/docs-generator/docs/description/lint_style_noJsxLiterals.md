@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noJsxLiterals
 description: Learn more about noJsxLiterals
@@ -97,6 +98,7 @@ When enabled, the rule will also flag string literals inside JSX expressions and
 		"rules": {
 			"style": {
 				"noJsxLiterals": {
+					"level": "on",
 					"options": {
 						"noStrings": true
 					}
@@ -133,6 +135,7 @@ or characters that don't need to be wrapped in expressions.
 		"rules": {
 			"style": {
 				"noJsxLiterals": {
+					"level": "on",
 					"options": {
 						"allowedStrings": [
 							"Hello",
@@ -169,6 +172,7 @@ When enabled, the rule will ignore string literals used as prop values.
 		"rules": {
 			"style": {
 				"noJsxLiterals": {
+					"level": "on",
 					"options": {
 						"ignoreProps": true
 					}
@@ -192,7 +196,7 @@ When enabled, the rule will ignore string literals used as prop values.
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/no_jsx_literals.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/no_jsx_literals.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/noJsxLiterals)
 
 </TabItem>

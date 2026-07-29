@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useIterableCallbackReturn
 description: Learn more about useIterableCallbackReturn
@@ -57,7 +58,7 @@ The following methods require a return in their callback:
 - `some`
 - `sort`
 - `toSorted`
-— `from` (when called on `Array`)
+- `from` (when called on `Array`)
 
 A return value is disallowed in the method `forEach`.
 
@@ -103,7 +104,7 @@ A return value is disallowed in the method `forEach`.
 
 ### `checkForEach`
 
-**Since \`v2.4.0**
+**Since `v2.4.0`**
 
 Default: `true`
 
@@ -117,6 +118,7 @@ When set to `false`, the rule will skip `forEach` callbacks that return a value.
 		"rules": {
 			"suspicious": {
 				"useIterableCallbackReturn": {
+					"level": "on",
 					"options": {
 						"checkForEach": false
 					}
@@ -134,14 +136,56 @@ When set to `false`, the rule will skip `forEach` callbacks that return a value.
 });
 ```
 
-When `checkForEach` is `false` (default), the above code will not trigger any diagnostic.
+When `checkForEach` is `false`, the above code will not trigger any diagnostic.
+
+### `allowImplicit`
+
+**Since `v2.5.0`**
+
+Default: `false`
+
+When set to `true`, allows callbacks to implicitly return `undefined`
+using `return;`. This is useful for patterns like `.filter(Boolean)`
+chaining where some callbacks intentionally return `undefined`.
+
+### Examples
+
+```json title='biome.json'
+{
+	"linter": {
+		"rules": {
+			"suspicious": {
+				"useIterableCallbackReturn": {
+					"level": "on",
+					"options": {
+						"allowImplicit": true
+					}
+				}
+			}
+		}
+	}
+}
+
+```
+
+```js
+;[1, 2, 3].map((it) => {
+    if (it % 2 === 0) {
+        return it;
+    }
+    if (it > 2) {
+        return it ** 2;
+    }
+    return;
+}).filter(Boolean);
+```
 
 ## Related links
 
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/use_iterable_callback_return.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/use_iterable_callback_return.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/useIterableCallbackReturn)
 
 </TabItem>

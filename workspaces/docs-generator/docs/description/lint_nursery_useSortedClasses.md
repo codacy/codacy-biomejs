@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useSortedClasses
 description: Learn more about useSortedClasses
@@ -52,9 +53,8 @@ We appreciate any feedback on this rule, and encourage you to try it out and rep
 Notably, keep in mind that the following features are not supported yet:
 
 - Screen variant sorting (e.g. `md:`, `max-lg:`). Only static, dynamic and arbitrary variants are supported.
-- Custom utilitites and variants (such as ones introduced by Tailwind CSS plugins). Only the default Tailwind CSS configuration is supported.
+- Custom utilities and variants (such as ones introduced by Tailwind CSS plugins). Only the default Tailwind CSS configuration is supported.
 - Options such as `prefix` and `separator`.
-- Object properties (e.g. in `clsx` calls).
 
 Please don't report issues about these features.
 :::
@@ -85,6 +85,7 @@ Please don't report issues about these features.
 		"rules": {
 			"nursery": {
 				"useSortedClasses": {
+					"level": "on",
 					"options": {
 						"attributes": [
 							"classList"
@@ -194,7 +195,7 @@ This is a deliberate decision. We're unsure about this behavior, and would appre
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/nursery/use_sorted_classes.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/nursery/use_sorted_classes.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/nursery/useSortedClasses)
 
 </TabItem>

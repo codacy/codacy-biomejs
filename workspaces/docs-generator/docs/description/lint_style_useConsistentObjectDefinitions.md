@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useConsistentObjectDefinitions
 description: Learn more about useConsistentObjectDefinitions
@@ -32,7 +33,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ```
 ## Description
-Require the consistent declaration of object literals. Defaults to explicit definitions.
+Require the consistent declaration of object literals.
 
 ECMAScript 6 provides two ways to define an object literal: `{foo: foo}` and `{foo}`.
 The two styles are functionally equivalent.
@@ -48,6 +49,7 @@ Using the same style consistently across your codebase makes it easier to quickl
 		"rules": {
 			"style": {
 				"useConsistentObjectDefinitions": {
+					"level": "on",
 					"options": {
 						"syntax": "shorthand"
 					}
@@ -94,6 +96,7 @@ let valid = {
 		"rules": {
 			"style": {
 				"useConsistentObjectDefinitions": {
+					"level": "on",
 					"options": {
 						"syntax": "explicit"
 					}
@@ -142,6 +145,7 @@ Use the options to specify the syntax of object literals to enforce.
 		"rules": {
 			"style": {
 				"useConsistentObjectDefinitions": {
+					"level": "on",
 					"options": {
 						"syntax": "explicit"
 					}
@@ -167,7 +171,7 @@ The syntax to use:
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_consistent_object_definitions.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_consistent_object_definitions.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useConsistentObjectDefinitions)
 
 </TabItem>

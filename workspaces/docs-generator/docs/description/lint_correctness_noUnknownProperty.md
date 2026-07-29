@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noUnknownProperty
 description: Learn more about noUnknownProperty
@@ -94,6 +95,7 @@ A list of unknown property names to ignore (case-insensitive).
 		"rules": {
 			"correctness": {
 				"noUnknownProperty": {
+					"level": "on",
 					"options": {
 						"ignore": [
 							"custom-property"
@@ -120,7 +122,7 @@ a {
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_unknown_property.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_unknown_property.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/correctness/noUnknownProperty)
 
 </TabItem>

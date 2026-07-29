@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useNamingConvention
 description: Learn more about useNamingConvention
@@ -330,6 +331,7 @@ The rule provides several options that are detailed in the following subsections
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"strictCase": false,
 						"requireAscii": false,
@@ -371,6 +373,7 @@ These names should be renamed to `HttpServer` and `aHttpServer`:
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"strictCase": true
 					}
@@ -398,6 +401,7 @@ For example, `HTTPServer` and `aHTTPServer` would be considered valid then:
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"strictCase": false
 					}
@@ -438,6 +442,7 @@ For example, you can enforce the use of [`CONSTANT_CASE`](https://en.wikipedia.o
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -544,6 +549,7 @@ In the following configuration, we require `static readonly` class properties to
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -588,6 +594,7 @@ You should always place first more specific conventions.
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -627,6 +634,7 @@ In the following configuration, all variable names must have a minimum of 3 char
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -660,6 +668,7 @@ In the following example, we require that:
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -699,6 +708,7 @@ The capture is then checked against `formats`.
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -741,6 +751,7 @@ For example, the following configuration...
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -781,6 +792,7 @@ can be factorized to...
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -821,6 +833,7 @@ the previous example can be simplified to:
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -856,6 +869,7 @@ You can reset all default conventions by adding a convention at the end of the a
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							// your conventions
@@ -891,6 +905,7 @@ Let's take a more complex example with the following conventions:
 		"rules": {
 			"style": {
 				"useNamingConvention": {
+					"level": "on",
 					"options": {
 						"conventions": [
 							{
@@ -985,7 +1000,7 @@ For example, `\$` and `[$]` are two valid patterns that escape `$`.
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_naming_convention.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_naming_convention.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useNamingConvention)
 
 </TabItem>

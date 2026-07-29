@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noRestrictedImports
 description: Learn more about noRestrictedImports
@@ -56,6 +57,7 @@ Disallow specified modules when loaded by import or require.
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"paths": {
 							"lodash": "Using lodash is not encouraged.",
@@ -245,6 +247,7 @@ Use the options to specify import paths and/or patterns, including specific impo
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"paths": {
 							"lodash": "Using lodash is not encouraged",
@@ -277,6 +280,7 @@ Use the options to specify import paths and/or patterns, including specific impo
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"patterns": [
 							{
@@ -314,6 +318,7 @@ Importing `constants` will emit the message `This file will be deleted soon.`:
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"paths": {
 							"services-deprecated": {
@@ -354,6 +359,7 @@ A default message will be generated if `message` is empty or not specified:
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"paths": {
 							"import-foo": {}
@@ -391,6 +397,7 @@ The following import name specifiers are supported:
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"paths": {
 							"import-foo": {
@@ -436,6 +443,7 @@ See `importNames` for the set of supported import name specifiers.
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"paths": {
 							"import-bar": {
@@ -484,6 +492,7 @@ The patterns array can also include objects. The group property is used to speci
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"patterns": [
 							{
@@ -530,6 +539,7 @@ This option allows you to use regex patterns to restrict import names.
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"patterns": [
 							{
@@ -574,6 +584,7 @@ If true, the matched patterns in the importNamePattern will be allowed
 		"rules": {
 			"style": {
 				"noRestrictedImports": {
+					"level": "on",
 					"options": {
 						"patterns": [
 							{
@@ -612,7 +623,7 @@ import { x } from 'import-foo/foo';
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/no_restricted_imports.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/no_restricted_imports.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/noRestrictedImports)
 
 </TabItem>

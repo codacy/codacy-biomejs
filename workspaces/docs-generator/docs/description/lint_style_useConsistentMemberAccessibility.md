@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useConsistentMemberAccessibility
 description: Learn more about useConsistentMemberAccessibility
@@ -55,6 +56,7 @@ Use the following configuration to disallow all explicit `public` modifiers:
 		"rules": {
 			"style": {
 				"useConsistentMemberAccessibility": {
+					"level": "on",
 					"options": {
 						"accessibility": "noPublic"
 					}
@@ -139,6 +141,7 @@ Use the following configuration to enforce the presence of explicit modifiers wh
 		"rules": {
 			"style": {
 				"useConsistentMemberAccessibility": {
+					"level": "on",
 					"options": {
 						"accessibility": "explicit"
 					}
@@ -185,6 +188,7 @@ Use the following configuration to disallow all explicit visibility modifiers:
 		"rules": {
 			"style": {
 				"useConsistentMemberAccessibility": {
+					"level": "on",
 					"options": {
 						"accessibility": "none"
 					}
@@ -269,6 +273,7 @@ The following patterns are considered correct code with the default options `noP
 		"rules": {
 			"style": {
 				"useConsistentMemberAccessibility": {
+					"level": "on",
 					"options": {
 						"accessibility": "noPublic"
 					}
@@ -311,6 +316,7 @@ The following patterns are considered correct code with the accessibility set to
 		"rules": {
 			"style": {
 				"useConsistentMemberAccessibility": {
+					"level": "on",
 					"options": {
 						"accessibility": "explicit"
 					}
@@ -354,6 +360,7 @@ The following patterns are considered correct code with the accessibility set to
 		"rules": {
 			"style": {
 				"useConsistentMemberAccessibility": {
+					"level": "on",
 					"options": {
 						"accessibility": "none"
 					}
@@ -399,6 +406,7 @@ The rule supports the following options:
 		"rules": {
 			"style": {
 				"useConsistentMemberAccessibility": {
+					"level": "on",
 					"options": {
 						"accessibility": "explicit"
 					}
@@ -426,7 +434,7 @@ It can be set to one of the following values:
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_consistent_member_accessibility.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_consistent_member_accessibility.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useConsistentMemberAccessibility)
 
 </TabItem>

@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noExcessiveLinesPerFunction
 description: Learn more about noExcessiveLinesPerFunction
@@ -90,6 +91,7 @@ When `maxLines: 2`, the following function will be considered invalid:
 		"rules": {
 			"complexity": {
 				"noExcessiveLinesPerFunction": {
+					"level": "on",
 					"options": {
 						"maxLines": 2
 					}
@@ -126,6 +128,7 @@ When `maxLines: 2` and `skipBlankLines: true`, the following function will be co
 		"rules": {
 			"complexity": {
 				"noExcessiveLinesPerFunction": {
+					"level": "on",
 					"options": {
 						"maxLines": 2,
 						"skipBlankLines": true
@@ -161,6 +164,7 @@ When `maxLines: 2` and `skipIifes: true`, the following IIFE will be considered 
 		"rules": {
 			"complexity": {
 				"noExcessiveLinesPerFunction": {
+					"level": "on",
 					"options": {
 						"maxLines": 2,
 						"skipIifes": true
@@ -186,7 +190,7 @@ When `maxLines: 2` and `skipIifes: true`, the following IIFE will be considered 
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_excessive_lines_per_function.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_excessive_lines_per_function.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/complexity/noExcessiveLinesPerFunction)
 
 </TabItem>
