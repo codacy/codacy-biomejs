@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useBaseline
 description: Learn more about useBaseline
@@ -19,6 +20,7 @@ This rule is part of the [nursery](/linter/#nursery) group. This means that it i
 - The default severity of this rule is [**information**](/reference/diagnostics#information).
 - Sources: 
   - Inspired from [`css/use-baseline`](https://github.com/eslint/css/blob/main/docs/rules/use-baseline.md)
+  - Inspired from [`@html-eslint/use-baseline`](https://html-eslint.org/docs/rules/use-baseline)
 
 ## How to configure
 ```json title="biome.json"
@@ -112,6 +114,7 @@ Default: `"widely"`
 		"rules": {
 			"nursery": {
 				"useBaseline": {
+					"level": "on",
 					"options": {
 						"available": "newly"
 					}
@@ -149,6 +152,7 @@ Default: `[]`
 		"rules": {
 			"nursery": {
 				"useBaseline": {
+					"level": "on",
 					"options": {
 						"allowProperties": [
 							"backdrop-filter"
@@ -178,6 +182,7 @@ Default: `[]`
 		"rules": {
 			"nursery": {
 				"useBaseline": {
+					"level": "on",
 					"options": {
 						"allowAtRules": [
 							"view-transition"
@@ -207,6 +212,7 @@ Default: `[]`
 		"rules": {
 			"nursery": {
 				"useBaseline": {
+					"level": "on",
 					"options": {
 						"allowFunctions": [
 							"abs"
@@ -236,6 +242,7 @@ Default: `[]`
 		"rules": {
 			"nursery": {
 				"useBaseline": {
+					"level": "on",
 					"options": {
 						"allowMediaConditions": [
 							"inverted-colors"
@@ -265,6 +272,7 @@ Default: `{}`
 		"rules": {
 			"nursery": {
 				"useBaseline": {
+					"level": "on",
 					"options": {
 						"allowPropertyValues": {
 							"clip-path": [
@@ -297,6 +305,7 @@ Default: `[]`
 		"rules": {
 			"nursery": {
 				"useBaseline": {
+					"level": "on",
 					"options": {
 						"allowSelectors": [
 							"has"
@@ -319,7 +328,7 @@ h1:has(+ h2) { margin: 0; }
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/nursery/use_baseline.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/nursery/use_baseline.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/nursery/useBaseline)
 
 </TabItem>

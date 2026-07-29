@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noUnknownMediaFeatureName
 description: Learn more about noUnknownMediaFeatureName
@@ -94,12 +95,17 @@ Data sources of known CSS media feature are:
 @media screen and (-webkit-width > 320px) {}
 ```
 
+```css
+@custom-media --mobile (max-width: 768px);
+@media screen and (--mobile) {}
+```
+
 ## Related links
 
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_unknown_media_feature_name.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_unknown_media_feature_name.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/correctness/noUnknownMediaFeatureName)
 
 </TabItem>

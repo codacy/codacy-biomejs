@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noSecrets
 description: Learn more about noSecrets
@@ -107,6 +108,7 @@ The rule supports the following option:
 		"rules": {
 			"security": {
 				"noSecrets": {
+					"level": "on",
 					"options": {
 						"entropyThreshold": 41
 					}
@@ -139,6 +141,7 @@ Example raising the threshold (fewer detections):
 		"rules": {
 			"security": {
 				"noSecrets": {
+					"level": "on",
 					"options": {
 						"entropyThreshold": 50
 					}
@@ -155,7 +158,7 @@ Example raising the threshold (fewer detections):
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/security/no_secrets.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/security/no_secrets.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/security/noSecrets)
 
 </TabItem>

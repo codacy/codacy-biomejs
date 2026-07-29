@@ -29,8 +29,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noAmbiguousAnchorText",
-    "title": "Lint: [Nursery] NoAmbiguousAnchorText",
+    "patternId": "lint_a11y_noAmbiguousAnchorText",
+    "title": "Lint: [A11y] NoAmbiguousAnchorText",
     "description": "Disallow ambiguous anchor descriptions.",
     "timeToFix": 5
   },
@@ -113,8 +113,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noBeforeInteractiveScriptOutsideDocument",
-    "title": "Lint: [Nursery] NoBeforeInteractiveScriptOutsideDocument",
+    "patternId": "lint_nursery_noBaseToString",
+    "title": "Lint: [Nursery] NoBaseToString",
+    "description": "Require stringification to avoid values that only use the default object representation.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_correctness_noBeforeInteractiveScriptOutsideDocument",
+    "title": "Lint: [Correctness] NoBeforeInteractiveScriptOutsideDocument",
     "description": "Prevent usage of `next/script`'s `beforeInteractive` strategy outside of `pages/_document.js` in a Next.js project.",
     "timeToFix": 5
   },
@@ -190,6 +197,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noComponentHookFactories",
+    "title": "Lint: [Nursery] NoComponentHookFactories",
+    "description": "Disallows defining React components or custom hooks inside other functions.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_nursery_noConditionalExpect",
     "title": "Lint: [Nursery] NoConditionalExpect",
     "description": "Disallow conditional `expect()` calls inside tests.",
@@ -260,8 +274,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noContinue",
-    "title": "Lint: [Nursery] NoContinue",
+    "patternId": "lint_style_noContinue",
+    "title": "Lint: [Style] NoContinue",
     "description": "Disallow continue statements.",
     "timeToFix": 5
   },
@@ -316,8 +330,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDeprecatedMediaType",
-    "title": "Lint: [Nursery] NoDeprecatedMediaType",
+    "patternId": "lint_suspicious_noDeprecatedMediaType",
+    "title": "Lint: [Suspicious] NoDeprecatedMediaType",
     "description": "Disallow deprecated media types.",
     "timeToFix": 5
   },
@@ -337,8 +351,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDivRegex",
-    "title": "Lint: [Nursery] NoDivRegex",
+    "patternId": "lint_complexity_noDivRegex",
+    "title": "Lint: [Complexity] NoDivRegex",
     "description": "Disallow equal signs explicitly at the beginning of regular expressions.",
     "timeToFix": 5
   },
@@ -372,8 +386,22 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDuplicateArgumentNames",
-    "title": "Lint: [Nursery] NoDuplicateArgumentNames",
+    "patternId": "lint_nursery_noDrizzleDeleteWithoutWhere",
+    "title": "Lint: [Nursery] NoDrizzleDeleteWithoutWhere",
+    "description": "Require `.where()` to be called when using `.delete()` with Drizzle ORM.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noDrizzleUpdateWithoutWhere",
+    "title": "Lint: [Nursery] NoDrizzleUpdateWithoutWhere",
+    "description": "Require `.where()` to be called when using `.update()` with Drizzle ORM.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_correctness_noDuplicateArgumentNames",
+    "title": "Lint: [Correctness] NoDuplicateArgumentNames",
     "description": "Require all argument names for fields & directives to be unique.",
     "timeToFix": 5
   },
@@ -386,8 +414,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDuplicateAttributes",
-    "title": "Lint: [Nursery] NoDuplicateAttributes",
+    "patternId": "lint_correctness_noDuplicateAttributes",
+    "title": "Lint: [Correctness] NoDuplicateAttributes",
     "description": "Disallow duplication of attributes.",
     "timeToFix": 5
   },
@@ -428,15 +456,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDuplicateEnumValueNames",
-    "title": "Lint: [Nursery] NoDuplicateEnumValueNames",
+    "patternId": "lint_correctness_noDuplicateEnumValueNames",
+    "title": "Lint: [Correctness] NoDuplicateEnumValueNames",
     "description": "Require all enum value names to be unique.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDuplicateEnumValues",
-    "title": "Lint: [Nursery] NoDuplicateEnumValues",
+    "patternId": "lint_suspicious_noDuplicateEnumValues",
+    "title": "Lint: [Suspicious] NoDuplicateEnumValues",
     "description": "Disallow duplicate enum member values.",
     "timeToFix": 5
   },
@@ -463,15 +491,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDuplicateGraphqlOperationName",
-    "title": "Lint: [Nursery] NoDuplicateGraphqlOperationName",
+    "patternId": "lint_suspicious_noDuplicateGraphqlOperationName",
+    "title": "Lint: [Suspicious] NoDuplicateGraphqlOperationName",
     "description": "Enforce unique operation names across a GraphQL document.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDuplicateInputFieldNames",
-    "title": "Lint: [Nursery] NoDuplicateInputFieldNames",
+    "patternId": "lint_correctness_noDuplicateInputFieldNames",
+    "title": "Lint: [Correctness] NoDuplicateInputFieldNames",
     "description": "Require fields within an input object to be unique.",
     "timeToFix": 5
   },
@@ -512,6 +540,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noDuplicateSelectors",
+    "title": "Lint: [Nursery] NoDuplicateSelectors",
+    "description": "Disallow duplicate selectors.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_suspicious_noDuplicateTestHooks",
     "title": "Lint: [Suspicious] NoDuplicateTestHooks",
     "description": "A `describe` block should not contain duplicate hooks.",
@@ -519,15 +554,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDuplicateVariableNames",
-    "title": "Lint: [Nursery] NoDuplicateVariableNames",
+    "patternId": "lint_correctness_noDuplicateVariableNames",
+    "title": "Lint: [Correctness] NoDuplicateVariableNames",
     "description": "Require all variable definitions to be unique.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noDuplicatedSpreadProps",
-    "title": "Lint: [Nursery] NoDuplicatedSpreadProps",
+    "patternId": "lint_suspicious_noDuplicatedSpreadProps",
+    "title": "Lint: [Suspicious] NoDuplicatedSpreadProps",
     "description": "Disallow JSX prop spreading the same identifier multiple times.",
     "timeToFix": 5
   },
@@ -603,8 +638,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noEqualsToNull",
-    "title": "Lint: [Nursery] NoEqualsToNull",
+    "patternId": "lint_suspicious_noEqualsToNull",
+    "title": "Lint: [Suspicious] NoEqualsToNull",
     "description": "Require the use of `===` or `!==` for comparison with `null`.",
     "timeToFix": 5
   },
@@ -617,8 +652,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noExcessiveClassesPerFile",
-    "title": "Lint: [Nursery] NoExcessiveClassesPerFile",
+    "patternId": "lint_style_noExcessiveClassesPerFile",
+    "title": "Lint: [Style] NoExcessiveClassesPerFile",
     "description": "Enforce a maximum number of classes per file.",
     "timeToFix": 5
   },
@@ -631,8 +666,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noExcessiveLinesPerFile",
-    "title": "Lint: [Nursery] NoExcessiveLinesPerFile",
+    "patternId": "lint_style_noExcessiveLinesPerFile",
+    "title": "Lint: [Style] NoExcessiveLinesPerFile",
     "description": "Restrict the number of lines in a file.",
     "timeToFix": 5
   },
@@ -645,9 +680,23 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noExcessiveNestedCallbacks",
+    "title": "Lint: [Nursery] NoExcessiveNestedCallbacks",
+    "description": "Enforce a maximum depth that callbacks can be nested.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_complexity_noExcessiveNestedTestSuites",
     "title": "Lint: [Complexity] NoExcessiveNestedTestSuites",
     "description": "This rule enforces a maximum depth to nested `describe()` in test files.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noExcessiveSelectorClasses",
+    "title": "Lint: [Nursery] NoExcessiveSelectorClasses",
+    "description": "Limit the number of classes in a selector.",
     "timeToFix": 5
   },
   {
@@ -701,13 +750,6 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noFloatingClasses",
-    "title": "Lint: [Nursery] NoFloatingClasses",
-    "description": "Disallow `new` operators outside of assignments or comparisons.",
-    "timeToFix": 5
-  },
-  {
-    "parameters": [],
     "patternId": "lint_nursery_noFloatingPromises",
     "title": "Lint: [Nursery] NoFloatingPromises",
     "description": "Require Promise-like statements to be handled appropriately.",
@@ -729,8 +771,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noForIn",
-    "title": "Lint: [Nursery] NoForIn",
+    "patternId": "lint_suspicious_noForIn",
+    "title": "Lint: [Suspicious] NoForIn",
     "description": "Disallow iterating using a for-in loop.",
     "timeToFix": 5
   },
@@ -806,9 +848,16 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noHexColors",
-    "title": "Lint: [Nursery] NoHexColors",
+    "patternId": "lint_style_noHexColors",
+    "title": "Lint: [Style] NoHexColors",
     "description": "Disallow hex colors.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noIdenticalTestTitle",
+    "title": "Lint: [Nursery] NoIdenticalTestTitle",
+    "description": "Disallow identical titles in test suites and test cases.",
     "timeToFix": 5
   },
   {
@@ -836,7 +885,14 @@
     "parameters": [],
     "patternId": "lint_complexity_noImplicitCoercions",
     "title": "Lint: [Complexity] NoImplicitCoercions",
-    "description": "Disallow shorthand type conversions.",
+    "description": "Encourage use of explicit type conversion functions over their shorthand counterparts.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noImpliedEval",
+    "title": "Lint: [Nursery] NoImpliedEval",
+    "description": "Disallow the use of `eval()`-like methods.",
     "timeToFix": 5
   },
   {
@@ -869,8 +925,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noIncrementDecrement",
-    "title": "Lint: [Nursery] NoIncrementDecrement",
+    "patternId": "lint_style_noIncrementDecrement",
+    "title": "Lint: [Style] NoIncrementDecrement",
     "description": "Disallows the usage of the unary operators ++ and --.",
     "timeToFix": 5
   },
@@ -879,6 +935,13 @@
     "patternId": "lint_style_noInferrableTypes",
     "title": "Lint: [Style] NoInferrableTypes",
     "description": "Disallow type annotations for variables, parameters, and class properties initialized with a literal expression.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noInlineStyles",
+    "title": "Lint: [Nursery] NoInlineStyles",
+    "description": "Disallow the use of inline styles.",
     "timeToFix": 5
   },
   {
@@ -946,6 +1009,20 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noJsRestrictedProperties",
+    "title": "Lint: [Nursery] NoJsRestrictedProperties",
+    "description": "Disallow specific object properties.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noJsxLeakedDollar",
+    "title": "Lint: [Nursery] NoJsxLeakedDollar",
+    "description": "Flags text nodes with a trailing `$` before a JSX expression.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_style_noJsxLiterals",
     "title": "Lint: [Style] NoJsxLiterals",
     "description": "Disallow string literals inside JSX elements.",
@@ -953,8 +1030,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noJsxPropsBind",
-    "title": "Lint: [Nursery] NoJsxPropsBind",
+    "patternId": "lint_nursery_noJsxNamespace",
+    "title": "Lint: [Nursery] NoJsxNamespace",
+    "description": "Disallow JSX namespace syntax.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_performance_noJsxPropsBind",
+    "title": "Lint: [Performance] NoJsxPropsBind",
     "description": "Disallow .bind(), arrow functions, or function expressions in JSX props",
     "timeToFix": 5
   },
@@ -974,9 +1058,16 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noLeakedRender",
-    "title": "Lint: [Nursery] NoLeakedRender",
+    "patternId": "lint_suspicious_noLeakedRender",
+    "title": "Lint: [Suspicious] NoLeakedRender",
     "description": "Prevent problematic leaked values from being rendered.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noLoopFunc",
+    "title": "Lint: [Nursery] NoLoopFunc",
+    "description": "Disallow functions declared inside loops that capture unsafe outer variables.",
     "timeToFix": 5
   },
   {
@@ -998,6 +1089,13 @@
     "patternId": "lint_suspicious_noMisleadingInstantiator",
     "title": "Lint: [Suspicious] NoMisleadingInstantiator",
     "description": "Enforce proper usage of `new` and `constructor`.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noMisleadingReturnType",
+    "title": "Lint: [Nursery] NoMisleadingReturnType",
+    "description": "Detect return type annotations that are misleadingly wider than what the implementation actually returns.",
     "timeToFix": 5
   },
   {
@@ -1030,15 +1128,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noMultiAssign",
-    "title": "Lint: [Nursery] NoMultiAssign",
+    "patternId": "lint_style_noMultiAssign",
+    "title": "Lint: [Style] NoMultiAssign",
     "description": "Disallow use of chained assignment expressions",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noMultiStr",
-    "title": "Lint: [Nursery] NoMultiStr",
+    "patternId": "lint_style_noMultilineString",
+    "title": "Lint: [Style] NoMultilineString",
     "description": "Disallow creating multiline strings by escaping newlines.",
     "timeToFix": 5
   },
@@ -1065,6 +1163,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noNegationInEqualityCheck",
+    "title": "Lint: [Nursery] NoNegationInEqualityCheck",
+    "description": "Disallow negated expressions on the left side of an equality check.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_correctness_noNestedComponentDefinitions",
     "title": "Lint: [Correctness] NoNestedComponentDefinitions",
     "description": "Disallows defining React components inside other components.",
@@ -1072,8 +1177,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noNestedPromises",
-    "title": "Lint: [Nursery] NoNestedPromises",
+    "patternId": "lint_suspicious_noNestedPromises",
+    "title": "Lint: [Suspicious] NoNestedPromises",
     "description": "Disallow nested `.then()` or `.catch()` promise calls.",
     "timeToFix": 5
   },
@@ -1163,8 +1268,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noParametersOnlyUsedInRecursion",
-    "title": "Lint: [Nursery] NoParametersOnlyUsedInRecursion",
+    "patternId": "lint_suspicious_noParametersOnlyUsedInRecursion",
+    "title": "Lint: [Suspicious] NoParametersOnlyUsedInRecursion",
     "description": "Disallow function parameters that are only used in recursive calls.",
     "timeToFix": 5
   },
@@ -1275,8 +1380,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noProto",
-    "title": "Lint: [Nursery] NoProto",
+    "patternId": "lint_suspicious_noProto",
+    "title": "Lint: [Suspicious] NoProto",
     "description": "Disallow the use of the deprecated `__proto__` object property.",
     "timeToFix": 5
   },
@@ -1317,6 +1422,27 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noReactNativeDeepImports",
+    "title": "Lint: [Nursery] NoReactNativeDeepImports",
+    "description": "Disallow deep imports from the `react-native` package.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noReactNativeLiteralColors",
+    "title": "Lint: [Nursery] NoReactNativeLiteralColors",
+    "description": "Disallow color literals in React Native styles.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noReactNativeRawText",
+    "title": "Lint: [Nursery] NoReactNativeRawText",
+    "description": "Disallow raw text outside `<Text>` components in React Native.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_correctness_noReactPropAssignments",
     "title": "Lint: [Correctness] NoReactPropAssignments",
     "description": "Disallow assigning to React component props.",
@@ -1327,6 +1453,13 @@
     "patternId": "lint_suspicious_noReactSpecificProps",
     "title": "Lint: [Suspicious] NoReactSpecificProps",
     "description": "Prevents React-specific JSX properties from being used.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noReactStringRefs",
+    "title": "Lint: [Nursery] NoReactStringRefs",
+    "description": "Disallow string refs in React components.",
     "timeToFix": 5
   },
   {
@@ -1345,8 +1478,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noRedundantDefaultExport",
-    "title": "Lint: [Nursery] NoRedundantDefaultExport",
+    "patternId": "lint_complexity_noRedundantDefaultExport",
+    "title": "Lint: [Complexity] NoRedundantDefaultExport",
     "description": "Checks if a default export exports the same symbol as a named export.",
     "timeToFix": 5
   },
@@ -1369,6 +1502,13 @@
     "patternId": "lint_correctness_noRenderReturnValue",
     "title": "Lint: [Correctness] NoRenderReturnValue",
     "description": "Prevent the usage of the return value of `React.render`.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noRestrictedDependencies",
+    "title": "Lint: [Nursery] NoRestrictedDependencies",
+    "description": "Disallow dependencies that are known to have better alternatives.",
     "timeToFix": 5
   },
   {
@@ -1401,22 +1541,22 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noReturnAssign",
-    "title": "Lint: [Nursery] NoReturnAssign",
+    "patternId": "lint_suspicious_noReturnAssign",
+    "title": "Lint: [Suspicious] NoReturnAssign",
     "description": "Disallow assignments in return statements.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noRootType",
-    "title": "Lint: [Nursery] NoRootType",
+    "patternId": "lint_style_noRootType",
+    "title": "Lint: [Style] NoRootType",
     "description": "Disallow the usage of specified root types",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noScriptUrl",
-    "title": "Lint: [Nursery] NoScriptUrl",
+    "patternId": "lint_security_noScriptUrl",
+    "title": "Lint: [Security] NoScriptUrl",
     "description": "Disallow `javascript:` URLs in HTML.",
     "timeToFix": 5
   },
@@ -1457,8 +1597,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noShadow",
-    "title": "Lint: [Nursery] NoShadow",
+    "patternId": "lint_suspicious_noShadow",
+    "title": "Lint: [Suspicious] NoShadow",
     "description": "Disallow variable declarations from shadowing variables declared in the outer scope.",
     "timeToFix": 5
   },
@@ -1534,6 +1674,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noSvelteUnnecessaryStateWrap",
+    "title": "Lint: [Nursery] NoSvelteUnnecessaryStateWrap",
+    "description": "Disallow unnecessary `$state` wrapping of reactive classes.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_a11y_noSvgWithoutTitle",
     "title": "Lint: [A11y] NoSvgWithoutTitle",
     "description": "Enforces the usage of the `title` element for the `svg` element.",
@@ -1548,8 +1695,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noSyncScripts",
-    "title": "Lint: [Nursery] NoSyncScripts",
+    "patternId": "lint_performance_noSyncScripts",
+    "title": "Lint: [Performance] NoSyncScripts",
     "description": "Prevent the usage of synchronous scripts.",
     "timeToFix": 5
   },
@@ -1562,8 +1709,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noTernary",
-    "title": "Lint: [Nursery] NoTernary",
+    "patternId": "lint_style_noTernary",
+    "title": "Lint: [Style] NoTernary",
     "description": "Disallow ternary operators.",
     "timeToFix": 5
   },
@@ -1604,6 +1751,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noUndeclaredClasses",
+    "title": "Lint: [Nursery] NoUndeclaredClasses",
+    "description": "Reports CSS class names in HTML `class` attributes that are not defined in any `<style>` block or linked stylesheet available to the file.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_correctness_noUndeclaredDependencies",
     "title": "Lint: [Correctness] NoUndeclaredDependencies",
     "description": "Disallow the use of dependencies that aren't specified in the `package.json`.",
@@ -1611,8 +1765,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noUndeclaredEnvVars",
-    "title": "Lint: [Nursery] NoUndeclaredEnvVars",
+    "patternId": "lint_suspicious_noUndeclaredEnvVars",
+    "title": "Lint: [Suspicious] NoUndeclaredEnvVars",
     "description": "Disallow the use of undeclared environment variables.",
     "timeToFix": 5
   },
@@ -1632,8 +1786,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noUnknownAttribute",
-    "title": "Lint: [Nursery] NoUnknownAttribute",
+    "patternId": "lint_suspicious_noUnknownAttribute",
+    "title": "Lint: [Suspicious] NoUnknownAttribute",
     "description": "Disallow unknown DOM properties.",
     "timeToFix": 5
   },
@@ -1695,9 +1849,16 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noUnnecessaryConditions",
-    "title": "Lint: [Nursery] NoUnnecessaryConditions",
-    "description": "Disallow unnecessary type-based conditions that can be statically determined as redundant.",
+    "patternId": "lint_suspicious_noUnnecessaryConditions",
+    "title": "Lint: [Suspicious] NoUnnecessaryConditions",
+    "description": "Disallow conditions that always evaluate to the same value.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noUnnecessaryTemplateExpression",
+    "title": "Lint: [Nursery] NoUnnecessaryTemplateExpression",
+    "description": "Disallow unnecessary template expressions.",
     "timeToFix": 5
   },
   {
@@ -1751,6 +1912,27 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_noUnsafePlusOperands",
+    "title": "Lint: [Nursery] NoUnsafePlusOperands",
+    "description": "Disallow `+` operations with operands that are known to be unsafe.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noUntrustedLicenses",
+    "title": "Lint: [Nursery] NoUntrustedLicenses",
+    "description": "Disallow dependencies with untrusted licenses.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noUnusedClasses",
+    "title": "Lint: [Nursery] NoUnusedClasses",
+    "description": "Reports CSS class selectors that are never referenced in any JSX or HTML file.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_suspicious_noUnusedExpressions",
     "title": "Lint: [Suspicious] NoUnusedExpressions",
     "description": "Disallow expression statements that are neither a function call nor an assignment.",
@@ -1768,6 +1950,13 @@
     "patternId": "lint_correctness_noUnusedImports",
     "title": "Lint: [Correctness] NoUnusedImports",
     "description": "Disallow unused imports.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_correctness_noUnusedInstantiation",
+    "title": "Lint: [Correctness] NoUnusedInstantiation",
+    "description": "Disallow `new` operators outside of assignments or comparisons.",
     "timeToFix": 5
   },
   {
@@ -1898,8 +2087,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noUselessReturn",
-    "title": "Lint: [Nursery] NoUselessReturn",
+    "patternId": "lint_complexity_noUselessReturn",
+    "title": "Lint: [Complexity] NoUselessReturn",
     "description": "Disallow redundant return statements.",
     "timeToFix": 5
   },
@@ -1943,6 +2132,13 @@
     "patternId": "lint_complexity_noUselessTypeConstraint",
     "title": "Lint: [Complexity] NoUselessTypeConstraint",
     "description": "Disallow using `any` or `unknown` as type constraint.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noUselessTypeConversion",
+    "title": "Lint: [Nursery] NoUselessTypeConversion",
+    "description": "Disallow type conversions that do not change the type of an expression.",
     "timeToFix": 5
   },
   {
@@ -1996,8 +2192,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noVueArrowFuncInWatch",
-    "title": "Lint: [Nursery] NoVueArrowFuncInWatch",
+    "patternId": "lint_suspicious_noVueArrowFuncInWatch",
+    "title": "Lint: [Suspicious] NoVueArrowFuncInWatch",
     "description": "Disallows using arrow functions when defining a watcher.",
     "timeToFix": 5
   },
@@ -2017,8 +2213,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noVueOptionsApi",
-    "title": "Lint: [Nursery] NoVueOptionsApi",
+    "patternId": "lint_nursery_noVueImportCompilerMacros",
+    "title": "Lint: [Nursery] NoVueImportCompilerMacros",
+    "description": "Disallow importing Vue compiler macros.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_style_noVueOptionsApi",
+    "title": "Lint: [Style] NoVueOptionsApi",
     "description": "Disallow the use of Vue Options API.",
     "timeToFix": 5
   },
@@ -2052,9 +2255,16 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_noVueVIfWithVFor",
-    "title": "Lint: [Nursery] NoVueVIfWithVFor",
+    "patternId": "lint_correctness_noVueVIfWithVFor",
+    "title": "Lint: [Correctness] NoVueVIfWithVFor",
     "description": "Disallow using `v-if` and `v-for` directives on the same element.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_noVueVOnNumberValues",
+    "title": "Lint: [Nursery] NoVueVOnNumberValues",
+    "description": "Disallow deprecated number modifiers on Vue `v-on` directives.",
     "timeToFix": 5
   },
   {
@@ -2115,6 +2325,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_complexity_useArrayFind",
+    "title": "Lint: [Complexity] UseArrayFind",
+    "description": "Enforce the use of Array.prototype.find() over Array.prototype.filter() followed by [0] when looking for a single result.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_style_useArrayLiterals",
     "title": "Lint: [Style] UseArrayLiterals",
     "description": "Disallow Array constructors.",
@@ -2129,8 +2346,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useArraySortCompare",
-    "title": "Lint: [Nursery] UseArraySortCompare",
+    "patternId": "lint_suspicious_useArraySortCompare",
+    "title": "Lint: [Suspicious] UseArraySortCompare",
     "description": "Require Array#sort and Array#toSorted calls to always provide a compareFunction.",
     "timeToFix": 5
   },
@@ -2248,15 +2465,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useConsistentEnumValueType",
-    "title": "Lint: [Nursery] UseConsistentEnumValueType",
+    "patternId": "lint_style_useConsistentEnumValueType",
+    "title": "Lint: [Style] UseConsistentEnumValueType",
     "description": "Disallow enums from having both number and string members.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useConsistentGraphqlDescriptions",
-    "title": "Lint: [Nursery] UseConsistentGraphqlDescriptions",
+    "patternId": "lint_style_useConsistentGraphqlDescriptions",
+    "title": "Lint: [Style] UseConsistentGraphqlDescriptions",
     "description": "Require all descriptions to follow the same style (either block or inline) to  maintain consistency and improve readability across the schema.",
     "timeToFix": 5
   },
@@ -2269,8 +2486,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useConsistentMethodSignatures",
-    "title": "Lint: [Nursery] UseConsistentMethodSignatures",
+    "patternId": "lint_style_useConsistentMethodSignatures",
+    "title": "Lint: [Style] UseConsistentMethodSignatures",
     "description": "Enforce consistent use of either method signatures or function properties within interfaces and type aliases.",
     "timeToFix": 5
   },
@@ -2278,7 +2495,14 @@
     "parameters": [],
     "patternId": "lint_style_useConsistentObjectDefinitions",
     "title": "Lint: [Style] UseConsistentObjectDefinitions",
-    "description": "Require the consistent declaration of object literals. Defaults to explicit definitions.",
+    "description": "Require the consistent declaration of object literals.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useConsistentTestIt",
+    "title": "Lint: [Nursery] UseConsistentTestIt",
+    "description": "Enforce consistent use of `it` or `test` for test functions.",
     "timeToFix": 5
   },
   {
@@ -2339,9 +2563,30 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useDestructuring",
-    "title": "Lint: [Nursery] UseDestructuring",
+    "patternId": "lint_style_useDestructuring",
+    "title": "Lint: [Style] UseDestructuring",
     "description": "Require destructuring from arrays and/or objects",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useDisposables",
+    "title": "Lint: [Nursery] UseDisposables",
+    "description": "Detects a disposable object assigned to a variable without using or await using syntax.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useDomNodeTextContent",
+    "title": "Lint: [Nursery] UseDomNodeTextContent",
+    "description": "Prefer `.textContent` over `.innerText` for DOM node text.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useDomQuerySelector",
+    "title": "Lint: [Nursery] UseDomQuerySelector",
+    "description": "Prefer `querySelector()` and `querySelectorAll()` over older DOM query APIs.",
     "timeToFix": 5
   },
   {
@@ -2353,8 +2598,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useErrorCause",
-    "title": "Lint: [Nursery] UseErrorCause",
+    "patternId": "lint_style_useErrorCause",
+    "title": "Lint: [Style] UseErrorCause",
     "description": "Enforce that `new Error()` is thrown with the original error as `cause`.",
     "timeToFix": 5
   },
@@ -2395,6 +2640,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useExplicitReturnType",
+    "title": "Lint: [Nursery] UseExplicitReturnType",
+    "description": "Require explicit return types on functions and class methods.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_nursery_useExplicitType",
     "title": "Lint: [Nursery] UseExplicitType",
     "description": "Enforce types in functions, methods, variables, and parameters.",
@@ -2426,13 +2678,6 @@
     "patternId": "lint_style_useFilenamingConvention",
     "title": "Lint: [Style] UseFilenamingConvention",
     "description": "Enforce naming conventions for JavaScript and TypeScript filenames.",
-    "timeToFix": 5
-  },
-  {
-    "parameters": [],
-    "patternId": "lint_nursery_useFind",
-    "title": "Lint: [Nursery] UseFind",
-    "description": "Enforce the use of Array.prototype.find() over Array.prototype.filter() followed by [0] when looking for a single result.",
     "timeToFix": 5
   },
   {
@@ -2479,8 +2724,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useGlobalThis",
-    "title": "Lint: [Nursery] UseGlobalThis",
+    "patternId": "lint_style_useGlobalThis",
+    "title": "Lint: [Style] UseGlobalThis",
     "description": "Enforce the use of `globalThis` over `window`, `self`, and `global`.",
     "timeToFix": 5
   },
@@ -2549,6 +2794,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useIframeSandbox",
+    "title": "Lint: [Nursery] UseIframeSandbox",
+    "description": "Enforce the 'sandbox' attribute for 'iframe' elements.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_a11y_useIframeTitle",
     "title": "Lint: [A11y] UseIframeTitle",
     "description": "Enforces the usage of the attribute `title` for the element `iframe`.",
@@ -2584,6 +2836,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useIncludes",
+    "title": "Lint: [Nursery] UseIncludes",
+    "description": "Prefer `Array#includes()` over `Array#indexOf()` checks.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_complexity_useIndexOf",
     "title": "Lint: [Complexity] UseIndexOf",
     "description": "Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item.",
@@ -2591,15 +2850,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useInlineScriptId",
-    "title": "Lint: [Nursery] UseInlineScriptId",
+    "patternId": "lint_correctness_useInlineScriptId",
+    "title": "Lint: [Correctness] UseInlineScriptId",
     "description": "Enforce `id` attribute on `next/script` components with inline content or `dangerouslySetInnerHTML`.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useInputName",
-    "title": "Lint: [Nursery] UseInputName",
+    "patternId": "lint_style_useInputName",
+    "title": "Lint: [Style] UseInputName",
     "description": "Require mutation argument to be always called \"input\"",
     "timeToFix": 5
   },
@@ -2642,7 +2901,7 @@
     "parameters": [],
     "patternId": "lint_a11y_useKeyWithClickEvents",
     "title": "Lint: [A11y] UseKeyWithClickEvents",
-    "description": "Enforce onClick is accompanied by at least one of the following: `onKeyUp`, `onKeyDown`, `onKeyPress`.",
+    "description": "Enforce elements with a click event handler to also have at least one keyboard event handler.",
     "timeToFix": 5
   },
   {
@@ -2668,16 +2927,23 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useLoneAnonymousOperation",
-    "title": "Lint: [Nursery] UseLoneAnonymousOperation",
+    "patternId": "lint_correctness_useLoneAnonymousOperation",
+    "title": "Lint: [Correctness] UseLoneAnonymousOperation",
     "description": "Disallow anonymous operations when more than one operation specified in document.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useLoneExecutableDefinition",
-    "title": "Lint: [Nursery] UseLoneExecutableDefinition",
+    "patternId": "lint_style_useLoneExecutableDefinition",
+    "title": "Lint: [Style] UseLoneExecutableDefinition",
     "description": "Require queries, mutations, subscriptions or fragments each to be located in separate files.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useMathMinMax",
+    "title": "Lint: [Nursery] UseMathMinMax",
+    "description": "Prefer `Math.min()` and `Math.max()` over ternaries for simple comparisons.",
     "timeToFix": 5
   },
   {
@@ -2801,6 +3067,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useQwikLoaderLocation",
+    "title": "Lint: [Nursery] UseQwikLoaderLocation",
+    "description": "Enforce that Qwik loader functions are declared in the correct location.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_correctness_useQwikMethodUsage",
     "title": "Lint: [Correctness] UseQwikMethodUsage",
     "description": "Disallow `use*` hooks outside of `component$` or other `use*` hooks in Qwik applications.",
@@ -2815,6 +3088,20 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useReactAsyncServerFunction",
+    "title": "Lint: [Nursery] UseReactAsyncServerFunction",
+    "description": "Require functions with the \"use server\" directive to be async.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useReactFunctionComponentDefinition",
+    "title": "Lint: [Nursery] UseReactFunctionComponentDefinition",
+    "description": "Enforce a specific function type for React function components.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_style_useReactFunctionComponents",
     "title": "Lint: [Style] UseReactFunctionComponents",
     "description": "Enforce that components are defined as functions and never as classes.",
@@ -2822,9 +3109,23 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useReactNativePlatformComponents",
+    "title": "Lint: [Nursery] UseReactNativePlatformComponents",
+    "description": "Ensure that platform-specific React Native components are only imported in files named for that platform.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_style_useReadonlyClassProperties",
     "title": "Lint: [Style] UseReadonlyClassProperties",
     "description": "Enforce marking members as `readonly` if they are never modified outside the constructor.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useReduceTypeParameter",
+    "title": "Lint: [Nursery] UseReduceTypeParameter",
+    "description": "Enforce using a type parameter on `Array#reduce` instead of casting the initial value.",
     "timeToFix": 5
   },
   {
@@ -2843,8 +3144,15 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useRequiredScripts",
-    "title": "Lint: [Nursery] UseRequiredScripts",
+    "patternId": "lint_nursery_useRegexpTest",
+    "title": "Lint: [Nursery] UseRegexpTest",
+    "description": "Enforce the use of `RegExp.prototype.test()` over `String.prototype.match()` and `RegExp.prototype.exec()` in boolean contexts.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_suspicious_useRequiredScripts",
+    "title": "Lint: [Suspicious] UseRequiredScripts",
     "description": "Enforce the presence of required scripts in package.json.",
     "timeToFix": 5
   },
@@ -2866,7 +3174,7 @@
     "parameters": [],
     "patternId": "lint_a11y_useSemanticElements",
     "title": "Lint: [A11y] UseSemanticElements",
-    "description": "It detects the use of `role` attributes in JSX elements and suggests using semantic elements instead.",
+    "description": "Enforces using semantic DOM elements over the ARIA `role` property.",
     "timeToFix": 5
   },
   {
@@ -2927,8 +3235,8 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useSpread",
-    "title": "Lint: [Nursery] UseSpread",
+    "patternId": "lint_style_useSpreadOverApply",
+    "title": "Lint: [Style] UseSpreadOverApply",
     "description": "Enforce the use of the spread operator over `.apply()`.",
     "timeToFix": 5
   },
@@ -2948,6 +3256,20 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useStringStartsEndsWith",
+    "title": "Lint: [Nursery] UseStringStartsEndsWith",
+    "description": "Prefer `String#startsWith()` and `String#endsWith()` over verbose prefix and suffix checks.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useSvelteRequireEachKey",
+    "title": "Lint: [Nursery] UseSvelteRequireEachKey",
+    "description": "Require keyed `{#each}` blocks in Svelte templates.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_style_useSymbolDescription",
     "title": "Lint: [Style] UseSymbolDescription",
     "description": "Require a description parameter for the `Symbol()`.",
@@ -2958,6 +3280,27 @@
     "patternId": "lint_style_useTemplate",
     "title": "Lint: [Style] UseTemplate",
     "description": "Prefer template literals over string concatenation.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useTestHooksInOrder",
+    "title": "Lint: [Nursery] UseTestHooksInOrder",
+    "description": "Enforce that test lifecycle hooks are declared in the order they execute.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useTestHooksOnTop",
+    "title": "Lint: [Nursery] UseTestHooksOnTop",
+    "description": "Enforce that lifecycle hooks appear before any test cases in the same block.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_nursery_useThisInClassMethods",
+    "title": "Lint: [Nursery] UseThisInClassMethods",
+    "description": "Enforce that class methods utilize `this`.",
     "timeToFix": 5
   },
   {
@@ -3067,6 +3410,13 @@
   },
   {
     "parameters": [],
+    "patternId": "lint_nursery_useVarsOnTop",
+    "title": "Lint: [Nursery] UseVarsOnTop",
+    "description": "Require `var` declarations to appear at the top of their containing scope.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
     "patternId": "lint_nursery_useVueConsistentDefinePropsDeclaration",
     "title": "Lint: [Nursery] UseVueConsistentDefinePropsDeclaration",
     "description": "Enforce consistent `defineProps` declaration style.",
@@ -3074,127 +3424,141 @@
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueConsistentVBindStyle",
-    "title": "Lint: [Nursery] UseVueConsistentVBindStyle",
+    "patternId": "lint_style_useVueConsistentVBindStyle",
+    "title": "Lint: [Style] UseVueConsistentVBindStyle",
     "description": "Enforce a consistent style for `v-bind` in Vue templates.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueConsistentVOnStyle",
-    "title": "Lint: [Nursery] UseVueConsistentVOnStyle",
+    "patternId": "lint_style_useVueConsistentVOnStyle",
+    "title": "Lint: [Style] UseVueConsistentVOnStyle",
     "description": "Enforce a consistent style for `v-on` in Vue templates.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueDefineMacrosOrder",
-    "title": "Lint: [Nursery] UseVueDefineMacrosOrder",
+    "patternId": "lint_style_useVueDefineMacrosOrder",
+    "title": "Lint: [Style] UseVueDefineMacrosOrder",
     "description": "Enforce specific order of Vue compiler macros.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueHyphenatedAttributes",
-    "title": "Lint: [Nursery] UseVueHyphenatedAttributes",
+    "patternId": "lint_style_useVueHyphenatedAttributes",
+    "title": "Lint: [Style] UseVueHyphenatedAttributes",
     "description": "Enforce hyphenated (kebab-case) attribute names in Vue templates.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueMultiWordComponentNames",
-    "title": "Lint: [Nursery] UseVueMultiWordComponentNames",
+    "patternId": "lint_style_useVueMultiWordComponentNames",
+    "title": "Lint: [Style] UseVueMultiWordComponentNames",
     "description": "Enforce multi-word component names in Vue components.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueVForKey",
-    "title": "Lint: [Nursery] UseVueVForKey",
+    "patternId": "lint_nursery_useVueNextTickPromise",
+    "title": "Lint: [Nursery] UseVueNextTickPromise",
+    "description": "Enforces Promise syntax when using Vue `nextTick`.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_correctness_useVueVForKey",
+    "title": "Lint: [Correctness] UseVueVForKey",
     "description": "Enforce that elements using `v-for` also specify a unique `key`.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidTemplateRoot",
-    "title": "Lint: [Nursery] UseVueValidTemplateRoot",
+    "patternId": "lint_correctness_useVueValidTemplateRoot",
+    "title": "Lint: [Correctness] UseVueValidTemplateRoot",
     "description": "Enforce valid Vue `<template>` root usage.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVBind",
-    "title": "Lint: [Nursery] UseVueValidVBind",
-    "description": "Forbids `v-bind` directives with missing arguments or invalid modifiers.",
+    "patternId": "lint_correctness_useVueValidVBind",
+    "title": "Lint: [Correctness] UseVueValidVBind",
+    "description": "Forbids `v-bind` directives with missing values or invalid modifiers.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVCloak",
-    "title": "Lint: [Nursery] UseVueValidVCloak",
+    "patternId": "lint_correctness_useVueValidVCloak",
+    "title": "Lint: [Correctness] UseVueValidVCloak",
     "description": "Enforce valid `v-cloak` Vue directives.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVElseIf",
-    "title": "Lint: [Nursery] UseVueValidVElseIf",
+    "patternId": "lint_correctness_useVueValidVElseIf",
+    "title": "Lint: [Correctness] UseVueValidVElseIf",
     "description": "Enforce valid `v-else-if` directives.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVElse",
-    "title": "Lint: [Nursery] UseVueValidVElse",
+    "patternId": "lint_correctness_useVueValidVElse",
+    "title": "Lint: [Correctness] UseVueValidVElse",
     "description": "Enforce valid usage of v-else.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVHtml",
-    "title": "Lint: [Nursery] UseVueValidVHtml",
+    "patternId": "lint_nursery_useVueValidVFor",
+    "title": "Lint: [Nursery] UseVueValidVFor",
+    "description": "Enforces valid `v-for` directives in Vue templates.",
+    "timeToFix": 5
+  },
+  {
+    "parameters": [],
+    "patternId": "lint_correctness_useVueValidVHtml",
+    "title": "Lint: [Correctness] UseVueValidVHtml",
     "description": "Enforce valid `v-html` directives.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVIf",
-    "title": "Lint: [Nursery] UseVueValidVIf",
+    "patternId": "lint_correctness_useVueValidVIf",
+    "title": "Lint: [Correctness] UseVueValidVIf",
     "description": "Enforces valid `v-if` usage for Vue templates.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVOn",
-    "title": "Lint: [Nursery] UseVueValidVOn",
+    "patternId": "lint_correctness_useVueValidVOn",
+    "title": "Lint: [Correctness] UseVueValidVOn",
     "description": "Enforce valid `v-on` directives with proper arguments, modifiers, and handlers.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVOnce",
-    "title": "Lint: [Nursery] UseVueValidVOnce",
+    "patternId": "lint_correctness_useVueValidVOnce",
+    "title": "Lint: [Correctness] UseVueValidVOnce",
     "description": "Enforce valid `v-once` Vue directives.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVPre",
-    "title": "Lint: [Nursery] UseVueValidVPre",
+    "patternId": "lint_correctness_useVueValidVPre",
+    "title": "Lint: [Correctness] UseVueValidVPre",
     "description": "Enforce valid `v-pre` Vue directives.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueValidVText",
-    "title": "Lint: [Nursery] UseVueValidVText",
+    "patternId": "lint_correctness_useVueValidVText",
+    "title": "Lint: [Correctness] UseVueValidVText",
     "description": "Enforce valid `v-text` Vue directives.",
     "timeToFix": 5
   },
   {
     "parameters": [],
-    "patternId": "lint_nursery_useVueVapor",
-    "title": "Lint: [Nursery] UseVueVapor",
+    "patternId": "lint_performance_useVueVapor",
+    "title": "Lint: [Performance] UseVueVapor",
     "description": "Enforce opting in to Vue Vapor mode in `<script setup>` blocks.",
     "timeToFix": 5
   },

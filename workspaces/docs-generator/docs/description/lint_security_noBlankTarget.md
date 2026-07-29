@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noBlankTarget
 description: Learn more about noBlankTarget
@@ -17,6 +18,8 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 - The default severity of this rule is [**error**](/reference/diagnostics#error).
 - Sources: 
   - Inspired from [`react/jsx-no-target-blank`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md)
+  - Inspired from [`react-dom/no-unsafe-target-blank`](https://eslint-react.xyz/docs/rules/dom-no-unsafe-target-blank)
+  - Inspired from [`@eslint-react/dom-no-unsafe-target-blank`](https://eslint-react.xyz/docs/rules/dom-no-unsafe-target-blank)
 
 ## How to configure
 ```json title="biome.json"
@@ -100,6 +103,7 @@ See to the [`noreferrer` documentation](https://html.spec.whatwg.org/multipage/l
 		"rules": {
 			"security": {
 				"noBlankTarget": {
+					"level": "on",
 					"options": {
 						"allowNoReferrer": false
 					}
@@ -132,6 +136,7 @@ configuration, it's allowed to use the domains `https://example.com` and
 		"rules": {
 			"security": {
 				"noBlankTarget": {
+					"level": "on",
 					"options": {
 						"allowDomains": [
 							"https://example.com",
@@ -161,6 +166,7 @@ The diagnostic is applied to all domains not in the allow list:
 		"rules": {
 			"security": {
 				"noBlankTarget": {
+					"level": "on",
 					"options": {
 						"allowDomains": [
 							"https://example.com"
@@ -190,7 +196,7 @@ Biome doesn't check if the list contains valid URLs.
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/security/no_blank_target.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/security/no_blank_target.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/security/noBlankTarget)
 
 </TabItem>

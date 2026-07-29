@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noMissingVarFunction
 description: Learn more about noMissingVarFunction
@@ -41,6 +42,7 @@ This rule has the following limitations:
 - It ignores the following properties:
   - `animation`
   - `animation-name`
+  - `container-name`
   - `counter-increment`
   - `counter-reset`
   - `counter-set`
@@ -154,7 +156,7 @@ a {
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_missing_var_function.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_missing_var_function.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/correctness/noMissingVarFunction)
 
 </TabItem>

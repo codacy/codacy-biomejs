@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: noUnknownPseudoClass
 description: Learn more about noUnknownPseudoClass
@@ -90,6 +91,7 @@ A list of unknown pseudo-class names to ignore (case-insensitive).
 		"rules": {
 			"correctness": {
 				"noUnknownPseudoClass": {
+					"level": "on",
 					"options": {
 						"ignore": [
 							"custom-pseudo-class"
@@ -114,7 +116,7 @@ a:custom-pseudo-class {}
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_unknown_pseudo_class.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_unknown_pseudo_class.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/correctness/noUnknownPseudoClass)
 
 </TabItem>

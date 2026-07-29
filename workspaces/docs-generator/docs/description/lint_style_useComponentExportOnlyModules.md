@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useComponentExportOnlyModules
 description: Learn more about useComponentExportOnlyModules
@@ -104,6 +105,7 @@ Some tools, such as [Vite](https://vitejs.dev/), allow exporting constants along
 		"rules": {
 			"style": {
 				"useComponentExportOnlyModules": {
+					"level": "on",
 					"options": {
 						"allowConstantExport": true
 					}
@@ -127,6 +129,7 @@ Example for [Remix](https://remix.run/docs/en/main/discussion/hot-module-replace
 		"rules": {
 			"style": {
 				"useComponentExportOnlyModules": {
+					"level": "on",
 					"options": {
 						"allowExportNames": [
 							"json",
@@ -150,7 +153,7 @@ Example for [Remix](https://remix.run/docs/en/main/discussion/hot-module-replace
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_component_export_only_modules.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_component_export_only_modules.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useComponentExportOnlyModules)
 
 </TabItem>

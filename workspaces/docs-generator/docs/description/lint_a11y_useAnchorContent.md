@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useAnchorContent
 description: Learn more about useAnchorContent
@@ -92,6 +93,14 @@ function html() {
 <a><div aria-hidden="true"></div>content</a>
 ```
 
+The following is valid because `<a>` is used as a JSX attribute value on a custom
+component. The rule is suppressed for any such prop on a custom component, as the
+component may render the anchor as a content wrapper whose children supply the link text.
+
+```jsx
+<Button render={<a href="/home" aria-label="Home" />}>Home</Button>
+```
+
 ## Accessibility guidelines
 
 - [WCAG 2.4.4](https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context)
@@ -102,7 +111,7 @@ function html() {
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/a11y/use_anchor_content.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/a11y/use_anchor_content.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/a11y/useAnchorContent)
 
 </TabItem>
@@ -114,7 +123,7 @@ function html() {
 - This rule has an [**unsafe**](/linter/#unsafe-fixes) fix.
 - The default severity of this rule is [**error**](/reference/diagnostics#error).
 - Sources: 
-  - Same as [`jsx-a11y/anchor-has-content`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-has-content.md)
+  - Inspired from [`jsx-a11y/anchor-has-content`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-has-content.md)
 
 ## How to configure
 ```json title="biome.json"
@@ -203,7 +212,7 @@ PascalCase variants like `<A>` are assumed to be custom components and are ignor
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/a11y/use_anchor_content.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/a11y/use_anchor_content.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/a11y/useAnchorContent)
 
 </TabItem>

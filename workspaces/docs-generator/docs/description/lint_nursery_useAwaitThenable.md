@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useAwaitThenable
 description: Learn more about useAwaitThenable
@@ -41,12 +42,7 @@ This rule belongs to the types domain. This means that its activation will activ
 ## Description
 Enforce that `await` is _only_ used on `Promise` values.
 
-:::caution
-At the moment, this rule only checks for instances of the global
-`Promise` class. This is a major shortcoming compared to the ESLint
-rule if you are using custom `Promise`-like implementations such as
-[Bluebird](http://bluebirdjs.com/) or in-house solutions.
-:::
+Values with a callable `then` member are treated as thenable.
 
 ## Examples
 
@@ -79,7 +75,7 @@ await createValue();
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/nursery/use_await_thenable.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/nursery/use_await_thenable.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/nursery/useAwaitThenable)
 
 </TabItem>

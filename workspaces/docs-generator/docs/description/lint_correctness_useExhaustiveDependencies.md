@@ -1,6 +1,7 @@
 ---
 # Don't modify this file manually. This file is auto generated from source, and you will lose your changes next time the website is built.
 # Head to the `biomejs/biome` repository, and modify the source code in there.
+editUrl: false
 
 title: useExhaustiveDependencies
 description: Learn more about useExhaustiveDependencies
@@ -20,6 +21,8 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
   - [`next`](/linter/domains#next)
 - Sources: 
   - Same as [`react-hooks/exhaustive-deps`](https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/README.md)
+  - Same as [`react-x/exhaustive-deps`](https://eslint-react.xyz/docs/rules/exhaustive-deps)
+  - Same as [`@eslint-react/exhaustive-deps`](https://eslint-react.xyz/docs/rules/exhaustive-deps)
 
 ## How to configure
 ```json title="biome.json"
@@ -319,6 +322,7 @@ using the dependencies and the dependencies array to validate it against.
 		"rules": {
 			"correctness": {
 				"useExhaustiveDependencies": {
+					"level": "on",
 					"options": {
 						"hooks": [
 							{
@@ -384,6 +388,7 @@ object and marks the properties with the given keys as stable.
 		"rules": {
 			"correctness": {
 				"useExhaustiveDependencies": {
+					"level": "on",
 					"options": {
 						"hooks": [
 							{
@@ -426,6 +431,7 @@ Default: `true`
 		"rules": {
 			"correctness": {
 				"useExhaustiveDependencies": {
+					"level": "on",
 					"options": {
 						"reportUnnecessaryDependencies": false
 					}
@@ -462,6 +468,7 @@ Default: `false`
 		"rules": {
 			"correctness": {
 				"useExhaustiveDependencies": {
+					"level": "on",
 					"options": {
 						"reportMissingDependenciesArray": true
 					}
@@ -487,7 +494,7 @@ function noArrayYesProblem() {
 - [Disable a rule](/linter/#disable-a-rule)
 - [Configure the code fix](/linter#configure-the-code-fix)
 - [Rule options](/linter/#rule-options)
-- [Source Code](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/use_exhaustive_dependencies.rs)
+- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/use_exhaustive_dependencies.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/correctness/useExhaustiveDependencies)
 
 </TabItem>
