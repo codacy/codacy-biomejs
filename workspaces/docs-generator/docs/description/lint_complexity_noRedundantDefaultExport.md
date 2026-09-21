@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noRedundantDefaultExport
-description: Learn more about noRedundantDefaultExport
+title: noRedundantDefaultExport (JavaScript)
+description: JavaScript (and super languages) documentation for noRedundantDefaultExport
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-redundant-default-export/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.14`
 - Diagnostic Category: [`lint/complexity/noRedundantDefaultExport`](/reference/diagnostics#diagnostic-category)
@@ -44,7 +46,7 @@ export const foo = 42;
 export default foo;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:16 <a href="https://biomejs.dev/linter/rules/no-redundant-default-export">lint/complexity/noRedundantDefaultExport</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Default export exports the same symbol as a named export.</span><br />  <br />    <strong>1 │ </strong>export const foo = 42;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>export default foo;<br />   <strong>   │ </strong>               <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Exporting the same identifier as both a named export and a default export is redundant.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Remove either the default export or the named export to avoid redundancy.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:16 <a href=\"https://biomejs.dev/linter/rules/no-redundant-default-export\">lint/complexity/noRedundantDefaultExport</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Default export exports the same symbol as a named export.</span><br />  <br />    <strong>1 │ </strong>export const foo = 42;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>export default foo;<br />   <strong>   │ </strong>               <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Exporting the same identifier as both a named export and a default export is redundant.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Remove either the default export or the named export to avoid redundancy.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -60,7 +62,5 @@ export default 42;
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_redundant_default_export.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/complexity/noRedundantDefaultExport)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noRedundantDefaultExport" category="lint" language="js" code={"export const foo = 42;\nexport default foo;\n"} />
 

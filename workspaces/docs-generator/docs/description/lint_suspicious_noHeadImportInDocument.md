@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noHeadImportInDocument
-description: Learn more about noHeadImportInDocument
+title: noHeadImportInDocument (JavaScript)
+description: JavaScript (and super languages) documentation for noHeadImportInDocument
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSX and TSX" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-head-import-in-document/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.4`
 - Diagnostic Category: [`lint/suspicious/noHeadImportInDocument`](/reference/diagnostics#diagnostic-category)
@@ -77,7 +79,4 @@ export default MyDocument;
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_head_import_in_document.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noHeadImportInDocument)
-
-</TabItem>
-</Tabs>
 

@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useQwikValidLexicalScope
-description: Learn more about useQwikValidLexicalScope
+title: useQwikValidLexicalScope (JavaScript)
+description: JavaScript (and super languages) documentation for useQwikValidLexicalScope
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSX and TSX" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-qwik-valid-lexical-scope/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.2.6`
 - Diagnostic Category: [`lint/correctness/useQwikValidLexicalScope`](/reference/diagnostics#diagnostic-category)
@@ -51,7 +53,7 @@ const handleClick = () => {
 };
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:21 <a href="https://biomejs.dev/linter/rules/use-qwik-valid-lexical-scope">lint/correctness/useQwikValidLexicalScope</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Non-serializable expression must be wrapped with </span><span style="color: Tomato;"><strong>$(...)</strong></span><br />  <br />    <strong>1 │ </strong>// Arrow function assigned without wrapping it in $(...)<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>const handleClick = () =&gt; &#123;<br />   <strong>   │ </strong>                    <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>  console.log(&quot;clicked&quot;);<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>4 │ </strong>&#125;;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>5 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Qwik requires serializable closures for:<br /></span>    <span style="color: lightgreen;">- Resumability (pausing/resuming execution)<br /></span>    <span style="color: lightgreen;">- Code splitting (lazy loading components)<br /></span>    <span style="color: lightgreen;">- Optimized rehydration (client-side continuation)</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Wrap the expression with </span><span style="color: lightgreen;"><strong>$(...)</strong></span><span style="color: lightgreen;"> to make it serializable. Learn more: </span><span style="color: lightgreen;"><a href="https://qwik.dev/docs/components/state/#use-methods">Qwik documentation</a></span><span style="color: lightgreen;">.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:21 <a href=\"https://biomejs.dev/linter/rules/use-qwik-valid-lexical-scope\">lint/correctness/useQwikValidLexicalScope</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Non-serializable expression must be wrapped with </span><span style=\"color: Tomato;\"><strong>$(...)</strong></span><br />  <br />    <strong>1 │ </strong>// Arrow function assigned without wrapping it in $(...)<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>const handleClick = () =&gt; &#123;<br />   <strong>   │ </strong>                    <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>  console.log(&quot;clicked&quot;);<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>4 │ </strong>&#125;;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>5 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Qwik requires serializable closures for:<br /></span>    <span style=\"color: lightgreen;\">- Resumability (pausing/resuming execution)<br /></span>    <span style=\"color: lightgreen;\">- Code splitting (lazy loading components)<br /></span>    <span style=\"color: lightgreen;\">- Optimized rehydration (client-side continuation)</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Wrap the expression with </span><span style=\"color: lightgreen;\"><strong>$(...)</strong></span><span style=\"color: lightgreen;\"> to make it serializable. Learn more: </span><span style=\"color: lightgreen;\"><a href=\"https://qwik.dev/docs/components/state/#use-methods\">Qwik documentation</a></span><span style=\"color: lightgreen;\">.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -69,7 +71,5 @@ const handleClick = $(() => {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/use_qwik_valid_lexical_scope.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/correctness/useQwikValidLexicalScope)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useQwikValidLexicalScope" category="lint" language="js" code={"// Arrow function assigned without wrapping it in $(...)\nconst handleClick = () => {\n  console.log(\"clicked\");\n};\n"} />
 

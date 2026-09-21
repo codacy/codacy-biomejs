@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noShorthandPropertyOverrides
-description: Learn more about noShorthandPropertyOverrides
+title: noShorthandPropertyOverrides (CSS)
+description: CSS documentation for noShorthandPropertyOverrides
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-shorthand-property-overrides/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.2`
 - Diagnostic Category: [`lint/suspicious/noShorthandPropertyOverrides`](/reference/diagnostics#diagnostic-category)
@@ -45,7 +47,15 @@ For details on shorthand properties, see the [MDN web docs](https://developer.mo
 a { padding-left: 10px; padding: 20px; }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:25 <a href="https://biomejs.dev/linter/rules/no-shorthand-property-overrides">lint/suspicious/noShorthandPropertyOverrides</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">This shorthand property </span><span style="color: Tomato;"><strong>padding</strong></span><span style="color: Tomato;"> overrides the earlier </span><span style="color: Tomato;"><strong>padding-left</strong></span><span style="color: Tomato;"> declaration.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>a &#123; padding-left: 10px; padding: 20px; &#125;<br />   <strong>   │ </strong>                        <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Shorthand properties reset related longhand properties, which can overwrite earlier values unexpectedly.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Declare the shorthand first, or use longhand properties consistently so later declarations stay explicit.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:25 <a href=\"https://biomejs.dev/linter/rules/no-shorthand-property-overrides\">lint/suspicious/noShorthandPropertyOverrides</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">This shorthand property </span><span style=\"color: Tomato;\"><strong>padding</strong></span><span style=\"color: Tomato;\"> overrides the earlier </span><span style=\"color: Tomato;\"><strong>padding-left</strong></span><span style=\"color: Tomato;\"> declaration.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>a &#123; padding-left: 10px; padding: 20px; &#125;<br />   <strong>   │ </strong>                        <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Shorthand properties reset related longhand properties, which can overwrite earlier values unexpectedly.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Declare the shorthand first, or use longhand properties consistently so later declarations stay explicit.</span><br />  <br /></code></pre>"} />
+
+```css
+@keyframes fade {
+  from { margin-left: 1px; margin: 0; }
+}
+```
+
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:2:28 <a href=\"https://biomejs.dev/linter/rules/no-shorthand-property-overrides\">lint/suspicious/noShorthandPropertyOverrides</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">This shorthand property </span><span style=\"color: Tomato;\"><strong>margin</strong></span><span style=\"color: Tomato;\"> overrides the earlier </span><span style=\"color: Tomato;\"><strong>margin-left</strong></span><span style=\"color: Tomato;\"> declaration.</span><br />  <br />    <strong>1 │ </strong>@keyframes fade &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  from &#123; margin-left: 1px; margin: 0; &#125;<br />   <strong>   │ </strong>                           <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Shorthand properties reset related longhand properties, which can overwrite earlier values unexpectedly.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Declare the shorthand first, or use longhand properties consistently so later declarations stay explicit.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -57,6 +67,13 @@ a { padding: 10px; padding-left: 20px; }
 a { transition-property: opacity; } a { transition: opacity 1s linear; }
 ```
 
+```css
+body { font-size: var(--font-size); }
+@supports (font: -apple-system-body) {
+  body { font-size: -apple-system-body; }
+}
+```
+
 ## Related links
 
 - [Disable a rule](/linter/#disable-a-rule)
@@ -64,7 +81,5 @@ a { transition-property: opacity; } a { transition: opacity 1s linear; }
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/suspicious/no_shorthand_property_overrides.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/suspicious/noShorthandPropertyOverrides)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noShorthandPropertyOverrides" category="lint" language="css" code={"a { padding-left: 10px; padding: 20px; }\n"} />
 

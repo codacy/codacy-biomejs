@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDuplicateGraphqlOperationName
-description: Learn more about noDuplicateGraphqlOperationName
+title: noDuplicateGraphqlOperationName (GraphQL)
+description: GraphQL documentation for noDuplicateGraphqlOperationName
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="GraphQL" icon="seti:graphql">
+<RuleLanguageLinks current="graphql" languages={[{"id":"graphql","label":"GraphQL","href":"/linter/rules/no-duplicate-graphql-operation-name/graphql/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.6`
 - Diagnostic Category: [`lint/suspicious/noDuplicateGraphqlOperationName`](/reference/diagnostics#diagnostic-category)
@@ -60,7 +62,7 @@ query user {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.graphql:7:1 <a href="https://biomejs.dev/linter/rules/no-duplicate-graphql-operation-name">lint/suspicious/noDuplicateGraphqlOperationName</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Operation named &quot;user&quot; is already defined.</span><br />  <br />     <strong>5 │ </strong>&#125;<br />     <strong>6 │ </strong><br />   <strong><span style="color: Tomato;">&gt;</span></strong> <strong>7 │ </strong>query user &#123;<br />    <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />   <strong><span style="color: Tomato;">&gt;</span></strong> <strong>8 │ </strong>  me &#123;<br />   <strong><span style="color: Tomato;">&gt;</span></strong> <strong>9 │ </strong>    id<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>10 │ </strong>  &#125;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>11 │ </strong>&#125;<br />    <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>12 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">GraphQL operation names must be unique to ensure proper identification.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Rename the operation to have a unique name.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.graphql:7:1 <a href=\"https://biomejs.dev/linter/rules/no-duplicate-graphql-operation-name\">lint/suspicious/noDuplicateGraphqlOperationName</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Operation named &quot;user&quot; is already defined.</span><br />  <br />     <strong>5 │ </strong>&#125;<br />     <strong>6 │ </strong><br />   <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>7 │ </strong>query user &#123;<br />    <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />   <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>8 │ </strong>  me &#123;<br />   <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>9 │ </strong>    id<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>10 │ </strong>  &#125;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>11 │ </strong>&#125;<br />    <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>12 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">GraphQL operation names must be unique to ensure proper identification.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Rename the operation to have a unique name.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -85,7 +87,5 @@ query me {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_graphql_analyze/src/lint/suspicious/no_duplicate_graphql_operation_name.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_graphql_analyze/tests/specs/suspicious/noDuplicateGraphqlOperationName)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDuplicateGraphqlOperationName" category="lint" language="graphql" code={"query user {\n  user {\n    id\n  }\n}\n\nquery user {\n  me {\n    id\n  }\n}\n"} />
 

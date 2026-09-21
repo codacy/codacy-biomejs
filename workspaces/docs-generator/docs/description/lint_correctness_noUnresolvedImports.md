@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noUnresolvedImports
-description: Learn more about noUnresolvedImports
+title: noUnresolvedImports (JavaScript)
+description: JavaScript (and super languages) documentation for noUnresolvedImports
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-unresolved-imports/javascript/"}]} />
+
 :::note
 This rule belongs to the project domain. This means that its activation will activate the Biome Scanner to scan the files of your project. Read more about it in the [documentation page](/linter/domains#project)
 :::
@@ -64,7 +66,7 @@ export function foo() {};
 import { fooo } from "./foo.js";
 ```
 
-<pre class="language-text"><code class="language-text"><a href="file:///bar.js">/bar.js</a>:2:10 <a href="https://biomejs.dev/linter/rules/no-unresolved-imports">lint/correctness/noUnresolvedImports</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The path </span><span style="color: Tomato;"><strong>./foo.js</strong></span><span style="color: Tomato;"> has no export named </span><span style="color: Tomato;"><strong>fooo</strong></span><span style="color: Tomato;">.</span><br />  <br />    <strong>1 │ </strong>// Attempt to import symbol with a typo:<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>import &#123; fooo &#125; from &quot;./foo.js&quot;;<br />   <strong>   │ </strong>         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Make sure that the path is correct and that you're importing the right symbol.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\"><a href=\"file:///bar.js\">/bar.js</a>:2:10 <a href=\"https://biomejs.dev/linter/rules/no-unresolved-imports\">lint/correctness/noUnresolvedImports</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The path </span><span style=\"color: Tomato;\"><strong>./foo.js</strong></span><span style=\"color: Tomato;\"> has no export named </span><span style=\"color: Tomato;\"><strong>fooo</strong></span><span style=\"color: Tomato;\">.</span><br />  <br />    <strong>1 │ </strong>// Attempt to import symbol with a typo:<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>import &#123; fooo &#125; from &quot;./foo.js&quot;;<br />   <strong>   │ </strong>         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Make sure that the path is correct and that you're importing the right symbol.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -84,7 +86,5 @@ import { foo } from "./foo.js";
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/no_unresolved_imports.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/correctness/noUnresolvedImports)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noUnresolvedImports" category="lint" language="js" code={"// Attempt to import symbol with a typo:\nimport { fooo } from \"./foo.js\";\n"} />
 

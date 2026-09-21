@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noIrregularWhitespace
-description: Learn more about noIrregularWhitespace
+title: noIrregularWhitespace (JavaScript)
+description: JavaScript (and super languages) documentation for noIrregularWhitespace
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-irregular-whitespace/css/"},{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-irregular-whitespace/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.0`
 - Diagnostic Category: [`lint/suspicious/noIrregularWhitespace`](/reference/diagnostics#diagnostic-category)
@@ -45,13 +47,13 @@ Invalid or irregular whitespace causes issues with various parsers and also make
 letcount;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:4 <a href="https://biomejs.dev/linter/rules/no-irregular-whitespace">lint/suspicious/noIrregularWhitespace</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Irregular whitespaces found.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>let<span style="opacity: 0.8;">␋</span>count;<br />   <strong>   │ </strong>   <strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Irregular whitespaces can cause issues to other parsers, and make the code harder to debug.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Replace the irregular whitespaces with normal whitespaces or tabs.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:4 <a href=\"https://biomejs.dev/linter/rules/no-irregular-whitespace\">lint/suspicious/noIrregularWhitespace</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Irregular whitespaces found.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>let<span style=\"opacity: 0.8;\">␋</span>count;<br />   <strong>   │ </strong>   <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Irregular whitespaces can cause issues to other parsers, and make the code harder to debug.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Replace the irregular whitespaces with normal whitespaces or tabs.</span><br />  <br /></code></pre>"} />
 
 ```js
 let foo;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:4 <a href="https://biomejs.dev/linter/rules/no-irregular-whitespace">lint/suspicious/noIrregularWhitespace</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Irregular whitespaces found.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>let<span style="opacity: 0.8;">␠</span>foo;<br />   <strong>   │ </strong>   <strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Irregular whitespaces can cause issues to other parsers, and make the code harder to debug.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Replace the irregular whitespaces with normal whitespaces or tabs.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:4 <a href=\"https://biomejs.dev/linter/rules/no-irregular-whitespace\">lint/suspicious/noIrregularWhitespace</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Irregular whitespaces found.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>let<span style=\"opacity: 0.8;\">␠</span>foo;<br />   <strong>   │ </strong>   <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Irregular whitespaces can cause issues to other parsers, and make the code harder to debug.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Replace the irregular whitespaces with normal whitespaces or tabs.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -70,64 +72,5 @@ const foo = '';
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_irregular_whitespace.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noIrregularWhitespace)
-
-</TabItem>
-<TabItem label="CSS" icon="seti:css">
-## Summary
-- Rule available since: `v1.9.0`
-- Diagnostic Category: [`lint/suspicious/noIrregularWhitespace`](/reference/diagnostics#diagnostic-category)
-- This rule is **recommended**, meaning it is enabled by default.
-- This rule doesn't have a fix.
-- The default severity of this rule is [**warning**](/reference/diagnostics#warning).
-- Sources: 
-  - Same as [`no-irregular-whitespace`](https://github.com/stylelint/stylelint/blob/main/lib/rules/no-irregular-whitespace/README.md)
-
-## How to configure
-```json title="biome.json"
-{
-	"linter": {
-		"rules": {
-			"suspicious": {
-				"noIrregularWhitespace": "error"
-			}
-		}
-	}
-}
-
-```
-## Description
-Disallows the use of irregular whitespace characters.
-
-Using irregular whitespace would lead to the failure of selecting the correct target.
-
-## Examples
-
-### Invalid
-
-```css
-.firstClass.secondClass {
-  color: red;
-}
-```
-
-<pre class="language-text"><code class="language-text">code-block.css:1:12 <a href="https://biomejs.dev/linter/rules/no-irregular-whitespace">lint/suspicious/noIrregularWhitespace</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Irregular whitespace found.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>.firstClass<span style="opacity: 0.8;">␋</span>.secondClass &#123;<br />   <strong>   │ </strong>           <strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>  color: red;<br />    <strong>3 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Replace the irregular whitespace with normal whitespaces.</span><br />  <br /></code></pre>
-
-### Valid
-
-```css
-.firstClass .secondClass {
-  color: red;
-}
-```
-
-## Related links
-
-- [Disable a rule](/linter/#disable-a-rule)
-- [Configure the code fix](/linter#configure-the-code-fix)
-- [Rule options](/linter/#rule-options)
-- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/suspicious/no_irregular_whitespace.rs)
-- [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/suspicious/noIrregularWhitespace)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noIrregularWhitespace" category="lint" language="js" code={"let\u000bcount;\n"} />
 

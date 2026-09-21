@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDuplicateDependencies
-description: Learn more about noDuplicateDependencies
+title: noDuplicateDependencies (JSON)
+description: JSON (and super languages) documentation for noDuplicateDependencies
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSON (and super languages)" icon="seti:json">
+<RuleLanguageLinks current="json" languages={[{"id":"json","label":"JSON (and super languages)","href":"/linter/rules/no-duplicate-dependencies/json/"}]} />
+
 ## Summary
 - Rule available since: `v2.2.4`
 - Diagnostic Category: [`lint/suspicious/noDuplicateDependencies`](/reference/diagnostics#diagnostic-category)
@@ -114,7 +116,4 @@ And dependencies listed in "overrides" & "bundleDependencies" are not checked ag
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/src/lint/suspicious/no_duplicate_dependencies.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/tests/specs/suspicious/noDuplicateDependencies)
-
-</TabItem>
-</Tabs>
 

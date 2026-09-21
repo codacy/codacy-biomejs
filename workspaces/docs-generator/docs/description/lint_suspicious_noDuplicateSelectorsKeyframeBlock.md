@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDuplicateSelectorsKeyframeBlock
-description: Learn more about noDuplicateSelectorsKeyframeBlock
+title: noDuplicateSelectorsKeyframeBlock (CSS)
+description: CSS documentation for noDuplicateSelectorsKeyframeBlock
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-duplicate-selectors-keyframe-block/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.0`
 - Diagnostic Category: [`lint/suspicious/noDuplicateSelectorsKeyframeBlock`](/reference/diagnostics#diagnostic-category)
@@ -44,19 +46,19 @@ Disallow duplicate selectors within keyframe blocks.
 @keyframes foo { from {} from {} }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:26 <a href="https://biomejs.dev/linter/rules/no-duplicate-selectors-keyframe-block">lint/suspicious/noDuplicateSelectorsKeyframeBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The duplicate keyframe selector is overwritten by later one.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>@keyframes foo &#123; from &#123;&#125; from &#123;&#125; &#125;<br />   <strong>   │ </strong>                         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider using a different percentage value or keyword to avoid duplication</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:26 <a href=\"https://biomejs.dev/linter/rules/no-duplicate-selectors-keyframe-block\">lint/suspicious/noDuplicateSelectorsKeyframeBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The duplicate keyframe selector is overwritten by later one.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>@keyframes foo &#123; from &#123;&#125; from &#123;&#125; &#125;<br />   <strong>   │ </strong>                         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider using a different percentage value or keyword to avoid duplication</span><br />  <br /></code></pre>"} />
 
 ```css
 @keyframes foo { from {} FROM {} }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:26 <a href="https://biomejs.dev/linter/rules/no-duplicate-selectors-keyframe-block">lint/suspicious/noDuplicateSelectorsKeyframeBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The duplicate keyframe selector is overwritten by later one.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>@keyframes foo &#123; from &#123;&#125; FROM &#123;&#125; &#125;<br />   <strong>   │ </strong>                         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider using a different percentage value or keyword to avoid duplication</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:26 <a href=\"https://biomejs.dev/linter/rules/no-duplicate-selectors-keyframe-block\">lint/suspicious/noDuplicateSelectorsKeyframeBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The duplicate keyframe selector is overwritten by later one.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>@keyframes foo &#123; from &#123;&#125; FROM &#123;&#125; &#125;<br />   <strong>   │ </strong>                         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider using a different percentage value or keyword to avoid duplication</span><br />  <br /></code></pre>"} />
 
 ```css
 @keyframes foo { 0% {} 0% {} }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:24 <a href="https://biomejs.dev/linter/rules/no-duplicate-selectors-keyframe-block">lint/suspicious/noDuplicateSelectorsKeyframeBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The duplicate keyframe selector is overwritten by later one.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>@keyframes foo &#123; 0% &#123;&#125; 0% &#123;&#125; &#125;<br />   <strong>   │ </strong>                       <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider using a different percentage value or keyword to avoid duplication</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:24 <a href=\"https://biomejs.dev/linter/rules/no-duplicate-selectors-keyframe-block\">lint/suspicious/noDuplicateSelectorsKeyframeBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The duplicate keyframe selector is overwritten by later one.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>@keyframes foo &#123; 0% &#123;&#125; 0% &#123;&#125; &#125;<br />   <strong>   │ </strong>                       <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider using a different percentage value or keyword to avoid duplication</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -75,7 +77,5 @@ Disallow duplicate selectors within keyframe blocks.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/suspicious/no_duplicate_selectors_keyframe_block.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/suspicious/noDuplicateSelectorsKeyframeBlock)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDuplicateSelectorsKeyframeBlock" category="lint" language="css" code={"@keyframes foo { from {} from {} }\n"} />
 

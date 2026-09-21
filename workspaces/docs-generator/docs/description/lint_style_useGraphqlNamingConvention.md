@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useGraphqlNamingConvention
-description: Learn more about useGraphqlNamingConvention
+title: useGraphqlNamingConvention (GraphQL)
+description: GraphQL documentation for useGraphqlNamingConvention
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="GraphQL" icon="seti:graphql">
+<RuleLanguageLinks current="graphql" languages={[{"id":"graphql","label":"GraphQL","href":"/linter/rules/use-graphql-naming-convention/graphql/"}]} />
+
 ## Summary
 - Rule available since: `v2.0.0`
 - Diagnostic Category: [`lint/style/useGraphqlNamingConvention`](/reference/diagnostics#diagnostic-category)
@@ -47,7 +49,7 @@ enum MyEnum {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.graphql:2:2 <a href="https://biomejs.dev/linter/rules/use-graphql-naming-convention">lint/style/useGraphqlNamingConvention</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Enum values should be in all caps.</span><br />  <br />    <strong>1 │ </strong>enum MyEnum &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong> value<br />   <strong>   │ </strong> <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Change the enum value to be in all caps.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.graphql:2:2 <a href=\"https://biomejs.dev/linter/rules/use-graphql-naming-convention\">lint/style/useGraphqlNamingConvention</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Enum values should be in all caps.</span><br />  <br />    <strong>1 │ </strong>enum MyEnum &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong> value<br />   <strong>   │ </strong> <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Change the enum value to be in all caps.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -64,7 +66,5 @@ enum MyEnum {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_graphql_analyze/src/lint/style/use_graphql_naming_convention.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_graphql_analyze/tests/specs/style/useGraphqlNamingConvention)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useGraphqlNamingConvention" category="lint" language="graphql" code={"enum MyEnum {\n value\n}\n"} />
 

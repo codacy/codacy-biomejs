@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDeprecatedImports
-description: Learn more about noDeprecatedImports
+title: noDeprecatedImports (JavaScript)
+description: JavaScript (and super languages) documentation for noDeprecatedImports
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-deprecated-imports/javascript/"}]} />
+
 :::note
 This rule belongs to the project domain. This means that its activation will activate the Biome Scanner to scan the files of your project. Read more about it in the [documentation page](/linter/domains#project)
 :::
@@ -53,7 +55,7 @@ comment that contains an "@deprecated" annotation.
 import { oldUtility } from "./utils.js";
 ```
 
-<pre class="language-text"><code class="language-text"><a href="file:///foo.js">/foo.js</a>:1:10 <a href="https://biomejs.dev/linter/rules/no-deprecated-imports">lint/suspicious/noDeprecatedImports</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Deprecated import.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>import &#123; oldUtility &#125; from &quot;./utils.js&quot;;<br />   <strong>   │ </strong>         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">An </span><span style="color: lightgreen;"><strong>@deprecated</strong></span><span style="color: lightgreen;"> annotation indicates the author doesn't want you to rely on this import anymore.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">You should probably import a different symbol instead.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\"><a href=\"file:///foo.js\">/foo.js</a>:1:10 <a href=\"https://biomejs.dev/linter/rules/no-deprecated-imports\">lint/suspicious/noDeprecatedImports</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Deprecated import.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>import &#123; oldUtility &#125; from &quot;./utils.js&quot;;<br />   <strong>   │ </strong>         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">An </span><span style=\"color: lightgreen;\"><strong>@deprecated</strong></span><span style=\"color: lightgreen;\"> annotation indicates the author doesn't want you to rely on this import anymore.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">You should probably import a different symbol instead.</span><br />  <br /></code></pre>"} />
 
 ```js title='utils.js'
 /**
@@ -82,7 +84,5 @@ export function oldUtility() {}
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_deprecated_imports.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noDeprecatedImports)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDeprecatedImports" category="lint" language="js" code={"import { oldUtility } from \"./utils.js\";\n"} />
 

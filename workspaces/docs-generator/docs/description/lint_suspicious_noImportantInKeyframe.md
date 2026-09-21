@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noImportantInKeyframe
-description: Learn more about noImportantInKeyframe
+title: noImportantInKeyframe (CSS)
+description: CSS documentation for noImportantInKeyframe
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-important-in-keyframe/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.0`
 - Diagnostic Category: [`lint/suspicious/noImportantInKeyframe`](/reference/diagnostics#diagnostic-category)
@@ -52,7 +54,7 @@ Using `!important` within keyframes declarations is completely ignored in some b
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:6:18 <a href="https://biomejs.dev/linter/rules/no-important-in-keyframe">lint/suspicious/noImportantInKeyframe</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Using </span><span style="color: Tomato;"><strong>!important</strong></span><span style="color: Tomato;"> within keyframes declaration is completely ignored in some browsers.</span><br />  <br />    <strong>4 │ </strong>    &#125;<br />    <strong>5 │ </strong>    to &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>6 │ </strong>      opacity: 1 !important;<br />   <strong>   │ </strong>                 <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>7 │ </strong>    &#125;<br />    <strong>8 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider removing useless </span><span style="color: lightgreen;"><strong>!important</strong></span><span style="color: lightgreen;"> declaration.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:6:18 <a href=\"https://biomejs.dev/linter/rules/no-important-in-keyframe\">lint/suspicious/noImportantInKeyframe</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Using </span><span style=\"color: Tomato;\"><strong>!important</strong></span><span style=\"color: Tomato;\"> within keyframes declaration is completely ignored in some browsers.</span><br />  <br />    <strong>4 │ </strong>    &#125;<br />    <strong>5 │ </strong>    to &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>6 │ </strong>      opacity: 1 !important;<br />   <strong>   │ </strong>                 <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>7 │ </strong>    &#125;<br />    <strong>8 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider removing useless </span><span style=\"color: lightgreen;\"><strong>!important</strong></span><span style=\"color: lightgreen;\"> declaration.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -74,7 +76,5 @@ Using `!important` within keyframes declarations is completely ignored in some b
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/suspicious/no_important_in_keyframe.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/suspicious/noImportantInKeyframe)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noImportantInKeyframe" category="lint" language="css" code={"@keyframes foo {\n    from {\n      opacity: 0;\n    }\n    to {\n      opacity: 1 !important;\n    }\n}\n"} />
 

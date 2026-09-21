@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useNodeAssertStrict
-description: Learn more about useNodeAssertStrict
+title: useNodeAssertStrict (JavaScript)
+description: JavaScript (and super languages) documentation for useNodeAssertStrict
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-node-assert-strict/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.6.0`
 - Diagnostic Category: [`lint/style/useNodeAssertStrict`](/reference/diagnostics#diagnostic-category)
@@ -42,7 +44,7 @@ If you prefer stricter assertions when using the Node.js assertion module, the p
 import * as assert from "node:assert"
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:25 <a href="https://biomejs.dev/linter/rules/use-node-assert-strict">lint/style/useNodeAssertStrict</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Use </span><span style="color: Orange;"><strong>node:assert/strict</strong></span><span style="color: Orange;"> instead.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>import &#42; as assert from &quot;node:assert&quot;<br />   <strong>   │ </strong>                        <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The use of stricter assertion is preferred.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Replace with </span><span style="color: lightgreen;"><strong>node:assert/strict</strong></span><span style="color: lightgreen;">.</span><br />  <br />  <strong>  1 │ </strong>import<span style="opacity: 0.8;">·</span>&#42;<span style="opacity: 0.8;">·</span>as<span style="opacity: 0.8;">·</span>assert<span style="opacity: 0.8;">·</span>from<span style="opacity: 0.8;">·</span>&quot;node:assert<span style="color: MediumSeaGreen;">/</span><span style="color: MediumSeaGreen;">s</span><span style="color: MediumSeaGreen;">t</span><span style="color: MediumSeaGreen;">r</span><span style="color: MediumSeaGreen;">i</span><span style="color: MediumSeaGreen;">c</span><span style="color: MediumSeaGreen;">t</span>&quot;<br />  <strong>    │ </strong>                                    <span style="color: MediumSeaGreen;">+</span><span style="color: MediumSeaGreen;">+</span><span style="color: MediumSeaGreen;">+</span><span style="color: MediumSeaGreen;">+</span><span style="color: MediumSeaGreen;">+</span><span style="color: MediumSeaGreen;">+</span><span style="color: MediumSeaGreen;">+</span> <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:25 <a href=\"https://biomejs.dev/linter/rules/use-node-assert-strict\">lint/style/useNodeAssertStrict</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Use </span><span style=\"color: Orange;\"><strong>node:assert/strict</strong></span><span style=\"color: Orange;\"> instead.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>import &#42; as assert from &quot;node:assert&quot;<br />   <strong>   │ </strong>                        <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The use of stricter assertion is preferred.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Replace with </span><span style=\"color: lightgreen;\"><strong>node:assert/strict</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />  <strong>  1 │ </strong>import<span style=\"opacity: 0.8;\">·</span>&#42;<span style=\"opacity: 0.8;\">·</span>as<span style=\"opacity: 0.8;\">·</span>assert<span style=\"opacity: 0.8;\">·</span>from<span style=\"opacity: 0.8;\">·</span>&quot;node:assert<span style=\"color: MediumSeaGreen;\">/</span><span style=\"color: MediumSeaGreen;\">s</span><span style=\"color: MediumSeaGreen;\">t</span><span style=\"color: MediumSeaGreen;\">r</span><span style=\"color: MediumSeaGreen;\">i</span><span style=\"color: MediumSeaGreen;\">c</span><span style=\"color: MediumSeaGreen;\">t</span>&quot;<br />  <strong>    │ </strong>                                    <span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span> <br /></code></pre>"} />
 
 ### Valid
 
@@ -57,7 +59,5 @@ import * as assert from "node:assert/strict"
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_node_assert_strict.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useNodeAssertStrict)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useNodeAssertStrict" category="lint" language="js" code={"import * as assert from \"node:assert\"\n"} />
 

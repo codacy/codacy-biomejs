@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noUnusedLabels
-description: Learn more about noUnusedLabels
+title: noUnusedLabels (JavaScript)
+description: JavaScript (and super languages) documentation for noUnusedLabels
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-unused-labels/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/correctness/noUnusedLabels`](/reference/diagnostics#diagnostic-category)
@@ -52,7 +54,7 @@ LOOP: for (const x of xs) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:1 <a href="https://biomejs.dev/linter/rules/no-unused-labels">lint/correctness/noUnusedLabels</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Unused </span><span style="color: Orange;"><strong>label</strong></span><span style="color: Orange;">.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>LOOP: for (const x of xs) &#123;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>    if (x &gt; 0) &#123;<br />    <strong>3 │ </strong>        break;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The label is not used by any </span><span style="color: lightgreen;"><strong>break</strong></span><span style="color: lightgreen;"> statement and continue statement.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Remove the unused </span><span style="color: lightgreen;"><strong>label</strong></span><span style="color: lightgreen;">.</span><br />  <br />  <strong>  1 │ </strong><span style="color: Tomato;">L</span><span style="color: Tomato;">O</span><span style="color: Tomato;">O</span><span style="color: Tomato;">P</span><span style="color: Tomato;">:</span><span style="opacity: 0.8;"><span style="color: Tomato;">·</span></span>for<span style="opacity: 0.8;">·</span>(const<span style="opacity: 0.8;">·</span>x<span style="opacity: 0.8;">·</span>of<span style="opacity: 0.8;">·</span>xs)<span style="opacity: 0.8;">·</span>&#123;<br />  <strong>    │ </strong><span style="color: Tomato;">-</span><span style="color: Tomato;">-</span><span style="color: Tomato;">-</span><span style="color: Tomato;">-</span><span style="color: Tomato;">-</span><span style="color: Tomato;">-</span>                     <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:1 <a href=\"https://biomejs.dev/linter/rules/no-unused-labels\">lint/correctness/noUnusedLabels</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Unused </span><span style=\"color: Orange;\"><strong>label</strong></span><span style=\"color: Orange;\">.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>LOOP: for (const x of xs) &#123;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>    if (x &gt; 0) &#123;<br />    <strong>3 │ </strong>        break;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The label is not used by any </span><span style=\"color: lightgreen;\"><strong>break</strong></span><span style=\"color: lightgreen;\"> statement and continue statement.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove the unused </span><span style=\"color: lightgreen;\"><strong>label</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />  <strong>  1 │ </strong><span style=\"color: Tomato;\">L</span><span style=\"color: Tomato;\">O</span><span style=\"color: Tomato;\">O</span><span style=\"color: Tomato;\">P</span><span style=\"color: Tomato;\">:</span><span style=\"opacity: 0.8;\"><span style=\"color: Tomato;\">·</span></span>for<span style=\"opacity: 0.8;\">·</span>(const<span style=\"opacity: 0.8;\">·</span>x<span style=\"opacity: 0.8;\">·</span>of<span style=\"opacity: 0.8;\">·</span>xs)<span style=\"opacity: 0.8;\">·</span>&#123;<br />  <strong>    │ </strong><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span>                     <br /></code></pre>"} />
 
 ### Valid
 
@@ -85,7 +87,5 @@ $: { /* reactive block */ }
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/no_unused_labels.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/correctness/noUnusedLabels)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noUnusedLabels" category="lint" language="js" code={"LOOP: for (const x of xs) {\n    if (x > 0) {\n        break;\n    }\n    f(x);\n}\n"} />
 

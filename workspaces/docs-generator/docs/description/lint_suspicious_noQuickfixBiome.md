@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noQuickfixBiome
-description: Learn more about noQuickfixBiome
+title: noQuickfixBiome (JSON)
+description: JSON (and super languages) documentation for noQuickfixBiome
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSON (and super languages)" icon="seti:json">
+<RuleLanguageLinks current="json" languages={[{"id":"json","label":"JSON (and super languages)","href":"/linter/rules/no-quickfix-biome/json/"}]} />
+
 ## Summary
 - Rule available since: `v2.1.3`
 - Diagnostic Category: [`lint/suspicious/noQuickfixBiome`](/reference/diagnostics#diagnostic-category)
@@ -99,7 +101,4 @@ If your editor uses, for example, a file called `.myEditor/file.json`, you can a
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/src/lint/suspicious/no_quickfix_biome.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/tests/specs/suspicious/noQuickfixBiome)
-
-</TabItem>
-</Tabs>
 

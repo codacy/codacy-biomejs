@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noArguments
-description: Learn more about noArguments
+title: noArguments (JavaScript)
+description: JavaScript (and super languages) documentation for noArguments
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-arguments/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/complexity/noArguments`](/reference/diagnostics#diagnostic-category)
@@ -45,7 +47,7 @@ function f() {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:16 <a href="https://biomejs.dev/linter/rules/no-arguments">lint/complexity/noArguments</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Use the </span><span style="color: Orange;"><strong>rest parameters</strong></span><span style="color: Orange;"> instead of </span><span style="color: Orange;"><strong>arguments</strong></span><span style="color: Orange;">.</span><br />  <br />    <strong>1 │ </strong>function f() &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>   console.log(arguments);<br />   <strong>   │ </strong>               <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;"><strong>arguments</strong></span><span style="color: lightgreen;"> does not have </span><span style="color: lightgreen;"><strong>Array.prototype</strong></span><span style="color: lightgreen;"> methods and can be inconvenient to use.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:16 <a href=\"https://biomejs.dev/linter/rules/no-arguments\">lint/complexity/noArguments</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Use the </span><span style=\"color: Orange;\"><strong>rest parameters</strong></span><span style=\"color: Orange;\"> instead of </span><span style=\"color: Orange;\"><strong>arguments</strong></span><span style=\"color: Orange;\">.</span><br />  <br />    <strong>1 │ </strong>function f() &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>   console.log(arguments);<br />   <strong>   │ </strong>               <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\"><strong>arguments</strong></span><span style=\"color: lightgreen;\"> does not have </span><span style=\"color: lightgreen;\"><strong>Array.prototype</strong></span><span style=\"color: lightgreen;\"> methods and can be inconvenient to use.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -63,7 +65,5 @@ function f() {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_arguments.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/complexity/noArguments)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noArguments" category="lint" language="js" code={"function f() {\n   console.log(arguments);\n}\n"} />
 

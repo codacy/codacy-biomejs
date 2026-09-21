@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noExplicitAny
-description: Learn more about noExplicitAny
+title: noExplicitAny (JavaScript)
+description: JavaScript (and super languages) documentation for noExplicitAny
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="TypeScript and TSX" icon="seti:typescript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-explicit-any/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/suspicious/noExplicitAny`](/reference/diagnostics#diagnostic-category)
@@ -52,7 +54,7 @@ It also accepts any value, however it requires to check that a property exists b
 let variable: any = 1;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:1:15 <a href="https://biomejs.dev/linter/rules/no-explicit-any">lint/suspicious/noExplicitAny</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Unexpected </span><span style="color: Orange;"><strong>any</strong></span><span style="color: Orange;">. Specify a different type.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>let variable: any = 1;<br />   <strong>   │ </strong>              <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;"><strong>any</strong></span><span style="color: lightgreen;"> disables many type checking rules. Its use should be avoided.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:1:15 <a href=\"https://biomejs.dev/linter/rules/no-explicit-any\">lint/suspicious/noExplicitAny</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Unexpected </span><span style=\"color: Orange;\"><strong>any</strong></span><span style=\"color: Orange;\">. Specify a different type.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>let variable: any = 1;<br />   <strong>   │ </strong>              <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\"><strong>any</strong></span><span style=\"color: lightgreen;\"> disables many type checking rules. Its use should be avoided.</span><br />  <br /></code></pre>"} />
 
 ```ts
 class SomeClass {
@@ -60,13 +62,13 @@ class SomeClass {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:2:25 <a href="https://biomejs.dev/linter/rules/no-explicit-any">lint/suspicious/noExplicitAny</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Unexpected </span><span style="color: Orange;"><strong>any</strong></span><span style="color: Orange;">. Specify a different type.</span><br />  <br />    <strong>1 │ </strong>class SomeClass &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>   message: Array&lt;Array&lt;any&gt;&gt;;<br />   <strong>   │ </strong>                        <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;"><strong>any</strong></span><span style="color: lightgreen;"> disables many type checking rules. Its use should be avoided.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:2:25 <a href=\"https://biomejs.dev/linter/rules/no-explicit-any\">lint/suspicious/noExplicitAny</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Unexpected </span><span style=\"color: Orange;\"><strong>any</strong></span><span style=\"color: Orange;\">. Specify a different type.</span><br />  <br />    <strong>1 │ </strong>class SomeClass &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>   message: Array&lt;Array&lt;any&gt;&gt;;<br />   <strong>   │ </strong>                        <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\"><strong>any</strong></span><span style=\"color: lightgreen;\"> disables many type checking rules. Its use should be avoided.</span><br />  <br /></code></pre>"} />
 
 ```ts
 function fn(param: Array<any>): void {}
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:1:26 <a href="https://biomejs.dev/linter/rules/no-explicit-any">lint/suspicious/noExplicitAny</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Unexpected </span><span style="color: Orange;"><strong>any</strong></span><span style="color: Orange;">. Specify a different type.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>function fn(param: Array&lt;any&gt;): void &#123;&#125;<br />   <strong>   │ </strong>                         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;"><strong>any</strong></span><span style="color: lightgreen;"> disables many type checking rules. Its use should be avoided.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:1:26 <a href=\"https://biomejs.dev/linter/rules/no-explicit-any\">lint/suspicious/noExplicitAny</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Unexpected </span><span style=\"color: Orange;\"><strong>any</strong></span><span style=\"color: Orange;\">. Specify a different type.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>function fn(param: Array&lt;any&gt;): void &#123;&#125;<br />   <strong>   │ </strong>                         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\"><strong>any</strong></span><span style=\"color: lightgreen;\"> disables many type checking rules. Its use should be avoided.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -92,7 +94,5 @@ function fn(param: Array<Array<unknown>>): Array<unknown> {}
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_explicit_any.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noExplicitAny)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noExplicitAny" category="lint" language="ts" code={"let variable: any = 1;\n"} />
 

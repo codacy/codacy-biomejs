@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noUnknownProperty
-description: Learn more about noUnknownProperty
+title: noUnknownProperty (CSS)
+description: CSS documentation for noUnknownProperty
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-unknown-property/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.0`
 - Diagnostic Category: [`lint/correctness/noUnknownProperty`](/reference/diagnostics#diagnostic-category)
@@ -18,6 +20,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 - The default severity of this rule is [**error**](/reference/diagnostics#error).
 - Sources: 
   - Same as [`property-no-unknown`](https://github.com/stylelint/stylelint/blob/main/lib/rules/property-no-unknown/README.md)
+  - Inspired from [`css/no-invalid-properties`](https://github.com/eslint/css/blob/main/docs/rules/no-invalid-properties.md)
 
 ## How to configure
 ```json title="biome.json"
@@ -53,7 +56,7 @@ a {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:2:3 <a href="https://biomejs.dev/linter/rules/no-unknown-property">lint/correctness/noUnknownProperty</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Unknown property is not allowed.</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  colr: blue;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">See </span><span style="color: lightgreen;"><a href="https://stylelint.io/user-guide/rules/property-no-unknown/">CSS Specifications and browser specific properties</a></span><span style="color: lightgreen;"> for more details.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">To resolve this issue, replace the unknown property with a valid CSS property.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:2:3 <a href=\"https://biomejs.dev/linter/rules/no-unknown-property\">lint/correctness/noUnknownProperty</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Unknown property is not allowed.</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  colr: blue;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">See </span><span style=\"color: lightgreen;\"><a href=\"https://stylelint.io/user-guide/rules/property-no-unknown/\">CSS Specifications and browser specific properties</a></span><span style=\"color: lightgreen;\"> for more details.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">To resolve this issue, replace the unknown property with a valid CSS property.</span><br />  <br /></code></pre>"} />
 
 ```css
 a {
@@ -61,7 +64,7 @@ a {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:2:3 <a href="https://biomejs.dev/linter/rules/no-unknown-property">lint/correctness/noUnknownProperty</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Unknown property is not allowed.</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  my-property: 1;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">See </span><span style="color: lightgreen;"><a href="https://stylelint.io/user-guide/rules/property-no-unknown/">CSS Specifications and browser specific properties</a></span><span style="color: lightgreen;"> for more details.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">To resolve this issue, replace the unknown property with a valid CSS property.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:2:3 <a href=\"https://biomejs.dev/linter/rules/no-unknown-property\">lint/correctness/noUnknownProperty</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Unknown property is not allowed.</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  my-property: 1;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">See </span><span style=\"color: lightgreen;\"><a href=\"https://stylelint.io/user-guide/rules/property-no-unknown/\">CSS Specifications and browser specific properties</a></span><span style=\"color: lightgreen;\"> for more details.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">To resolve this issue, replace the unknown property with a valid CSS property.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -124,7 +127,5 @@ a {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_unknown_property.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/correctness/noUnknownProperty)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noUnknownProperty" category="lint" language="css" code={"a {\n  colr: blue;\n}\n"} />
 

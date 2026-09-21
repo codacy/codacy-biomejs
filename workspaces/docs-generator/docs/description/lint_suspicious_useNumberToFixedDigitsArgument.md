@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useNumberToFixedDigitsArgument
-description: Learn more about useNumberToFixedDigitsArgument
+title: useNumberToFixedDigitsArgument (JavaScript)
+description: JavaScript (and super languages) documentation for useNumberToFixedDigitsArgument
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-number-to-fixed-digits-argument/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.0`
 - Diagnostic Category: [`lint/suspicious/useNumberToFixedDigitsArgument`](/reference/diagnostics#diagnostic-category)
@@ -46,7 +48,7 @@ to avoid unexpected results, rather than relying on its default value of 0.
 const string = number.toFixed();
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:30 <a href="https://biomejs.dev/linter/rules/use-number-to-fixed-digits-argument">lint/suspicious/useNumberToFixedDigitsArgument</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Specify the number of digits you want to appear after the decimal point.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>const string = number.toFixed();<br />   <strong>   │ </strong>                             <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Unsafe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Add explicit digits argument to </span><span style="color: lightgreen;"><strong>toFixed</strong></span><span style="color: lightgreen;"> method.</span><br />  <br />  <strong>  1 │ </strong>const<span style="opacity: 0.8;">·</span>string<span style="opacity: 0.8;">·</span>=<span style="opacity: 0.8;">·</span>number.toFixed(<span style="color: MediumSeaGreen;">0</span>);<br />  <strong>    │ </strong>                              <span style="color: MediumSeaGreen;">+</span>  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:30 <a href=\"https://biomejs.dev/linter/rules/use-number-to-fixed-digits-argument\">lint/suspicious/useNumberToFixedDigitsArgument</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Specify the number of digits you want to appear after the decimal point.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>const string = number.toFixed();<br />   <strong>   │ </strong>                             <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Add explicit digits argument to </span><span style=\"color: lightgreen;\"><strong>toFixed</strong></span><span style=\"color: lightgreen;\"> method.</span><br />  <br />  <strong>  1 │ </strong>const<span style=\"opacity: 0.8;\">·</span>string<span style=\"opacity: 0.8;\">·</span>=<span style=\"opacity: 0.8;\">·</span>number.toFixed(<span style=\"color: MediumSeaGreen;\">0</span>);<br />  <strong>    │ </strong>                              <span style=\"color: MediumSeaGreen;\">+</span>  <br /></code></pre>"} />
 
 ### Valid
 
@@ -70,7 +72,5 @@ It does not check the type of the callee.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/use_number_to_fixed_digits_argument.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/useNumberToFixedDigitsArgument)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useNumberToFixedDigitsArgument" category="lint" language="js" code={"const string = number.toFixed();\n"} />
 

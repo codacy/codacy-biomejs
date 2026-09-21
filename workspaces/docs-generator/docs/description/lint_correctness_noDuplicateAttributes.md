@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDuplicateAttributes
-description: Learn more about noDuplicateAttributes
+title: noDuplicateAttributes (HTML)
+description: HTML documentation for noDuplicateAttributes
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="HTML" icon="seti:html">
+<RuleLanguageLinks current="html" languages={[{"id":"html","label":"HTML","href":"/linter/rules/no-duplicate-attributes/html/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.12`
 - Diagnostic Category: [`lint/correctness/noDuplicateAttributes`](/reference/diagnostics#diagnostic-category)
@@ -61,7 +63,7 @@ Dynamic arguments such as `:[foo]` or `v-bind:[foo]` are ignored.
 <div foo="a" foo="b"></div>
 ```
 
-<pre class="language-text"><code class="language-text">code-block.html:1:14 <a href="https://biomejs.dev/linter/rules/no-duplicate-attributes">lint/correctness/noDuplicateAttributes</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Duplicate attribute '</span><span style="color: Tomato;"><strong>foo</strong></span><span style="color: Tomato;">'.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;div foo=&quot;a&quot; foo=&quot;b&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>             <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">This is the first occurrence of the attribute.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;div foo=&quot;a&quot; foo=&quot;b&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>     <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Each attribute name must be unique within a single element. Duplicate attributes are invalid and can lead to unexpected browser behavior.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider removing or renaming the duplicate '</span><span style="color: lightgreen;"><strong>foo</strong></span><span style="color: lightgreen;">' attribute.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.html:1:14 <a href=\"https://biomejs.dev/linter/rules/no-duplicate-attributes\">lint/correctness/noDuplicateAttributes</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Duplicate attribute '</span><span style=\"color: Tomato;\"><strong>foo</strong></span><span style=\"color: Tomato;\">'.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div foo=&quot;a&quot; foo=&quot;b&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>             <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This is the first occurrence of the attribute.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div foo=&quot;a&quot; foo=&quot;b&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>     <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Each attribute name must be unique within a single element. Duplicate attributes are invalid and can lead to unexpected browser behavior.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider removing or renaming the duplicate '</span><span style=\"color: lightgreen;\"><strong>foo</strong></span><span style=\"color: lightgreen;\">' attribute.</span><br />  <br /></code></pre>"} />
 
 ```vue
 <template>
@@ -69,7 +71,7 @@ Dynamic arguments such as `:[foo]` or `v-bind:[foo]` are ignored.
 </template>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:2:12 <a href=\"https://biomejs.dev/linter/rules/no-duplicate-attributes\">lint/correctness/noDuplicateAttributes</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Duplicate attribute '</span><span style=\"color: Tomato;\"><strong>foo</strong></span><span style=\"color: Tomato;\">'.</span><br />  <br />    <strong>1 │ </strong>&lt;template&gt;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  &lt;div foo :foo=&quot;bar&quot; /&gt;<br />   <strong>   │ </strong>           <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&lt;/template&gt;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This is the first occurrence of the attribute.</span><br />  <br />    <strong>1 │ </strong>&lt;template&gt;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  &lt;div foo :foo=&quot;bar&quot; /&gt;<br />   <strong>   │ </strong>       <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&lt;/template&gt;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Each attribute name must be unique within a single element. Duplicate attributes are invalid and can lead to unexpected browser behavior.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider removing or renaming the duplicate '</span><span style=\"color: lightgreen;\"><strong>foo</strong></span><span style=\"color: lightgreen;\">' attribute.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -84,7 +86,5 @@ Dynamic arguments such as `:[foo]` or `v-bind:[foo]` are ignored.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/correctness/no_duplicate_attributes.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/correctness/noDuplicateAttributes)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDuplicateAttributes" category="lint" language="html" code={"<div foo=\"a\" foo=\"b\"></div>\n"} />
 

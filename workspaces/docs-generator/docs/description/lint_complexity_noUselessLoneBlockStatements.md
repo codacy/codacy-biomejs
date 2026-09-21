@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noUselessLoneBlockStatements
-description: Learn more about noUselessLoneBlockStatements
+title: noUselessLoneBlockStatements (JavaScript)
+description: JavaScript (and super languages) documentation for noUselessLoneBlockStatements
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-useless-lone-block-statements/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.3.3`
 - Diagnostic Category: [`lint/complexity/noUselessLoneBlockStatements`](/reference/diagnostics#diagnostic-category)
@@ -47,7 +49,7 @@ In ES6, code blocks may create a new scope if a block-level binding (let and con
 {}
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:1 <a href="https://biomejs.dev/linter/rules/no-useless-lone-block-statements">lint/complexity/noUselessLoneBlockStatements</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">This block statement doesn't serve any purpose and can be safely removed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&#123;&#125;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Standalone block statements without any block-level declarations are redundant in JavaScript and can be removed to simplify the code.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:1 <a href=\"https://biomejs.dev/linter/rules/no-useless-lone-block-statements\">lint/complexity/noUselessLoneBlockStatements</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This block statement doesn't serve any purpose and can be safely removed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&#123;&#125;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Standalone block statements without any block-level declarations are redundant in JavaScript and can be removed to simplify the code.</span><br />  <br /></code></pre>"} />
 
 ```js
 if (foo) {
@@ -58,7 +60,7 @@ if (foo) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:3:3 <a href="https://biomejs.dev/linter/rules/no-useless-lone-block-statements">lint/complexity/noUselessLoneBlockStatements</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">This block statement doesn't serve any purpose and can be safely removed.</span><br />  <br />    <strong>1 │ </strong>if (foo) &#123;<br />    <strong>2 │ </strong>  bar();<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>  &#123;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>4 │ </strong>    baz();<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>5 │ </strong>  &#125;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><br />    <strong>6 │ </strong>&#125;<br />    <strong>7 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Standalone block statements without any block-level declarations are redundant in JavaScript and can be removed to simplify the code.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Remove redundant block.</span><br />  <br />    <strong>1</strong> <strong>1</strong><strong> │ </strong>  if (foo) &#123;<br />    <strong>2</strong> <strong>2</strong><strong> │ </strong>    bar();<br />    <strong>3</strong>  <strong> │ </strong><span style="color: Tomato;">-</span> <span style="color: Tomato;"><span style="opacity: 0.8;"><strong>·</strong></span></span><span style="color: Tomato;"><span style="opacity: 0.8;"><strong>·</strong></span></span><span style="color: Tomato;"><strong>&#123;</strong></span><br />    <strong>4</strong> <strong>3</strong><strong> │ </strong>      baz();<br />    <strong>5</strong>  <strong> │ </strong><span style="color: Tomato;">-</span> <span style="color: Tomato;"><span style="opacity: 0.8;"><strong>·</strong></span></span><span style="color: Tomato;"><span style="opacity: 0.8;"><strong>·</strong></span></span><span style="color: Tomato;"><strong>&#125;</strong></span><br />    <strong>6</strong> <strong>4</strong><strong> │ </strong>  &#125;<br />    <strong>7</strong> <strong>5</strong><strong> │ </strong>  <br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:3:3 <a href=\"https://biomejs.dev/linter/rules/no-useless-lone-block-statements\">lint/complexity/noUselessLoneBlockStatements</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This block statement doesn't serve any purpose and can be safely removed.</span><br />  <br />    <strong>1 │ </strong>if (foo) &#123;<br />    <strong>2 │ </strong>  bar();<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>  &#123;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>4 │ </strong>    baz();<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>5 │ </strong>  &#125;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>6 │ </strong>&#125;<br />    <strong>7 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Standalone block statements without any block-level declarations are redundant in JavaScript and can be removed to simplify the code.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove redundant block.</span><br />  <br />    <strong>1</strong> <strong>1</strong><strong> │ </strong>  if (foo) &#123;<br />    <strong>2</strong> <strong>2</strong><strong> │ </strong>    bar();<br />    <strong>3</strong>  <strong> │ </strong><span style=\"color: Tomato;\">-</span> <span style=\"color: Tomato;\"><span style=\"opacity: 0.8;\"><strong>·</strong></span></span><span style=\"color: Tomato;\"><span style=\"opacity: 0.8;\"><strong>·</strong></span></span><span style=\"color: Tomato;\"><strong>&#123;</strong></span><br />    <strong>4</strong> <strong>3</strong><strong> │ </strong>      baz();<br />    <strong>5</strong>  <strong> │ </strong><span style=\"color: Tomato;\">-</span> <span style=\"color: Tomato;\"><span style=\"opacity: 0.8;\"><strong>·</strong></span></span><span style=\"color: Tomato;\"><span style=\"opacity: 0.8;\"><strong>·</strong></span></span><span style=\"color: Tomato;\"><strong>&#125;</strong></span><br />    <strong>6</strong> <strong>4</strong><strong> │ </strong>  &#125;<br />    <strong>7</strong> <strong>5</strong><strong> │ </strong>  <br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -75,7 +77,5 @@ while (foo) {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_useless_lone_block_statements.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/complexity/noUselessLoneBlockStatements)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noUselessLoneBlockStatements" category="lint" language="js" code={"{}\n"} />
 

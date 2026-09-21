@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useRequiredScripts
-description: Learn more about useRequiredScripts
+title: useRequiredScripts (JSON)
+description: JSON (and super languages) documentation for useRequiredScripts
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSON (and super languages)" icon="seti:json">
+<RuleLanguageLinks current="json" languages={[{"id":"json","label":"JSON (and super languages)","href":"/linter/rules/use-required-scripts/json/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.9`
 - Diagnostic Category: [`lint/suspicious/useRequiredScripts`](/reference/diagnostics#diagnostic-category)
@@ -95,7 +97,4 @@ Default: `[]` (no scripts required)
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/src/lint/suspicious/use_required_scripts.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/tests/specs/suspicious/useRequiredScripts)
-
-</TabItem>
-</Tabs>
 

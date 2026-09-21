@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noBiomeFirstException
-description: Learn more about noBiomeFirstException
+title: noBiomeFirstException (JSON)
+description: JSON (and super languages) documentation for noBiomeFirstException
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSON (and super languages)" icon="seti:json">
+<RuleLanguageLinks current="json" languages={[{"id":"json","label":"JSON (and super languages)","href":"/linter/rules/no-biome-first-exception/json/"}]} />
+
 ## Summary
 - Rule available since: `v2.2.0`
 - Diagnostic Category: [`lint/suspicious/noBiomeFirstException`](/reference/diagnostics#diagnostic-category)
@@ -94,7 +96,4 @@ the rule will trigger a violation if also the user configuration file has a `**`
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/src/lint/suspicious/no_biome_first_exception.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/tests/specs/suspicious/noBiomeFirstException)
-
-</TabItem>
-</Tabs>
 

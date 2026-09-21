@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noCommaOperator
-description: Learn more about noCommaOperator
+title: noCommaOperator (JavaScript)
+description: JavaScript (and super languages) documentation for noCommaOperator
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-comma-operator/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/complexity/noCommaOperator`](/reference/diagnostics#diagnostic-category)
@@ -49,13 +51,13 @@ The use of the comma operator in the initialization and update parts of a `for` 
 const foo = (doSomething(), 0);
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:27 <a href="https://biomejs.dev/linter/rules/no-comma-operator">lint/complexity/noCommaOperator</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">The comma operator is disallowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>const foo = (doSomething(), 0);<br />   <strong>   │ </strong>                          <strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Its use is often confusing and obscures side effects.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:27 <a href=\"https://biomejs.dev/linter/rules/no-comma-operator\">lint/complexity/noCommaOperator</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">The comma operator is disallowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>const foo = (doSomething(), 0);<br />   <strong>   │ </strong>                          <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Its use is often confusing and obscures side effects.</span><br />  <br /></code></pre>"} />
 
 ```js
 for (; doSomething(), !!test; ) {}
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:21 <a href="https://biomejs.dev/linter/rules/no-comma-operator">lint/complexity/noCommaOperator</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">The comma operator is disallowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>for (; doSomething(), !!test; ) &#123;&#125;<br />   <strong>   │ </strong>                    <strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Its use is often confusing and obscures side effects.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:21 <a href=\"https://biomejs.dev/linter/rules/no-comma-operator\">lint/complexity/noCommaOperator</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">The comma operator is disallowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>for (; doSomething(), !!test; ) &#123;&#125;<br />   <strong>   │ </strong>                    <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Its use is often confusing and obscures side effects.</span><br />  <br /></code></pre>"} />
 
 ```js
 // Use a semicolon instead.
@@ -63,7 +65,7 @@ let a, b;
 a = 1, b = 2;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:3:6 <a href="https://biomejs.dev/linter/rules/no-comma-operator">lint/complexity/noCommaOperator</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">The comma operator is disallowed.</span><br />  <br />    <strong>1 │ </strong>// Use a semicolon instead.<br />    <strong>2 │ </strong>let a, b;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>a = 1, b = 2;<br />   <strong>   │ </strong>     <strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Its use is often confusing and obscures side effects.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:3:6 <a href=\"https://biomejs.dev/linter/rules/no-comma-operator\">lint/complexity/noCommaOperator</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">The comma operator is disallowed.</span><br />  <br />    <strong>1 │ </strong>// Use a semicolon instead.<br />    <strong>2 │ </strong>let a, b;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>a = 1, b = 2;<br />   <strong>   │ </strong>     <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Its use is often confusing and obscures side effects.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -78,7 +80,5 @@ for(a = 0, b = 0; (a + b) < 10; a++, b += 2) {}
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_comma_operator.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/complexity/noCommaOperator)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noCommaOperator" category="lint" language="js" code={"const foo = (doSomething(), 0);\n"} />
 

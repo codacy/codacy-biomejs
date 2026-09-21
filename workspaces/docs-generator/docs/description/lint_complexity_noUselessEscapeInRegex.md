@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noUselessEscapeInRegex
-description: Learn more about noUselessEscapeInRegex
+title: noUselessEscapeInRegex (JavaScript)
+description: JavaScript (and super languages) documentation for noUselessEscapeInRegex
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-useless-escape-in-regex/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.0`
 - Diagnostic Category: [`lint/complexity/noUselessEscapeInRegex`](/reference/diagnostics#diagnostic-category)
@@ -46,13 +48,13 @@ Hence, they may confuse a reader.
 /\a/;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:2 <a href="https://biomejs.dev/linter/rules/no-useless-escape-in-regex">lint/complexity/noUselessEscapeInRegex</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The character doesn't need to be escaped.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>/&#92;a/;<br />   <strong>   │ </strong> <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Unescape the character.</span><br />  <br />  <strong>  1 │ </strong>/<span style="color: Tomato;">&#92;</span>a/;<br />  <strong>    │ </strong> <span style="color: Tomato;">-</span>   <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:2 <a href=\"https://biomejs.dev/linter/rules/no-useless-escape-in-regex\">lint/complexity/noUselessEscapeInRegex</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The character doesn't need to be escaped.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>/&#92;a/;<br />   <strong>   │ </strong> <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Unescape the character.</span><br />  <br />  <strong>  1 │ </strong>/<span style=\"color: Tomato;\">&#92;</span>a/;<br />  <strong>    │ </strong> <span style=\"color: Tomato;\">-</span>   <br /></code></pre>"} />
 
 ```js
 /[\-]/;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:3 <a href="https://biomejs.dev/linter/rules/no-useless-escape-in-regex">lint/complexity/noUselessEscapeInRegex</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The character doesn't need to be escaped.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>/[&#92;-]/;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The character should only be escaped if it appears in the middle of the character class or under the &#96;v&#96; flag.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Unescape the character.</span><br />  <br />  <strong>  1 │ </strong>/[<span style="color: Tomato;">&#92;</span>-]/;<br />  <strong>    │ </strong>  <span style="color: Tomato;">-</span>    <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:3 <a href=\"https://biomejs.dev/linter/rules/no-useless-escape-in-regex\">lint/complexity/noUselessEscapeInRegex</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The character doesn't need to be escaped.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>/[&#92;-]/;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The character should only be escaped if it appears in the middle of the character class or under the &#96;v&#96; flag.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Unescape the character.</span><br />  <br />  <strong>  1 │ </strong>/[<span style=\"color: Tomato;\">&#92;</span>-]/;<br />  <strong>    │ </strong>  <span style=\"color: Tomato;\">-</span>    <br /></code></pre>"} />
 
 ### Valid
 
@@ -75,7 +77,5 @@ Hence, they may confuse a reader.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_useless_escape_in_regex.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/complexity/noUselessEscapeInRegex)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noUselessEscapeInRegex" category="lint" language="js" code={"/\\a/;\n"} />
 

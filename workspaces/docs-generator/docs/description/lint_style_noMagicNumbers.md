@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noMagicNumbers
-description: Learn more about noMagicNumbers
+title: noMagicNumbers (JavaScript)
+description: JavaScript (and super languages) documentation for noMagicNumbers
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="TypeScript and TSX" icon="seti:typescript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-magic-numbers/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.1.0`
 - Diagnostic Category: [`lint/style/noMagicNumbers`](/reference/diagnostics#diagnostic-category)
@@ -58,7 +60,7 @@ It ignores:
 let total = price * 1.23; // Magic number for tax rate
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:21 <a href="https://biomejs.dev/linter/rules/no-magic-numbers">lint/style/noMagicNumbers</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Magic number detected. Extract it to a constant with a meaningful name.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>let total = price &#42; 1.23; // Magic number for tax rate<br />   <strong>   │ </strong>                    <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Code is more readable and refactoring easier when special numbers are declared as constants as it makes their meaning explicit.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:21 <a href=\"https://biomejs.dev/linter/rules/no-magic-numbers\">lint/style/noMagicNumbers</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Magic number detected. Extract it to a constant with a meaningful name.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>let total = price &#42; 1.23; // Magic number for tax rate<br />   <strong>   │ </strong>                    <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Code is more readable and refactoring easier when special numbers are declared as constants as it makes their meaning explicit.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -79,7 +81,5 @@ let total = price * TAX_RATE;
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/no_magic_numbers.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/noMagicNumbers)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noMagicNumbers" category="lint" language="js" code={"let total = price * 1.23; // Magic number for tax rate\n"} />
 

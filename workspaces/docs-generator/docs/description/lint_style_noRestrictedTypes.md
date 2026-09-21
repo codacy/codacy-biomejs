@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noRestrictedTypes
-description: Learn more about noRestrictedTypes
+title: noRestrictedTypes (JavaScript)
+description: JavaScript (and super languages) documentation for noRestrictedTypes
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="TypeScript and TSX" icon="seti:typescript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-restricted-types/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.0`
 - Diagnostic Category: [`lint/style/noRestrictedTypes`](/reference/diagnostics#diagnostic-category)
@@ -77,7 +79,4 @@ In the example above, the rule will emit a diagnostics if `Foo` or `OldAPI` are 
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/no_restricted_types.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/noRestrictedTypes)
-
-</TabItem>
-</Tabs>
 

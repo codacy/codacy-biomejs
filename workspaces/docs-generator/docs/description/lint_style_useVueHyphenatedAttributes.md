@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useVueHyphenatedAttributes
-description: Learn more about useVueHyphenatedAttributes
+title: useVueHyphenatedAttributes (HTML)
+description: HTML documentation for useVueHyphenatedAttributes
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="HTML" icon="seti:html">
+<RuleLanguageLinks current="html" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-vue-hyphenated-attributes/html/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.6`
 - Diagnostic Category: [`lint/style/useVueHyphenatedAttributes`](/reference/diagnostics#diagnostic-category)
@@ -35,18 +37,17 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ```
 ## Description
-Enforce hyphenated (kebab-case) attribute names in Vue templates.
+Disallow uppercase letters in Vue template attribute names.
 
 Vue style guide recommends using hyphenated attribute (and prop) names in templates to
 keep them consistent and distinguish them from JavaScript identifiers written in camelCase/PascalCase.
 
-This rule flags attributes that are detected as camelCase, PascalCase, CONSTANT_CASE, snake_case
-or that contain any uppercase ASCII letter. It uses Biome's internal `Case::identify` helper.
+Like the upstream ESLint rule, this rule flags attribute names that contain uppercase letters.
+It doesn't require exact kebab-case, so punctuation such as colons and underscores is allowed.
 
 Allowed:
 
-- kebab-case attributes (e.g. `data-test-id`)
-- pure lowercase single word attributes (e.g. `class`, `id`)
+- names without uppercase letters (e.g. `data-test-id`, `pt:header:id`, `some_attr`)
 
 ## Examples
 
@@ -56,13 +57,13 @@ Allowed:
 <div fooBar="x"></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:6 <a href=\"https://biomejs.dev/linter/rules/use-vue-hyphenated-attributes\">lint/style/useVueHyphenatedAttributes</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Attribute </span><span style=\"color: lightgreen;\"><strong>fooBar</strong></span><span style=\"color: lightgreen;\"> should be hyphenated (kebab-case).</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div fooBar=&quot;x&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>     <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The Vue style guide recommends using hyphenated attribute (and prop) names in templates to keep them consistent.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Rename the attribute to </span><span style=\"color: lightgreen;\"><strong>foo-bar</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />    <strong>1</strong>  <strong> │ </strong><span style=\"color: Tomato;\">-</span> <span style=\"color: Tomato;\">&lt;</span><span style=\"color: Tomato;\">d</span><span style=\"color: Tomato;\">i</span><span style=\"color: Tomato;\">v</span><span style=\"color: Tomato;\"><span style=\"opacity: 0.8;\">·</span></span><span style=\"color: Tomato;\"><strong>f</strong></span><span style=\"color: Tomato;\"><strong>o</strong></span><span style=\"color: Tomato;\"><strong>o</strong></span><span style=\"color: Tomato;\"><strong>B</strong></span><span style=\"color: Tomato;\"><strong>a</strong></span><span style=\"color: Tomato;\"><strong>r</strong></span><span style=\"color: Tomato;\">=</span><span style=\"color: Tomato;\">&quot;</span><span style=\"color: Tomato;\">x</span><span style=\"color: Tomato;\">&quot;</span><span style=\"color: Tomato;\">&gt;</span><span style=\"color: Tomato;\">&lt;</span><span style=\"color: Tomato;\">/</span><span style=\"color: Tomato;\">d</span><span style=\"color: Tomato;\">i</span><span style=\"color: Tomato;\">v</span><span style=\"color: Tomato;\">&gt;</span><br />      <strong>1</strong><strong> │ </strong><span style=\"color: MediumSeaGreen;\">+</span> <span style=\"color: MediumSeaGreen;\">&lt;</span><span style=\"color: MediumSeaGreen;\">d</span><span style=\"color: MediumSeaGreen;\">i</span><span style=\"color: MediumSeaGreen;\">v</span><span style=\"color: MediumSeaGreen;\"><span style=\"opacity: 0.8;\">·</span></span><span style=\"color: MediumSeaGreen;\"><strong>f</strong></span><span style=\"color: MediumSeaGreen;\"><strong>o</strong></span><span style=\"color: MediumSeaGreen;\"><strong>o</strong></span><span style=\"color: MediumSeaGreen;\"><strong>-</strong></span><span style=\"color: MediumSeaGreen;\"><strong>b</strong></span><span style=\"color: MediumSeaGreen;\"><strong>a</strong></span><span style=\"color: MediumSeaGreen;\"><strong>r</strong></span><span style=\"color: MediumSeaGreen;\">=</span><span style=\"color: MediumSeaGreen;\">&quot;</span><span style=\"color: MediumSeaGreen;\">x</span><span style=\"color: MediumSeaGreen;\">&quot;</span><span style=\"color: MediumSeaGreen;\">&gt;</span><span style=\"color: MediumSeaGreen;\">&lt;</span><span style=\"color: MediumSeaGreen;\">/</span><span style=\"color: MediumSeaGreen;\">d</span><span style=\"color: MediumSeaGreen;\">i</span><span style=\"color: MediumSeaGreen;\">v</span><span style=\"color: MediumSeaGreen;\">&gt;</span><br />    <strong>2</strong> <strong>2</strong><strong> │ </strong>  <br />  <br /></code></pre>"} />
 
 ```vue
 <MyComp :someProp="x" />
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:9 <a href=\"https://biomejs.dev/linter/rules/use-vue-hyphenated-attributes\">lint/style/useVueHyphenatedAttributes</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Attribute </span><span style=\"color: lightgreen;\"><strong>someProp</strong></span><span style=\"color: lightgreen;\"> should be hyphenated (kebab-case).</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;MyComp :someProp=&quot;x&quot; /&gt;<br />   <strong>   │ </strong>        <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The Vue style guide recommends using hyphenated attribute (and prop) names in templates to keep them consistent.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Rename the attribute to </span><span style=\"color: lightgreen;\"><strong>some-prop</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />    <strong>1</strong>  <strong> │ </strong><span style=\"color: Tomato;\">-</span> <span style=\"color: Tomato;\">&lt;</span><span style=\"color: Tomato;\">M</span><span style=\"color: Tomato;\">y</span><span style=\"color: Tomato;\">C</span><span style=\"color: Tomato;\">o</span><span style=\"color: Tomato;\">m</span><span style=\"color: Tomato;\">p</span><span style=\"color: Tomato;\"><span style=\"opacity: 0.8;\">·</span></span><span style=\"color: Tomato;\">:</span><span style=\"color: Tomato;\"><strong>s</strong></span><span style=\"color: Tomato;\"><strong>o</strong></span><span style=\"color: Tomato;\"><strong>m</strong></span><span style=\"color: Tomato;\"><strong>e</strong></span><span style=\"color: Tomato;\"><strong>P</strong></span><span style=\"color: Tomato;\"><strong>r</strong></span><span style=\"color: Tomato;\"><strong>o</strong></span><span style=\"color: Tomato;\"><strong>p</strong></span><span style=\"color: Tomato;\">=</span><span style=\"color: Tomato;\">&quot;</span><span style=\"color: Tomato;\">x</span><span style=\"color: Tomato;\">&quot;</span><span style=\"color: Tomato;\"><span style=\"opacity: 0.8;\">·</span></span><span style=\"color: Tomato;\">/</span><span style=\"color: Tomato;\">&gt;</span><br />      <strong>1</strong><strong> │ </strong><span style=\"color: MediumSeaGreen;\">+</span> <span style=\"color: MediumSeaGreen;\">&lt;</span><span style=\"color: MediumSeaGreen;\">M</span><span style=\"color: MediumSeaGreen;\">y</span><span style=\"color: MediumSeaGreen;\">C</span><span style=\"color: MediumSeaGreen;\">o</span><span style=\"color: MediumSeaGreen;\">m</span><span style=\"color: MediumSeaGreen;\">p</span><span style=\"color: MediumSeaGreen;\"><span style=\"opacity: 0.8;\">·</span></span><span style=\"color: MediumSeaGreen;\">:</span><span style=\"color: MediumSeaGreen;\"><strong>s</strong></span><span style=\"color: MediumSeaGreen;\"><strong>o</strong></span><span style=\"color: MediumSeaGreen;\"><strong>m</strong></span><span style=\"color: MediumSeaGreen;\"><strong>e</strong></span><span style=\"color: MediumSeaGreen;\"><strong>-</strong></span><span style=\"color: MediumSeaGreen;\"><strong>p</strong></span><span style=\"color: MediumSeaGreen;\"><strong>r</strong></span><span style=\"color: MediumSeaGreen;\"><strong>o</strong></span><span style=\"color: MediumSeaGreen;\"><strong>p</strong></span><span style=\"color: MediumSeaGreen;\">=</span><span style=\"color: MediumSeaGreen;\">&quot;</span><span style=\"color: MediumSeaGreen;\">x</span><span style=\"color: MediumSeaGreen;\">&quot;</span><span style=\"color: MediumSeaGreen;\"><span style=\"opacity: 0.8;\">·</span></span><span style=\"color: MediumSeaGreen;\">/</span><span style=\"color: MediumSeaGreen;\">&gt;</span><br />    <strong>2</strong> <strong>2</strong><strong> │ </strong>  <br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -70,6 +71,7 @@ Allowed:
 <div data-test-id="x"></div>
 <div class="foo"></div>
 <MyComp :some-prop="x" />
+<MyComp pt:header:data-test-id="x" />
 ```
 
 ## Options
@@ -78,7 +80,7 @@ The rule supports the following options:
 
 ### `ignore`
 
-A list of attribute names that should be ignored by the rule (they won't be required to be hyphenated).
+A list of attribute names that should be exempt from the uppercase-letter check.
 Use this when you have a fixed set of camelCase / PascalCase prop names you intentionally allow.
 
 ```json title='biome.json'
@@ -110,8 +112,8 @@ Use this when you have a fixed set of camelCase / PascalCase prop names you inte
 
 ### `ignoreTags`
 
-A list of tag names whose attributes should be skipped entirely.
-This is useful for third-party or internal components that deliberately expose non‑hyphenated prop names.
+A list of tag names whose attributes should be exempt from the uppercase-letter check.
+This is useful for third-party or internal components that deliberately expose camelCase or PascalCase prop names.
 
 ```json title='biome.json'
 {
@@ -147,7 +149,5 @@ This is useful for third-party or internal components that deliberately expose n
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/style/use_vue_hyphenated_attributes.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/style/useVueHyphenatedAttributes)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useVueHyphenatedAttributes" category="lint" language="vue" code={"<div fooBar=\"x\"></div>\n"} />
 

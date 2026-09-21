@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noEqualsToNull
-description: Learn more about noEqualsToNull
+title: noEqualsToNull (JavaScript)
+description: JavaScript (and super languages) documentation for noEqualsToNull
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-equals-to-null/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.8`
 - Diagnostic Category: [`lint/suspicious/noEqualsToNull`](/reference/diagnostics#diagnostic-category)
@@ -46,13 +48,13 @@ expression evaluates to `true` when comparing `null` to `undefined`.
 foo == null;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:5 <a href="https://biomejs.dev/linter/rules/no-equals-to-null">lint/suspicious/noEqualsToNull</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;"><strong>null</strong></span><span style="color: Orange;"> comparison with </span><span style="color: Orange;"><strong>==</strong></span><span style="color: Orange;"> is disallowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>foo == null;<br />   <strong>   │ </strong>    <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Unsafe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Use </span><span style="color: lightgreen;"><strong>===</strong></span><span style="color: lightgreen;"> instead.</span><br />  <br />  <strong>  1 │ </strong>foo<span style="opacity: 0.8;">·</span>==<span style="color: MediumSeaGreen;">=</span><span style="opacity: 0.8;">·</span>null;<br />  <strong>    │ </strong>      <span style="color: MediumSeaGreen;">+</span>      <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:5 <a href=\"https://biomejs.dev/linter/rules/no-equals-to-null\">lint/suspicious/noEqualsToNull</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\"><strong>null</strong></span><span style=\"color: Orange;\"> comparison with </span><span style=\"color: Orange;\"><strong>==</strong></span><span style=\"color: Orange;\"> is disallowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>foo == null;<br />   <strong>   │ </strong>    <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Use </span><span style=\"color: lightgreen;\"><strong>===</strong></span><span style=\"color: lightgreen;\"> instead.</span><br />  <br />  <strong>  1 │ </strong>foo<span style=\"opacity: 0.8;\">·</span>==<span style=\"color: MediumSeaGreen;\">=</span><span style=\"opacity: 0.8;\">·</span>null;<br />  <strong>    │ </strong>      <span style=\"color: MediumSeaGreen;\">+</span>      <br /></code></pre>"} />
 
 ```js
 foo != null;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:5 <a href="https://biomejs.dev/linter/rules/no-equals-to-null">lint/suspicious/noEqualsToNull</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;"><strong>null</strong></span><span style="color: Orange;"> comparison with </span><span style="color: Orange;"><strong>!=</strong></span><span style="color: Orange;"> is disallowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>foo != null;<br />   <strong>   │ </strong>    <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Unsafe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Use </span><span style="color: lightgreen;"><strong>!==</strong></span><span style="color: lightgreen;"> instead.</span><br />  <br />  <strong>  1 │ </strong>foo<span style="opacity: 0.8;">·</span>!=<span style="color: MediumSeaGreen;">=</span><span style="opacity: 0.8;">·</span>null;<br />  <strong>    │ </strong>      <span style="color: MediumSeaGreen;">+</span>      <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:5 <a href=\"https://biomejs.dev/linter/rules/no-equals-to-null\">lint/suspicious/noEqualsToNull</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\"><strong>null</strong></span><span style=\"color: Orange;\"> comparison with </span><span style=\"color: Orange;\"><strong>!=</strong></span><span style=\"color: Orange;\"> is disallowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>foo != null;<br />   <strong>   │ </strong>    <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Use </span><span style=\"color: lightgreen;\"><strong>!==</strong></span><span style=\"color: lightgreen;\"> instead.</span><br />  <br />  <strong>  1 │ </strong>foo<span style=\"opacity: 0.8;\">·</span>!=<span style=\"color: MediumSeaGreen;\">=</span><span style=\"opacity: 0.8;\">·</span>null;<br />  <strong>    │ </strong>      <span style=\"color: MediumSeaGreen;\">+</span>      <br /></code></pre>"} />
 
 ### Valid
 
@@ -71,7 +73,5 @@ foo !== null;
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_equals_to_null.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noEqualsToNull)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noEqualsToNull" category="lint" language="js" code={"foo == null;\n"} />
 

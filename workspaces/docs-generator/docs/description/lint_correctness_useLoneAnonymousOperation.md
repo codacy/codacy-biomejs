@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useLoneAnonymousOperation
-description: Learn more about useLoneAnonymousOperation
+title: useLoneAnonymousOperation (GraphQL)
+description: GraphQL documentation for useLoneAnonymousOperation
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="GraphQL" icon="seti:graphql">
+<RuleLanguageLinks current="graphql" languages={[{"id":"graphql","label":"GraphQL","href":"/linter/rules/use-lone-anonymous-operation/graphql/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.12`
 - Diagnostic Category: [`lint/correctness/useLoneAnonymousOperation`](/reference/diagnostics#diagnostic-category)
@@ -51,7 +53,7 @@ query B {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.graphql:1:1 <a href="https://biomejs.dev/linter/rules/use-lone-anonymous-operation">lint/correctness/useLoneAnonymousOperation</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Document contains an anonymous operation while defining more than one operation. This anonymous operation must be the only defined operation in this document or turned into a named operation.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>query &#123;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  fieldA<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>&#125;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong><br />    <strong>5 │ </strong>query B &#123;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">A GraphQL document that contains an anonymous operation (the query short-hand) is only valid if it contains only that one operation definition.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.graphql:1:1 <a href=\"https://biomejs.dev/linter/rules/use-lone-anonymous-operation\">lint/correctness/useLoneAnonymousOperation</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Document contains an anonymous operation while defining more than one operation. This anonymous operation must be the only defined operation in this document or turned into a named operation.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>query &#123;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  fieldA<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>&#125;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong><br />    <strong>5 │ </strong>query B &#123;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">A GraphQL document that contains an anonymous operation (the query short-hand) is only valid if it contains only that one operation definition.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -72,7 +74,5 @@ query B {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_graphql_analyze/src/lint/correctness/use_lone_anonymous_operation.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_graphql_analyze/tests/specs/correctness/useLoneAnonymousOperation)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useLoneAnonymousOperation" category="lint" language="graphql" code={"query {\n  fieldA\n}\n\nquery B {\n  fieldB\n}\n"} />
 

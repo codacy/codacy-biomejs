@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noInvalidGridAreas
-description: Learn more about noInvalidGridAreas
+title: noInvalidGridAreas (CSS)
+description: CSS documentation for noInvalidGridAreas
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-invalid-grid-areas/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.0`
 - Diagnostic Category: [`lint/correctness/noInvalidGridAreas`](/reference/diagnostics#diagnostic-category)
@@ -52,21 +54,21 @@ a { grid-template-areas: "a a"
                          "b b b"; }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:26 <a href="https://biomejs.dev/linter/rules/use-consistent-grid-areas">lint/correctness/noInvalidGridAreas</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Inconsistent cell count in grid areas are not allowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>a &#123; grid-template-areas: &quot;a a&quot;<br />   <strong>   │ </strong>                         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>                         &quot;b b b&quot;; &#125;<br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider adding the same number of cell tokens in each string.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:26 <a href=\"https://biomejs.dev/linter/rules/use-consistent-grid-areas\">lint/correctness/noInvalidGridAreas</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Inconsistent cell count in grid areas are not allowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>a &#123; grid-template-areas: &quot;a a&quot;<br />   <strong>   │ </strong>                         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>                         &quot;b b b&quot;; &#125;<br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider adding the same number of cell tokens in each string.</span><br />  <br /></code></pre>"} />
 
 ```css
 a { grid-template-areas: "b b b"
                          ""; }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:33 <a href="https://biomejs.dev/linter/rules/use-consistent-grid-areas">lint/correctness/noInvalidGridAreas</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Empty grid areas are not allowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>a &#123; grid-template-areas: &quot;b b b&quot;<br />   <strong>   │ </strong>                                <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>                         &quot;&quot;; &#125;<br />   <strong>   │ </strong>                         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider adding the cell token within string.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:33 <a href=\"https://biomejs.dev/linter/rules/use-consistent-grid-areas\">lint/correctness/noInvalidGridAreas</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Empty grid areas are not allowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>a &#123; grid-template-areas: &quot;b b b&quot;<br />   <strong>   │ </strong>                                <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>                         &quot;&quot;; &#125;<br />   <strong>   │ </strong>                         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider adding the cell token within string.</span><br />  <br /></code></pre>"} />
 
 ```css
 a { grid-template-areas: "a a a"
                          "b b a"; }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:33 <a href="https://biomejs.dev/linter/rules/use-consistent-grid-areas">lint/correctness/noInvalidGridAreas</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Duplicate filled in rectangle are not allowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>a &#123; grid-template-areas: &quot;a a a&quot;<br />   <strong>   │ </strong>                                <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>                         &quot;b b a&quot;; &#125;<br />   <strong>   │ </strong>                         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider removing the duplicated filled-in rectangle: </span><span style="color: lightgreen;"><strong>a</strong></span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:33 <a href=\"https://biomejs.dev/linter/rules/use-consistent-grid-areas\">lint/correctness/noInvalidGridAreas</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Duplicate filled in rectangle are not allowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>a &#123; grid-template-areas: &quot;a a a&quot;<br />   <strong>   │ </strong>                                <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>                         &quot;b b a&quot;; &#125;<br />   <strong>   │ </strong>                         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider removing the duplicated filled-in rectangle: </span><span style=\"color: lightgreen;\"><strong>a</strong></span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -87,7 +89,5 @@ a { grid-template-areas: "a a a"
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_invalid_grid_areas.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/correctness/noInvalidGridAreas)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noInvalidGridAreas" category="lint" language="css" code={"a { grid-template-areas: \"a a\"\n                         \"b b b\"; }\n"} />
 

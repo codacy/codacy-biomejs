@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noSuspiciousSemicolonInJsx
-description: Learn more about noSuspiciousSemicolonInJsx
+title: noSuspiciousSemicolonInJsx (JavaScript)
+description: JavaScript (and super languages) documentation for noSuspiciousSemicolonInJsx
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSX and TSX" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-suspicious-semicolon-in-jsx/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.6.0`
 - Diagnostic Category: [`lint/suspicious/noSuspiciousSemicolonInJsx`](/reference/diagnostics#diagnostic-category)
@@ -48,7 +50,7 @@ const Component = () => {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:4:14 <a href="https://biomejs.dev/linter/rules/no-suspicious-semicolon-in-jsx">lint/suspicious/noSuspiciousSemicolonInJsx</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">There is a suspicious </span><span style="color: Orange;"><strong>semicolon</strong></span><span style="color: Orange;"> in the JSX element.</span><br />  <br />    <strong>2 │ </strong>  return (<br />    <strong>3 │ </strong>    &lt;div&gt;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>4 │ </strong>      &lt;div /&gt;;<br />   <strong>   │ </strong>             <strong><span style="color: Tomato;">^</span></strong><br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>5 │ </strong>    &lt;/div&gt;<br />   <strong>   │ </strong>    <br />    <strong>6 │ </strong> );<br />    <strong>7 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">This is usually the result of a typo or some refactor gone wrong.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Remove the </span><span style="color: lightgreen;"><strong>semicolon</strong></span><span style="color: lightgreen;">, or move it inside a JSX element.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:4:14 <a href=\"https://biomejs.dev/linter/rules/no-suspicious-semicolon-in-jsx\">lint/suspicious/noSuspiciousSemicolonInJsx</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">There is a suspicious </span><span style=\"color: Orange;\"><strong>semicolon</strong></span><span style=\"color: Orange;\"> in the JSX element.</span><br />  <br />    <strong>2 │ </strong>  return (<br />    <strong>3 │ </strong>    &lt;div&gt;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>4 │ </strong>      &lt;div /&gt;;<br />   <strong>   │ </strong>             <strong><span style=\"color: Tomato;\">^</span></strong><br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>5 │ </strong>    &lt;/div&gt;<br />   <strong>   │ </strong>    <br />    <strong>6 │ </strong> );<br />    <strong>7 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This is usually the result of a typo or some refactor gone wrong.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Remove the </span><span style=\"color: lightgreen;\"><strong>semicolon</strong></span><span style=\"color: lightgreen;\">, or move it inside a JSX element.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -77,7 +79,5 @@ const Component2 = () => {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_suspicious_semicolon_in_jsx.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noSuspiciousSemicolonInJsx)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noSuspiciousSemicolonInJsx" category="lint" language="jsx" code={"const Component = () => {\n  return (\n    <div>\n      <div />;\n    </div>\n );\n}\n"} />
 

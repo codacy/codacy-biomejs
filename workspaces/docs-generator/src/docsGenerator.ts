@@ -19,7 +19,26 @@ import { TerminalColor, wrapConsoleTextInColor } from "lib/utils/logging.ts"
 
 const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/biomejs/website/main"
 const GITHUB_API_BASE = "https://api.github.com/repos/biomejs/website"
-const BIOME_RULES_DOCS_PATH = "src/content/docs/linter/rules"
+const BIOME_RULES_DOCS_PATH = "src/content/docs/en/linter/rules"
+
+// Each rule now has its own directory containing one .mdx file per language
+// variant (e.g. `javascript.mdx`, `css.mdx`). The rule metadata (diagnostic
+// category, recommended status, description) is duplicated across variants,
+// so picking any single file per rule is sufficient — prefer the most
+// broadly applicable language when more than one is available.
+const RULE_DOC_LANGUAGE_PRIORITY = [
+  "javascript.mdx",
+  "typescript.mdx",
+  "jsx.mdx",
+  "tsx.mdx",
+  "css.mdx",
+  "html.mdx",
+  "graphql.mdx",
+  "json.mdx",
+  "vue.mdx",
+  "svelte.mdx",
+  "astro.mdx",
+]
 
 interface RuleDoc {
   ruleId: string       // "lint/suspicious/noDoubleEquals"
@@ -27,7 +46,7 @@ interface RuleDoc {
   name: string         // "noDoubleEquals"
   description: string
   recommended: boolean
-  docFileName: string  // "no-double-equals.mdx"
+  docFileName: string  // "no-double-equals/javascript.mdx"
 }
 
 export class DocsGenerator {
@@ -41,20 +60,41 @@ export class DocsGenerator {
 
   private async fetchAllRules(): Promise<RuleDoc[]> {
     try {
-      // List all MDX files in the Biome rules docs directory
-      const response = await axios.get<Array<{ name: string; type: string }>>(
-        `${GITHUB_API_BASE}/contents/${BIOME_RULES_DOCS_PATH}`,
+      // Rule docs live one directory per rule (e.g. `no-double-equals/javascript.mdx`).
+      // Fetch the whole repo tree in one call instead of listing each rule
+      // directory individually, to stay well within the GitHub API rate limit.
+      const response = await axios.get<{ tree: Array<{ path: string; type: string }>; truncated: boolean }>(
+        `${GITHUB_API_BASE}/git/trees/main?recursive=1`,
         { headers: { Accept: "application/vnd.github.v3+json" } }
       )
 
-      const mdxFiles = response.data
-        .filter((f) => f.type === "file" && f.name.endsWith(".mdx"))
-        .map((f) => f.name)
+      if (response.data.truncated) {
+        console.error(
+          wrapConsoleTextInColor("GitHub tree listing was truncated — some rules may be missing", TerminalColor.Yellow)
+        )
+      }
 
-      console.log(`Found ${mdxFiles.length} rule doc files`)
+      const rulesPrefix = `${BIOME_RULES_DOCS_PATH}/`
+      const docFilesByRule = new Map<string, string[]>()
+      for (const entry of response.data.tree) {
+        if (entry.type !== "blob" || !entry.path.startsWith(rulesPrefix) || !entry.path.endsWith(".mdx")) continue
+        const relativePath = entry.path.slice(rulesPrefix.length)
+        const [ruleDir, fileName] = relativePath.split("/")
+        if (!ruleDir || !fileName) continue
+        const files = docFilesByRule.get(ruleDir) ?? []
+        files.push(fileName)
+        docFilesByRule.set(ruleDir, files)
+      }
+
+      const docFileNames = Array.from(docFilesByRule.entries()).map(([ruleDir, files]) => {
+        const preferred = RULE_DOC_LANGUAGE_PRIORITY.find((f) => files.includes(f)) ?? files[0]
+        return `${ruleDir}/${preferred}`
+      })
+
+      console.log(`Found ${docFileNames.length} rule doc directories`)
 
       const rules = await Promise.all(
-        mdxFiles.map((fileName) => this.parseRuleDoc(fileName))
+        docFileNames.map((fileName) => this.parseRuleDoc(fileName))
       )
 
       const validRules = rules.filter((r): r is RuleDoc => r !== null)

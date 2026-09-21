@@ -8,6 +8,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@biomejs/biome": "2.5.6"
+    "@biomejs/biome": "2.5.14"
   }
 }

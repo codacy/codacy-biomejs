@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useVueValidVPre
-description: Learn more about useVueValidVPre
+title: useVueValidVPre (HTML)
+description: HTML documentation for useVueValidVPre
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="HTML" icon="seti:html">
+<RuleLanguageLinks current="html" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-vue-valid-v-pre/html/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.11`
 - Diagnostic Category: [`lint/correctness/useVueValidVPre`](/reference/diagnostics#diagnostic-category)
@@ -49,7 +51,7 @@ The directive has an argument so it is invalid.
 <div v-pre:arg></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:11 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-pre\">lint/correctness/useVueValidVPre</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The v-pre directive must not have an argument.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-pre:arg&gt;&lt;/div&gt;<br />   <strong>   │ </strong>          <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Use v-pre without arguments, e.g. </span><span style=\"color: lightgreen;\"><strong>v-pre</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove the argument.</span><br />  <br />  <strong>  1 │ </strong>&lt;div<span style=\"opacity: 0.8;\">·</span>v-pre<span style=\"color: Tomato;\">:</span><span style=\"color: Tomato;\">a</span><span style=\"color: Tomato;\">r</span><span style=\"color: Tomato;\">g</span>&gt;&lt;/div&gt;<br />  <strong>    │ </strong>          <span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span>       <br /></code></pre>"} />
 
 The directive has a modifier so it is invalid.
 
@@ -57,7 +59,7 @@ The directive has a modifier so it is invalid.
 <div v-pre.mod></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:11 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-pre\">lint/correctness/useVueValidVPre</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The v-pre directive does not support modifiers.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-pre.mod&gt;&lt;/div&gt;<br />   <strong>   │ </strong>          <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Remove the modifier; v-pre is a stand-alone control directive.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove the modifier.</span><br />  <br />  <strong>  1 │ </strong>&lt;div<span style=\"opacity: 0.8;\">·</span>v-pre<span style=\"color: Tomato;\">.</span><span style=\"color: Tomato;\">m</span><span style=\"color: Tomato;\">o</span><span style=\"color: Tomato;\">d</span>&gt;&lt;/div&gt;<br />  <strong>    │ </strong>          <span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span>       <br /></code></pre>"} />
 
 The directive has a value so it is invalid.
 
@@ -65,7 +67,7 @@ The directive has a value so it is invalid.
 <div v-pre="value"></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:11 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-pre\">lint/correctness/useVueValidVPre</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The v-pre directive must not have a value.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-pre=&quot;value&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>          <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">v-pre is a boolean-like directive and should be used without a value.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove the value.</span><br />  <br />  <strong>  1 │ </strong>&lt;div<span style=\"opacity: 0.8;\">·</span>v-pre<span style=\"color: Tomato;\">=</span><span style=\"color: Tomato;\">&quot;</span><span style=\"color: Tomato;\">v</span><span style=\"color: Tomato;\">a</span><span style=\"color: Tomato;\">l</span><span style=\"color: Tomato;\">u</span><span style=\"color: Tomato;\">e</span><span style=\"color: Tomato;\">&quot;</span>&gt;&lt;/div&gt;<br />  <strong>    │ </strong>          <span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span>       <br /></code></pre>"} />
 
 ### Valid
 
@@ -80,7 +82,5 @@ The directive has a value so it is invalid.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/correctness/use_vue_valid_v_pre.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/correctness/useVueValidVPre)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useVueValidVPre" category="lint" language="vue" code={"<div v-pre:arg></div>\n"} />
 

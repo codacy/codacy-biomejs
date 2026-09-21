@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDeprecatedMediaType
-description: Learn more about noDeprecatedMediaType
+title: noDeprecatedMediaType (CSS)
+description: CSS documentation for noDeprecatedMediaType
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-deprecated-media-type/css/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.14`
 - Diagnostic Category: [`lint/suspicious/noDeprecatedMediaType`](/reference/diagnostics#diagnostic-category)
@@ -49,13 +51,13 @@ For details on media types, see the
 @media tv {}
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:8 <a href="https://biomejs.dev/linter/rules/no-deprecated-media-type">lint/suspicious/noDeprecatedMediaType</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Unexpected deprecated media type: </span><span style="color: Orange;"><strong>tv</strong></span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>@media tv &#123;&#125;<br />   <strong>   │ </strong>       <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Deprecated media types are recognized but match nothing; prefer using media features or recommended media types.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Recommended media types include:</span><br />  <br />  - all<br />  - print<br />  - screen<br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:8 <a href=\"https://biomejs.dev/linter/rules/no-deprecated-media-type\">lint/suspicious/noDeprecatedMediaType</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Unexpected deprecated media type: </span><span style=\"color: Orange;\"><strong>tv</strong></span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>@media tv &#123;&#125;<br />   <strong>   │ </strong>       <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Deprecated media types are recognized but match nothing; prefer using media features or recommended media types.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Recommended media types include:</span><br />  <br />  - all<br />  - print<br />  - screen<br />  <br /></code></pre>"} />
 
 ```css
 @media handheld and (min-width: 480px) {}
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:8 <a href="https://biomejs.dev/linter/rules/no-deprecated-media-type">lint/suspicious/noDeprecatedMediaType</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Unexpected deprecated media type: </span><span style="color: Orange;"><strong>handheld</strong></span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>@media handheld and (min-width: 480px) &#123;&#125;<br />   <strong>   │ </strong>       <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Deprecated media types are recognized but match nothing; prefer using media features or recommended media types.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Recommended media types include:</span><br />  <br />  - all<br />  - print<br />  - screen<br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:8 <a href=\"https://biomejs.dev/linter/rules/no-deprecated-media-type\">lint/suspicious/noDeprecatedMediaType</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Unexpected deprecated media type: </span><span style=\"color: Orange;\"><strong>handheld</strong></span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>@media handheld and (min-width: 480px) &#123;&#125;<br />   <strong>   │ </strong>       <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Deprecated media types are recognized but match nothing; prefer using media features or recommended media types.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Recommended media types include:</span><br />  <br />  - all<br />  - print<br />  - screen<br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -108,7 +110,5 @@ Media types to allow (case-insensitive).
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/suspicious/no_deprecated_media_type.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/suspicious/noDeprecatedMediaType)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDeprecatedMediaType" category="lint" language="css" code={"@media tv {}\n"} />
 
