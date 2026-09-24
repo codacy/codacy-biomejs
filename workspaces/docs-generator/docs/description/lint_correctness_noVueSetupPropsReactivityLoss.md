@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noVueSetupPropsReactivityLoss
-description: Learn more about noVueSetupPropsReactivityLoss
+title: noVueSetupPropsReactivityLoss (JavaScript)
+description: JavaScript (and super languages) documentation for noVueSetupPropsReactivityLoss
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-vue-setup-props-reactivity-loss/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.2.6`
 - Diagnostic Category: [`lint/correctness/noVueSetupPropsReactivityLoss`](/reference/diagnostics#diagnostic-category)
@@ -53,7 +55,7 @@ export default {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:9 <a href="https://biomejs.dev/linter/rules/no-vue-setup-props-reactivity-loss">lint/correctness/noVueSetupPropsReactivityLoss</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Destructuring &#96;props&#96; in the &#96;setup&#96; function parameters loses reactivity.</span><br />  <br />    <strong>1 │ </strong>export default &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  setup(&#123; count &#125;) &#123;<br />   <strong>   │ </strong>        <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>    return () =&gt; h('div', count);<br />    <strong>4 │ </strong>  &#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">To preserve reactivity, access props as properties: &#96;props.propertyName&#96;.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:9 <a href=\"https://biomejs.dev/linter/rules/no-vue-setup-props-reactivity-loss\">lint/correctness/noVueSetupPropsReactivityLoss</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Destructuring &#96;props&#96; in the &#96;setup&#96; function parameters loses reactivity.</span><br />  <br />    <strong>1 │ </strong>export default &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  setup(&#123; count &#125;) &#123;<br />   <strong>   │ </strong>        <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>    return () =&gt; h('div', count);<br />    <strong>4 │ </strong>  &#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">To preserve reactivity, access props as properties: &#96;props.propertyName&#96;.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -72,7 +74,5 @@ export default {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/no_vue_setup_props_reactivity_loss.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/correctness/noVueSetupPropsReactivityLoss)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noVueSetupPropsReactivityLoss" category="lint" language="js" code={"export default {\n  setup({ count }) {\n    return () => h('div', count);\n  }\n}\n"} />
 

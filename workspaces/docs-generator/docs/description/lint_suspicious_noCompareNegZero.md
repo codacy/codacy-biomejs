@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noCompareNegZero
-description: Learn more about noCompareNegZero
+title: noCompareNegZero (JavaScript)
+description: JavaScript (and super languages) documentation for noCompareNegZero
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-compare-neg-zero/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/suspicious/noCompareNegZero`](/reference/diagnostics#diagnostic-category)
@@ -43,7 +45,7 @@ Disallow comparing against `-0`
 (1 >= -0)
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:2 <a href="https://biomejs.dev/linter/rules/no-compare-neg-zero">lint/suspicious/noCompareNegZero</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Do not use the &gt;= operator to compare against -0.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>(1 &gt;= -0)<br />   <strong>   │ </strong> <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Replace -0 with 0</span><br />  <br />  <strong>  1 │ </strong>(1<span style="opacity: 0.8;">·</span>&gt;=<span style="opacity: 0.8;">·</span><span style="color: Tomato;">-</span>0)<br />  <strong>    │ </strong>      <span style="color: Tomato;">-</span>  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:2 <a href=\"https://biomejs.dev/linter/rules/no-compare-neg-zero\">lint/suspicious/noCompareNegZero</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Do not use the &gt;= operator to compare against -0.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>(1 &gt;= -0)<br />   <strong>   │ </strong> <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Replace -0 with 0</span><br />  <br />  <strong>  1 │ </strong>(1<span style=\"opacity: 0.8;\">·</span>&gt;=<span style=\"opacity: 0.8;\">·</span><span style=\"color: Tomato;\">-</span>0)<br />  <strong>    │ </strong>      <span style=\"color: Tomato;\">-</span>  <br /></code></pre>"} />
 
 ### Valid
 
@@ -58,7 +60,5 @@ Disallow comparing against `-0`
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_compare_neg_zero.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noCompareNegZero)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noCompareNegZero" category="lint" language="js" code={"(1 >= -0)\n"} />
 

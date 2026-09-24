@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useBiomeIgnoreFolder
-description: Learn more about useBiomeIgnoreFolder
+title: useBiomeIgnoreFolder (JSON)
+description: JSON (and super languages) documentation for useBiomeIgnoreFolder
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSON (and super languages)" icon="seti:json">
+<RuleLanguageLinks current="json" languages={[{"id":"json","label":"JSON (and super languages)","href":"/linter/rules/use-biome-ignore-folder/json/"}]} />
+
 ## Summary
 - Rule available since: `v2.2.0`
 - Diagnostic Category: [`lint/suspicious/useBiomeIgnoreFolder`](/reference/diagnostics#diagnostic-category)
@@ -67,7 +69,4 @@ If the intention is to ignore specific files inside a folder, the trailing patte
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/src/lint/suspicious/use_biome_ignore_folder.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_json_analyze/tests/specs/suspicious/useBiomeIgnoreFolder)
-
-</TabItem>
-</Tabs>
 

@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useVueValidVIf
-description: Learn more about useVueValidVIf
+title: useVueValidVIf (HTML)
+description: HTML documentation for useVueValidVIf
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="HTML" icon="seti:html">
+<RuleLanguageLinks current="html" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-vue-valid-v-if/html/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.6`
 - Diagnostic Category: [`lint/correctness/useVueValidVIf`](/reference/diagnostics#diagnostic-category)
@@ -52,31 +54,31 @@ This rule reports `v-if` directives in following cases:
 <div v-if:aaa="foo"></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:10 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-if\">lint/correctness/useVueValidVIf</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">v-if cannot have an argument.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-if:aaa=&quot;foo&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Remove the argument. v-if takes a value expression only.</span><br />  <br /></code></pre>"} />
 
 ```vue
 <div v-if.bbb="foo"></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:10 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-if\">lint/correctness/useVueValidVIf</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">v-if cannot have modifiers.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-if.bbb=&quot;foo&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Remove the modifier. v-if takes a value expression only.</span><br />  <br /></code></pre>"} />
 
 ```vue
 <div v-if></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:6 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-if\">lint/correctness/useVueValidVIf</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">v-if requires a value expression.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-if&gt;&lt;/div&gt;<br />   <strong>   │ </strong>     <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Provide a boolean expression, e.g. v-if=&quot;condition&quot;.</span><br />  <br /></code></pre>"} />
 
 ```vue
 <div v-if="foo" v-else></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:17 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-if\">lint/correctness/useVueValidVIf</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">v-if cannot be used on an element that also has v-else or v-else-if.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-if=&quot;foo&quot; v-else&gt;&lt;/div&gt;<br />   <strong>   │ </strong>                <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Place v-if on one element, followed by sibling elements with v-else-if and/or v-else.</span><br />  <br /></code></pre>"} />
 
 ```vue
 <div v-if="foo" v-else-if="bar"></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:17 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-if\">lint/correctness/useVueValidVIf</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">v-if cannot be used on an element that also has v-else or v-else-if.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-if=&quot;foo&quot; v-else-if=&quot;bar&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>                <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Place v-if on one element, followed by sibling elements with v-else-if and/or v-else.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -101,7 +103,5 @@ This rule reports `v-if` directives in following cases:
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/correctness/use_vue_valid_v_if.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/correctness/useVueValidVIf)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useVueValidVIf" category="lint" language="vue" code={"<div v-if:aaa=\"foo\"></div>\n"} />
 

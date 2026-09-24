@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useVueValidVText
-description: Learn more about useVueValidVText
+title: useVueValidVText (HTML)
+description: HTML documentation for useVueValidVText
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="HTML" icon="seti:html">
+<RuleLanguageLinks current="html" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-vue-valid-v-text/html/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.7`
 - Diagnostic Category: [`lint/correctness/useVueValidVText`](/reference/diagnostics#diagnostic-category)
@@ -51,19 +53,19 @@ This rule reports `v-text` directives in the following cases:
 <div v-text />
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:6 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-text\">lint/correctness/useVueValidVText</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The v-text directive is missing a value.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-text /&gt;<br />   <strong>   │ </strong>     <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">v-text directives require a value containing the text content to render.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">For example, use </span><span style=\"color: lightgreen;\"><strong>v-text=&quot;foo&quot;</strong></span><span style=\"color: lightgreen;\"> to render the content of the </span><span style=\"color: lightgreen;\"><strong>foo</strong></span><span style=\"color: lightgreen;\"> variable.</span><br />  <br /></code></pre>"} />
 
 ```vue
 <div v-text:aaa="foo"></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:12 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-text\">lint/correctness/useVueValidVText</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The v-text directive does not accept an argument.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-text:aaa=&quot;foo&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>           <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">v-text directives should be used without arguments, like </span><span style=\"color: lightgreen;\"><strong>v-text=&quot;content&quot;</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br /></code></pre>"} />
 
 ```vue
 <div v-text.bbb="foo"></div>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:12 <a href=\"https://biomejs.dev/linter/rules/use-vue-valid-v-text\">lint/correctness/useVueValidVText</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The v-text directive does not support modifiers.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div v-text.bbb=&quot;foo&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong>           <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">v-text directives do not support any modifiers. Remove the modifier.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -78,7 +80,5 @@ This rule reports `v-text` directives in the following cases:
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/correctness/use_vue_valid_v_text.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/correctness/useVueValidVText)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useVueValidVText" category="lint" language="vue" code={"<div v-text />\n"} />
 

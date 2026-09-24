@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noUselessLabel
-description: Learn more about noUselessLabel
+title: noUselessLabel (JavaScript)
+description: JavaScript (and super languages) documentation for noUselessLabel
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-useless-label/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/complexity/noUselessLabel`](/reference/diagnostics#diagnostic-category)
@@ -47,7 +49,7 @@ loop: while(a) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:11 <a href="https://biomejs.dev/linter/rules/no-useless-label">lint/complexity/noUselessLabel</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Unnecessary </span><span style="color: lightgreen;"><strong>label</strong></span><span style="color: lightgreen;">.</span><br />  <br />    <strong>1 │ </strong>loop: while(a) &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>    break loop;<br />   <strong>   │ </strong>          <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Remove the unnecessary </span><span style="color: lightgreen;"><strong>label</strong></span><span style="color: lightgreen;">.<br /></span>    <span style="color: lightgreen;">You can achieve the same result without the label.</span><br />  <br />  <strong>  2 │ </strong><span style="opacity: 0.8;">·</span><span style="opacity: 0.8;">·</span><span style="opacity: 0.8;">·</span><span style="opacity: 0.8;">·</span>break<span style="opacity: 0.8;"><span style="color: Tomato;">·</span></span><span style="color: Tomato;">l</span><span style="color: Tomato;">o</span><span style="color: Tomato;">o</span><span style="color: Tomato;">p</span>;<br />  <strong>    │ </strong>         <span style="color: Tomato;">-</span><span style="color: Tomato;">-</span><span style="color: Tomato;">-</span><span style="color: Tomato;">-</span><span style="color: Tomato;">-</span> <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:11 <a href=\"https://biomejs.dev/linter/rules/no-useless-label\">lint/complexity/noUselessLabel</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unnecessary </span><span style=\"color: lightgreen;\"><strong>label</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />    <strong>1 │ </strong>loop: while(a) &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>    break loop;<br />   <strong>   │ </strong>          <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove the unnecessary </span><span style=\"color: lightgreen;\"><strong>label</strong></span><span style=\"color: lightgreen;\">.<br /></span>    <span style=\"color: lightgreen;\">You can achieve the same result without the label.</span><br />  <br />  <strong>  2 │ </strong><span style=\"opacity: 0.8;\">·</span><span style=\"opacity: 0.8;\">·</span><span style=\"opacity: 0.8;\">·</span><span style=\"opacity: 0.8;\">·</span>break<span style=\"opacity: 0.8;\"><span style=\"color: Tomato;\">·</span></span><span style=\"color: Tomato;\">l</span><span style=\"color: Tomato;\">o</span><span style=\"color: Tomato;\">o</span><span style=\"color: Tomato;\">p</span>;<br />  <strong>    │ </strong>         <span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span><span style=\"color: Tomato;\">-</span> <br /></code></pre>"} />
 
 ### Valid
 
@@ -66,7 +68,5 @@ outer: while(a) {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_useless_label.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/complexity/noUselessLabel)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noUselessLabel" category="lint" language="js" code={"loop: while(a) {\n    break loop;\n}\n"} />
 

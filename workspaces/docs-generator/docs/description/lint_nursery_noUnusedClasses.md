@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noUnusedClasses
-description: Learn more about noUnusedClasses
+title: noUnusedClasses (CSS)
+description: CSS documentation for noUnusedClasses
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-unused-classes/css/"}]} />
+
 :::caution
 This rule is part of the [nursery](/linter/#nursery) group. This means that it is experimental and the behavior can change at any time.
 :::
@@ -84,7 +86,4 @@ export default () => (
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/nursery/no_unused_classes.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/nursery/noUnusedClasses)
-
-</TabItem>
-</Tabs>
 

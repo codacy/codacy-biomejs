@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noEmptyBlock
-description: Learn more about noEmptyBlock
+title: noEmptyBlock (CSS)
+description: CSS documentation for noEmptyBlock
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-empty-block/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.0`
 - Diagnostic Category: [`lint/suspicious/noEmptyBlock`](/reference/diagnostics#diagnostic-category)
@@ -46,19 +48,19 @@ By default, it will allow empty blocks with comments inside.
 p {}
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:3 <a href="https://biomejs.dev/linter/rules/no-empty-block">lint/suspicious/noEmptyBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">An empty block isn't allowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>p &#123;&#125;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider removing the empty block or adding styles inside it.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:3 <a href=\"https://biomejs.dev/linter/rules/no-empty-block\">lint/suspicious/noEmptyBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">An empty block isn't allowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>p &#123;&#125;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider removing the empty block or adding styles inside it.</span><br />  <br /></code></pre>"} />
 
 ```css
 .b {}
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:4 <a href="https://biomejs.dev/linter/rules/no-empty-block">lint/suspicious/noEmptyBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">An empty block isn't allowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>.b &#123;&#125;<br />   <strong>   │ </strong>   <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider removing the empty block or adding styles inside it.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:4 <a href=\"https://biomejs.dev/linter/rules/no-empty-block\">lint/suspicious/noEmptyBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">An empty block isn't allowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>.b &#123;&#125;<br />   <strong>   │ </strong>   <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider removing the empty block or adding styles inside it.</span><br />  <br /></code></pre>"} />
 
 ```css
 @media print { a {} }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:1:18 <a href="https://biomejs.dev/linter/rules/no-empty-block">lint/suspicious/noEmptyBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">An empty block isn't allowed.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>@media print &#123; a &#123;&#125; &#125;<br />   <strong>   │ </strong>                 <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider removing the empty block or adding styles inside it.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:1:18 <a href=\"https://biomejs.dev/linter/rules/no-empty-block\">lint/suspicious/noEmptyBlock</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">An empty block isn't allowed.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>@media print &#123; a &#123;&#125; &#125;<br />   <strong>   │ </strong>                 <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider removing the empty block or adding styles inside it.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -83,7 +85,5 @@ p { /* foo */ }
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/suspicious/no_empty_block.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/suspicious/noEmptyBlock)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noEmptyBlock" category="lint" language="css" code={"p {}\n"} />
 

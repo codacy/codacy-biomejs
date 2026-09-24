@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useKeyWithClickEvents
-description: Learn more about useKeyWithClickEvents
+title: useKeyWithClickEvents (JavaScript)
+description: JavaScript (and super languages) documentation for useKeyWithClickEvents
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSX and TSX" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-key-with-click-events/html/"},{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-key-with-click-events/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/a11y/useKeyWithClickEvents`](/reference/diagnostics#diagnostic-category)
@@ -46,7 +48,7 @@ This does not apply for interactive or hidden elements.
 <div onClick={() => {}} />
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:1:1 <a href="https://biomejs.dev/linter/rules/use-key-with-click-events">lint/a11y/useKeyWithClickEvents</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Enforce to have the </span><span style="color: Tomato;"><strong>onClick</strong></span><span style="color: Tomato;"> mouse event with the </span><span style="color: Tomato;"><strong>onKeyUp</strong></span><span style="color: Tomato;">, the </span><span style="color: Tomato;"><strong>onKeyDown</strong></span><span style="color: Tomato;">, or the </span><span style="color: Tomato;"><strong>onKeyPress</strong></span><span style="color: Tomato;"> keyboard event.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;div onClick=&#123;() =&gt; &#123;&#125;&#125; /&gt;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:1:1 <a href=\"https://biomejs.dev/linter/rules/use-key-with-click-events\">lint/a11y/useKeyWithClickEvents</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Enforce to have the </span><span style=\"color: Tomato;\"><strong>onClick</strong></span><span style=\"color: Tomato;\"> mouse event with the </span><span style=\"color: Tomato;\"><strong>onKeyUp</strong></span><span style=\"color: Tomato;\">, the </span><span style=\"color: Tomato;\"><strong>onKeyDown</strong></span><span style=\"color: Tomato;\">, or the </span><span style=\"color: Tomato;\"><strong>onKeyPress</strong></span><span style=\"color: Tomato;\"> keyboard event.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div onClick=&#123;() =&gt; &#123;&#125;&#125; /&gt;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -82,86 +84,5 @@ This does not apply for interactive or hidden elements.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/a11y/use_key_with_click_events.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/a11y/useKeyWithClickEvents)
-
-</TabItem>
-<TabItem label="HTML" icon="seti:html">
-## Summary
-- Rule available since: `v2.5.0`
-- Diagnostic Category: [`lint/a11y/useKeyWithClickEvents`](/reference/diagnostics#diagnostic-category)
-- This rule is **recommended**, meaning it is enabled by default.
-- This rule doesn't have a fix.
-- The default severity of this rule is [**error**](/reference/diagnostics#error).
-- Sources: 
-  - Inspired from [`jsx-a11y/click-events-have-key-events`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/click-events-have-key-events.md)
-
-## How to configure
-```json title="biome.json"
-{
-	"linter": {
-		"rules": {
-			"a11y": {
-				"useKeyWithClickEvents": "error"
-			}
-		}
-	}
-}
-
-```
-## Description
-Enforce elements with a click event handler to also have at least one keyboard event handler.
-
-Coding for the keyboard is important for users with physical disabilities who cannot use a mouse,
-AT compatibility, and screen reader users. This rule checks that interactive elements with an
-`onclick` attribute also include at least one of `onkeydown`, `onkeyup`, or `onkeypress`.
-
-This does not apply to elements that are inherently keyboard-accessible (such as `<button>`,
-`<input>`, `<select>`, `<textarea>`, or `<a>` with an `href` attribute) or elements that are
-hidden from assistive technologies.
-
-## Examples
-
-### Invalid
-
-```html
-<div onclick="handleClick()"></div>
-```
-
-<pre class="language-text"><code class="language-text">code-block.html:1:1 <a href="https://biomejs.dev/linter/rules/use-key-with-click-events">lint/a11y/useKeyWithClickEvents</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Elements with </span><span style="color: Tomato;"><strong>onclick</strong></span><span style="color: Tomato;"> must also include at least one keyboard handler: </span><span style="color: Tomato;"><strong>onkeydown</strong></span><span style="color: Tomato;">, </span><span style="color: Tomato;"><strong>onkeyup</strong></span><span style="color: Tomato;">, or </span><span style="color: Tomato;"><strong>onkeypress</strong></span><span style="color: Tomato;">.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;div onclick=&quot;handleClick()&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Actions triggered using mouse events should have corresponding keyboard events to account for keyboard-only navigation.</span><br />  <br /></code></pre>
-
-### Valid
-
-```html
-<div onclick="handleClick()" onkeydown="handleKeyDown()"></div>
-```
-
-```html
-<div onclick="handleClick()" onkeyup="handleKeyUp()"></div>
-```
-
-```html
-<div onclick="handleClick()" onkeypress="handleKeyPress()"></div>
-```
-
-```html
-<button onclick="handleClick()">Submit</button>
-```
-
-```html
-<input onclick="handleClick()" />
-```
-
-## Accessibility guidelines
-
-- [WCAG 2.1.1](https://www.w3.org/WAI/WCAG21/Understanding/keyboard)
-
-## Related links
-
-- [Disable a rule](/linter/#disable-a-rule)
-- [Configure the code fix](/linter#configure-the-code-fix)
-- [Rule options](/linter/#rule-options)
-- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/a11y/use_key_with_click_events.rs)
-- [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/a11y/useKeyWithClickEvents)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useKeyWithClickEvents" category="lint" language="jsx" code={"<div onClick={() => {}} />\n"} />
 

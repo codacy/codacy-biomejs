@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noFallthroughSwitchClause
-description: Learn more about noFallthroughSwitchClause
+title: noFallthroughSwitchClause (JavaScript)
+description: JavaScript (and super languages) documentation for noFallthroughSwitchClause
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-fallthrough-switch-clause/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/suspicious/noFallthroughSwitchClause`](/reference/diagnostics#diagnostic-category)
@@ -54,7 +56,7 @@ switch (bar) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:2 <a href="https://biomejs.dev/linter/rules/no-fallthrough-switch-clause">lint/suspicious/noFallthroughSwitchClause</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">This case is falling through to the next case.</span><br />  <br />    <strong>1 │ </strong>switch (bar) &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>	case 0:<br />   <strong>   │ </strong>	<strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>		a();<br />   <strong>   │ </strong>		<strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong>	case 1:<br />    <strong>5 │ </strong>		b();<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Add a &#96;break&#96; or &#96;return&#96; statement to the end of this case to prevent fallthrough.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:2 <a href=\"https://biomejs.dev/linter/rules/no-fallthrough-switch-clause\">lint/suspicious/noFallthroughSwitchClause</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">This case is falling through to the next case.</span><br />  <br />    <strong>1 │ </strong>switch (bar) &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>\tcase 0:<br />   <strong>   │ </strong>\t<strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>\t\ta();<br />   <strong>   │ </strong>\t\t<strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong>\tcase 1:<br />    <strong>5 │ </strong>\t\tb();<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Add a &#96;break&#96; or &#96;return&#96; statement to the end of this case to prevent fallthrough.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -83,7 +85,5 @@ switch (foo) {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_fallthrough_switch_clause.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noFallthroughSwitchClause)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noFallthroughSwitchClause" category="lint" language="js" code={"switch (bar) {\n\tcase 0:\n\t\ta();\n\tcase 1:\n\t\tb();\n}\n"} />
 

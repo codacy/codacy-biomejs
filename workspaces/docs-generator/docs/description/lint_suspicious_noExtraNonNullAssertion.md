@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noExtraNonNullAssertion
-description: Learn more about noExtraNonNullAssertion
+title: noExtraNonNullAssertion (JavaScript)
+description: JavaScript (and super languages) documentation for noExtraNonNullAssertion
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="TypeScript and TSX" icon="seti:typescript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-extra-non-null-assertion/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/suspicious/noExtraNonNullAssertion`](/reference/diagnostics#diagnostic-category)
@@ -46,7 +48,7 @@ Prevents the wrong usage of the non-null assertion operator (`!`) in TypeScript 
 const bar = foo!!.bar;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:1:13 <a href="https://biomejs.dev/linter/rules/no-extra-non-null-assertion">lint/suspicious/noExtraNonNullAssertion</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Forbidden extra non-null assertion.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>const bar = foo!!.bar;<br />   <strong>   │ </strong>            <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Remove extra non-null assertion.</span><br />  <br />  <strong>  1 │ </strong>const<span style="opacity: 0.8;">·</span>bar<span style="opacity: 0.8;">·</span>=<span style="opacity: 0.8;">·</span>foo<span style="color: Tomato;">!</span>!.bar;<br />  <strong>    │ </strong>               <span style="color: Tomato;">-</span>      <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:1:13 <a href=\"https://biomejs.dev/linter/rules/no-extra-non-null-assertion\">lint/suspicious/noExtraNonNullAssertion</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Forbidden extra non-null assertion.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>const bar = foo!!.bar;<br />   <strong>   │ </strong>            <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove extra non-null assertion.</span><br />  <br />  <strong>  1 │ </strong>const<span style=\"opacity: 0.8;\">·</span>bar<span style=\"opacity: 0.8;\">·</span>=<span style=\"opacity: 0.8;\">·</span>foo<span style=\"color: Tomato;\">!</span>!.bar;<br />  <strong>    │ </strong>               <span style=\"color: Tomato;\">-</span>      <br /></code></pre>"} />
 
 ```ts
 function fn(bar?: { n: number }) {
@@ -54,7 +56,7 @@ function fn(bar?: { n: number }) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:2:10 <a href="https://biomejs.dev/linter/rules/no-extra-non-null-assertion">lint/suspicious/noExtraNonNullAssertion</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Forbidden extra non-null assertion.</span><br />  <br />    <strong>1 │ </strong>function fn(bar?: &#123; n: number &#125;) &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  return bar!?.n;<br />   <strong>   │ </strong>         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Remove extra non-null assertion.</span><br />  <br />  <strong>  2 │ </strong><span style="opacity: 0.8;">·</span><span style="opacity: 0.8;">·</span>return<span style="opacity: 0.8;">·</span>bar<span style="color: Tomato;">!</span>?.n;<br />  <strong>    │ </strong>            <span style="color: Tomato;">-</span>    <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:2:10 <a href=\"https://biomejs.dev/linter/rules/no-extra-non-null-assertion\">lint/suspicious/noExtraNonNullAssertion</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Forbidden extra non-null assertion.</span><br />  <br />    <strong>1 │ </strong>function fn(bar?: &#123; n: number &#125;) &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  return bar!?.n;<br />   <strong>   │ </strong>         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove extra non-null assertion.</span><br />  <br />  <strong>  2 │ </strong><span style=\"opacity: 0.8;\">·</span><span style=\"opacity: 0.8;\">·</span>return<span style=\"opacity: 0.8;\">·</span>bar<span style=\"color: Tomato;\">!</span>?.n;<br />  <strong>    │ </strong>            <span style=\"color: Tomato;\">-</span>    <br /></code></pre>"} />
 
 ```ts
 function fn(bar?: { n: number }) {
@@ -62,7 +64,7 @@ function fn(bar?: { n: number }) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:2:12 <a href="https://biomejs.dev/linter/rules/no-extra-non-null-assertion">lint/suspicious/noExtraNonNullAssertion</a> <span style="color: #000; background-color: #ddd;"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Forbidden extra non-null assertion.</span><br />  <br />    <strong>1 │ </strong>function fn(bar?: &#123; n: number &#125;) &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  return ((bar!))?.();<br />   <strong>   │ </strong>           <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Safe fix</span><span style="color: lightgreen;">: </span><span style="color: lightgreen;">Remove extra non-null assertion.</span><br />  <br />  <strong>  2 │ </strong><span style="opacity: 0.8;">·</span><span style="opacity: 0.8;">·</span>return<span style="opacity: 0.8;">·</span>((bar<span style="color: Tomato;">!</span>))?.();<br />  <strong>    │ </strong>              <span style="color: Tomato;">-</span>       <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:2:12 <a href=\"https://biomejs.dev/linter/rules/no-extra-non-null-assertion\">lint/suspicious/noExtraNonNullAssertion</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Forbidden extra non-null assertion.</span><br />  <br />    <strong>1 │ </strong>function fn(bar?: &#123; n: number &#125;) &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  return ((bar!))?.();<br />   <strong>   │ </strong>           <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Safe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Remove extra non-null assertion.</span><br />  <br />  <strong>  2 │ </strong><span style=\"opacity: 0.8;\">·</span><span style=\"opacity: 0.8;\">·</span>return<span style=\"opacity: 0.8;\">·</span>((bar<span style=\"color: Tomato;\">!</span>))?.();<br />  <strong>    │ </strong>              <span style=\"color: Tomato;\">-</span>       <br /></code></pre>"} />
 
 ### Valid
 
@@ -84,7 +86,5 @@ function fn(key: string | null) {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_extra_non_null_assertion.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noExtraNonNullAssertion)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noExtraNonNullAssertion" category="lint" language="ts" code={"const bar = foo!!.bar;\n"} />
 

@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noReactPropAssignments
-description: Learn more about noReactPropAssignments
+title: noReactPropAssignments (JavaScript)
+description: JavaScript (and super languages) documentation for noReactPropAssignments
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSX and TSX" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-react-prop-assignments/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.0.0`
 - Diagnostic Category: [`lint/correctness/noReactPropAssignments`](/reference/diagnostics#diagnostic-category)
@@ -53,7 +55,7 @@ function Foo(props) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:2:2 <a href="https://biomejs.dev/linter/rules/no-react-prop-assignments">lint/correctness/noReactPropAssignments</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Mutating component props is not allowed.</span><br />  <br />    <strong>1 │ </strong>function Foo(props) &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>	props.bar = &quot;Hello &quot; + props.bar;<br />   <strong>   │ </strong>	<strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />    <strong>4 │ </strong>	return &lt;div&gt;&#123;props.bar&#125;&lt;/div&gt;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider using a local variable instead.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:2:2 <a href=\"https://biomejs.dev/linter/rules/no-react-prop-assignments\">lint/correctness/noReactPropAssignments</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Mutating component props is not allowed.</span><br />  <br />    <strong>1 │ </strong>function Foo(props) &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>\tprops.bar = &quot;Hello &quot; + props.bar;<br />   <strong>   │ </strong>\t<strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />    <strong>4 │ </strong>\treturn &lt;div&gt;&#123;props.bar&#125;&lt;/div&gt;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider using a local variable instead.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -71,7 +73,5 @@ const Foo = function({bar}) {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/no_react_prop_assignments.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/correctness/noReactPropAssignments)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noReactPropAssignments" category="lint" language="jsx" code={"function Foo(props) {\n\tprops.bar = \"Hello \" + props.bar;\n\n\treturn <div>{props.bar}</div>\n}\n"} />
 

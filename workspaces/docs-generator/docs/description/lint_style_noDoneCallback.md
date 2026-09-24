@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDoneCallback
-description: Learn more about noDoneCallback
+title: noDoneCallback (JavaScript)
+description: JavaScript (and super languages) documentation for noDoneCallback
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-done-callback/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.6.1`
 - Diagnostic Category: [`lint/style/noDoneCallback`](/reference/diagnostics#diagnostic-category)
@@ -48,7 +50,7 @@ beforeEach((done) => {
 });
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:13 <a href="https://biomejs.dev/linter/rules/no-done-callback">lint/style/noDoneCallback</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Disallow using a callback in asynchronous tests and hooks.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>beforeEach((done) =&gt; &#123;<br />   <strong>   │ </strong>            <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>    // ...<br />    <strong>3 │ </strong>&#125;);<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Return a Promise instead of relying on callback parameter.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:13 <a href=\"https://biomejs.dev/linter/rules/no-done-callback\">lint/style/noDoneCallback</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Disallow using a callback in asynchronous tests and hooks.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>beforeEach((done) =&gt; &#123;<br />   <strong>   │ </strong>            <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>    // ...<br />    <strong>3 │ </strong>&#125;);<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Return a Promise instead of relying on callback parameter.</span><br />  <br /></code></pre>"} />
 
 ```js
 test('tets-name', (done) => {
@@ -56,7 +58,7 @@ test('tets-name', (done) => {
 });
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:20 <a href="https://biomejs.dev/linter/rules/no-done-callback">lint/style/noDoneCallback</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Disallow using a callback in asynchronous tests and hooks.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>test('tets-name', (done) =&gt; &#123;<br />   <strong>   │ </strong>                   <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>    // ...<br />    <strong>3 │ </strong>&#125;);<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Return a Promise instead of relying on callback parameter.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:20 <a href=\"https://biomejs.dev/linter/rules/no-done-callback\">lint/style/noDoneCallback</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Disallow using a callback in asynchronous tests and hooks.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>test('tets-name', (done) =&gt; &#123;<br />   <strong>   │ </strong>                   <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>    // ...<br />    <strong>3 │ </strong>&#125;);<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Return a Promise instead of relying on callback parameter.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -79,7 +81,5 @@ test('test-name', () => {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/no_done_callback.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/noDoneCallback)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDoneCallback" category="lint" language="js" code={"beforeEach((done) => {\n    // ...\n});\n"} />
 

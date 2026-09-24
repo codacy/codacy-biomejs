@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noAwaitInLoops
-description: Learn more about noAwaitInLoops
+title: noAwaitInLoops (JavaScript)
+description: JavaScript (and super languages) documentation for noAwaitInLoops
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-await-in-loops/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.0.0`
 - Diagnostic Category: [`lint/performance/noAwaitInLoops`](/reference/diagnostics#diagnostic-category)
@@ -49,7 +51,7 @@ async function invalid() {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:3:24 <a href="https://biomejs.dev/linter/rules/no-await-in-loops">lint/performance/noAwaitInLoops</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Avoid using </span><span style="color: lightgreen;"><strong>await</strong></span><span style="color: lightgreen;"> inside loops.</span><br />  <br />    <strong>1 │ </strong>async function invalid() &#123;<br />    <strong>2 │ </strong>    for (const thing of things) &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>        const result = await asyncWork();<br />   <strong>   │ </strong>                       <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong>    &#125;<br />    <strong>5 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Using </span><span style="color: lightgreen;"><strong>await</strong></span><span style="color: lightgreen;"> inside loops might cause performance issues or unintended sequential execution, consider use </span><span style="color: lightgreen;"><strong>Promise.all()</strong></span><span style="color: lightgreen;"> instead.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:3:24 <a href=\"https://biomejs.dev/linter/rules/no-await-in-loops\">lint/performance/noAwaitInLoops</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Avoid using </span><span style=\"color: lightgreen;\"><strong>await</strong></span><span style=\"color: lightgreen;\"> inside loops.</span><br />  <br />    <strong>1 │ </strong>async function invalid() &#123;<br />    <strong>2 │ </strong>    for (const thing of things) &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>        const result = await asyncWork();<br />   <strong>   │ </strong>                       <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong>    &#125;<br />    <strong>5 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Using </span><span style=\"color: lightgreen;\"><strong>await</strong></span><span style=\"color: lightgreen;\"> inside loops might cause performance issues or unintended sequential execution, consider use </span><span style=\"color: lightgreen;\"><strong>Promise.all()</strong></span><span style=\"color: lightgreen;\"> instead.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -66,7 +68,5 @@ async function valid() {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/performance/no_await_in_loops.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/performance/noAwaitInLoops)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noAwaitInLoops" category="lint" language="js" code={"async function invalid() {\n    for (const thing of things) {\n        const result = await asyncWork();\n    }\n}\n"} />
 

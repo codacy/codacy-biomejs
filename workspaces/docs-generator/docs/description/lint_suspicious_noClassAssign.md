@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noClassAssign
-description: Learn more about noClassAssign
+title: noClassAssign (JavaScript)
+description: JavaScript (and super languages) documentation for noClassAssign
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-class-assign/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/suspicious/noClassAssign`](/reference/diagnostics#diagnostic-category)
@@ -46,14 +48,14 @@ class A {}
 A = 0;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:1 <a href="https://biomejs.dev/linter/rules/no-class-assign">lint/suspicious/noClassAssign</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">'A' is a class.</span><br />  <br />    <strong>1 │ </strong>class A &#123;&#125;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>A = 0;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">'A' is defined here.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>class A &#123;&#125;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>A = 0;<br />    <strong>3 │ </strong><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:1 <a href=\"https://biomejs.dev/linter/rules/no-class-assign\">lint/suspicious/noClassAssign</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">'A' is a class.</span><br />  <br />    <strong>1 │ </strong>class A &#123;&#125;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>A = 0;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">'A' is defined here.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>class A &#123;&#125;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>A = 0;<br />    <strong>3 │ </strong><br />  <br /></code></pre>"} />
 
 ```js
 A = 0;
 class A {}
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:1 <a href="https://biomejs.dev/linter/rules/no-class-assign">lint/suspicious/noClassAssign</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">'A' is a class.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>A = 0;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>class A &#123;&#125;<br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">'A' is defined here.</span><br />  <br />    <strong>1 │ </strong>A = 0;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>class A &#123;&#125;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:1 <a href=\"https://biomejs.dev/linter/rules/no-class-assign\">lint/suspicious/noClassAssign</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">'A' is a class.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>A = 0;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>class A &#123;&#125;<br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">'A' is defined here.</span><br />  <br />    <strong>1 │ </strong>A = 0;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>class A &#123;&#125;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br /></code></pre>"} />
 
 ```js
 class A {
@@ -63,7 +65,7 @@ class A {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:3:3 <a href="https://biomejs.dev/linter/rules/no-class-assign">lint/suspicious/noClassAssign</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">'A' is a class.</span><br />  <br />    <strong>1 │ </strong>class A &#123;<br />    <strong>2 │ </strong>	b() &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>		A = 0;<br />   <strong>   │ </strong>		<strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong>	&#125;<br />    <strong>5 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">'A' is defined here.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>class A &#123;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>	b() &#123;<br />    <strong>3 │ </strong>		A = 0;<br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:3:3 <a href=\"https://biomejs.dev/linter/rules/no-class-assign\">lint/suspicious/noClassAssign</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">'A' is a class.</span><br />  <br />    <strong>1 │ </strong>class A &#123;<br />    <strong>2 │ </strong>\tb() &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>\t\tA = 0;<br />   <strong>   │ </strong>\t\t<strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong>\t&#125;<br />    <strong>5 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">'A' is defined here.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>class A &#123;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>\tb() &#123;<br />    <strong>3 │ </strong>\t\tA = 0;<br />  <br /></code></pre>"} />
 
 ```js
 let A = class A {
@@ -74,7 +76,7 @@ let A = class A {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:3:3 <a href="https://biomejs.dev/linter/rules/no-class-assign">lint/suspicious/noClassAssign</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">'A' is a class.</span><br />  <br />    <strong>1 │ </strong>let A = class A &#123;<br />    <strong>2 │ </strong>	b() &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>		A = 0;<br />   <strong>   │ </strong>		<strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong>		// &#96;let A&#96; is shadowed by the class name.<br />    <strong>5 │ </strong>	&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">'A' is defined here.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>let A = class A &#123;<br />   <strong>   │ </strong>              <strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>	b() &#123;<br />    <strong>3 │ </strong>		A = 0;<br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:3:3 <a href=\"https://biomejs.dev/linter/rules/no-class-assign\">lint/suspicious/noClassAssign</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">'A' is a class.</span><br />  <br />    <strong>1 │ </strong>let A = class A &#123;<br />    <strong>2 │ </strong>\tb() &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>\t\tA = 0;<br />   <strong>   │ </strong>\t\t<strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong>\t\t// &#96;let A&#96; is shadowed by the class name.<br />    <strong>5 │ </strong>\t&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">'A' is defined here.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>let A = class A &#123;<br />   <strong>   │ </strong>              <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>\tb() &#123;<br />    <strong>3 │ </strong>\t\tA = 0;<br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -106,7 +108,5 @@ class A {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_class_assign.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noClassAssign)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noClassAssign" category="lint" language="js" code={"class A {}\nA = 0;\n"} />
 

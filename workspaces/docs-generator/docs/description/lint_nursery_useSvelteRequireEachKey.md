@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useSvelteRequireEachKey
-description: Learn more about useSvelteRequireEachKey
+title: useSvelteRequireEachKey (HTML)
+description: HTML documentation for useSvelteRequireEachKey
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="HTML" icon="seti:html">
+<RuleLanguageLinks current="html" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-svelte-require-each-key/html/"}]} />
+
 :::caution
 This rule is part of the [nursery](/linter/#nursery) group. This means that it is experimental and the behavior can change at any time.
 :::
@@ -54,7 +56,7 @@ For more information, see the Svelte documentation on [keyed each blocks](https:
 {/each}
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.svelte:1:1 <a href=\"https://biomejs.dev/linter/rules/use-svelte-require-each-key\">lint/nursery/useSvelteRequireEachKey</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This </span><span style=\"color: lightgreen;\"><strong>&#123;#each&#125;</strong></span><span style=\"color: lightgreen;\"> block is missing a key.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&#123;#each items as item&#125;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>  &lt;div&gt;&#123;item&#125;&lt;/div&gt;<br />    <strong>3 │ </strong>&#123;/each&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Providing a key helps Svelte track each item when the list changes.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Add a unique key using the </span><span style=\"color: lightgreen;\"><strong>(key)</strong></span><span style=\"color: lightgreen;\"> syntax, for example: </span><span style=\"color: lightgreen;\"><strong>&#123;#each items as item (item.id)&#125;</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit </span><span style=\"color: lightgreen;\"><a href=\"https://biomejs.dev/linter/#nursery\">https://biomejs.dev/linter/#nursery</a></span><span style=\"color: lightgreen;\"> for more information.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -71,7 +73,5 @@ For more information, see the Svelte documentation on [keyed each blocks](https:
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/nursery/use_svelte_require_each_key.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/nursery/useSvelteRequireEachKey)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useSvelteRequireEachKey" category="lint" language="svelte" code={"{#each items as item}\n  <div>{item}</div>\n{/each}\n"} />
 

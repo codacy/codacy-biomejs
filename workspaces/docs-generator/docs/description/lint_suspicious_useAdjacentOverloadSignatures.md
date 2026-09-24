@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useAdjacentOverloadSignatures
-description: Learn more about useAdjacentOverloadSignatures
+title: useAdjacentOverloadSignatures (JavaScript)
+description: JavaScript (and super languages) documentation for useAdjacentOverloadSignatures
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-adjacent-overload-signatures/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.0`
 - Diagnostic Category: [`lint/suspicious/useAdjacentOverloadSignatures`](/reference/diagnostics#diagnostic-category)
@@ -53,7 +55,7 @@ type Foo = {
 };
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:5:3 <a href="https://biomejs.dev/linter/rules/use-adjacent-overload-signatures">lint/suspicious/useAdjacentOverloadSignatures</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">All foo&#95;type signatures must be adjacent.</span><br />  <br />    <strong>3 │ </strong>  foo&#95;type(n: number): void;<br />    <strong>4 │ </strong>  bar&#95;type(): void;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>5 │ </strong>  foo&#95;type(sn: string | number): void;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>6 │ </strong>&#125;;<br />    <strong>7 │ </strong><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:5:3 <a href=\"https://biomejs.dev/linter/rules/use-adjacent-overload-signatures\">lint/suspicious/useAdjacentOverloadSignatures</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">All foo&#95;type signatures must be adjacent.</span><br />  <br />    <strong>3 │ </strong>  foo&#95;type(n: number): void;<br />    <strong>4 │ </strong>  bar&#95;type(): void;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>5 │ </strong>  foo&#95;type(sn: string | number): void;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>6 │ </strong>&#125;;<br />    <strong>7 │ </strong><br />  <br /></code></pre>"} />
 
 ```ts
 interface Foo {
@@ -64,7 +66,7 @@ interface Foo {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:5:3 <a href="https://biomejs.dev/linter/rules/use-adjacent-overload-signatures">lint/suspicious/useAdjacentOverloadSignatures</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">All foo&#95;interface signatures must be adjacent.</span><br />  <br />    <strong>3 │ </strong>  foo&#95;interface(n: number): void;<br />    <strong>4 │ </strong>  bar&#95;interface(): void;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>5 │ </strong>  foo&#95;interface(sn: string | number): void;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>6 │ </strong>&#125;<br />    <strong>7 │ </strong><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:5:3 <a href=\"https://biomejs.dev/linter/rules/use-adjacent-overload-signatures\">lint/suspicious/useAdjacentOverloadSignatures</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">All foo&#95;interface signatures must be adjacent.</span><br />  <br />    <strong>3 │ </strong>  foo&#95;interface(n: number): void;<br />    <strong>4 │ </strong>  bar&#95;interface(): void;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>5 │ </strong>  foo&#95;interface(sn: string | number): void;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>6 │ </strong>&#125;<br />    <strong>7 │ </strong><br />  <br /></code></pre>"} />
 
 ```ts
 class A {
@@ -75,7 +77,7 @@ class A {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:5:3 <a href="https://biomejs.dev/linter/rules/use-adjacent-overload-signatures">lint/suspicious/useAdjacentOverloadSignatures</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">All fooA signatures must be adjacent.</span><br />  <br />    <strong>3 │ </strong>  fooA(n: number): void;<br />    <strong>4 │ </strong>  barA(): void &#123;&#125;;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>5 │ </strong>  fooA(sn: string | number): void &#123;&#125;;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>6 │ </strong>&#125;<br />    <strong>7 │ </strong><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:5:3 <a href=\"https://biomejs.dev/linter/rules/use-adjacent-overload-signatures\">lint/suspicious/useAdjacentOverloadSignatures</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">All fooA signatures must be adjacent.</span><br />  <br />    <strong>3 │ </strong>  fooA(n: number): void;<br />    <strong>4 │ </strong>  barA(): void &#123;&#125;;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>5 │ </strong>  fooA(sn: string | number): void &#123;&#125;;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>6 │ </strong>&#125;<br />    <strong>7 │ </strong><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -122,7 +124,5 @@ class A {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/use_adjacent_overload_signatures.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/useAdjacentOverloadSignatures)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useAdjacentOverloadSignatures" category="lint" language="ts" code={"type Foo = {\n  foo_type(s: string): void;\n  foo_type(n: number): void;\n  bar_type(): void;\n  foo_type(sn: string | number): void;\n};\n"} />
 

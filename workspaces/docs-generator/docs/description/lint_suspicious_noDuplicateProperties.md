@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDuplicateProperties
-description: Learn more about noDuplicateProperties
+title: noDuplicateProperties (CSS)
+description: CSS documentation for noDuplicateProperties
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-duplicate-properties/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.4`
 - Diagnostic Category: [`lint/suspicious/noDuplicateProperties`](/reference/diagnostics#diagnostic-category)
@@ -48,7 +50,7 @@ a {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:3:3 <a href="https://biomejs.dev/linter/rules/no-duplicate-properties">lint/suspicious/noDuplicateProperties</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Duplicate properties can lead to unexpected behavior and may override previous declarations unintentionally.</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />    <strong>2 │ </strong>  color: pink;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>  color: orange;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong>&#125;<br />    <strong>5 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;"><strong>color</strong></span><span style="color: lightgreen;"> is already defined here.</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  color: pink;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>  color: orange;<br />    <strong>4 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Remove or rename the duplicate property to ensure consistent styling.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:3:3 <a href=\"https://biomejs.dev/linter/rules/no-duplicate-properties\">lint/suspicious/noDuplicateProperties</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Duplicate properties can lead to unexpected behavior and may override previous declarations unintentionally.</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />    <strong>2 │ </strong>  color: pink;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>  color: orange;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong>&#125;<br />    <strong>5 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\"><strong>color</strong></span><span style=\"color: lightgreen;\"> is already defined here.</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  color: pink;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>  color: orange;<br />    <strong>4 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Remove or rename the duplicate property to ensure consistent styling.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -66,7 +68,5 @@ a {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/suspicious/no_duplicate_properties.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/suspicious/noDuplicateProperties)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDuplicateProperties" category="lint" language="css" code={"a {\n  color: pink;\n  color: orange;\n}\n"} />
 

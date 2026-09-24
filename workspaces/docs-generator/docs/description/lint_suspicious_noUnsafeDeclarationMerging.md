@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noUnsafeDeclarationMerging
-description: Learn more about noUnsafeDeclarationMerging
+title: noUnsafeDeclarationMerging (JavaScript)
+description: JavaScript (and super languages) documentation for noUnsafeDeclarationMerging
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="TypeScript and TSX" icon="seti:typescript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-unsafe-declaration-merging/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/suspicious/noUnsafeDeclarationMerging`](/reference/diagnostics#diagnostic-category)
@@ -56,7 +58,7 @@ const foo = new Foo();
 foo.f(); // Runtime Error: Cannot read properties of undefined.
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:5:7 <a href="https://biomejs.dev/linter/rules/no-unsafe-declaration-merging">lint/suspicious/noUnsafeDeclarationMerging</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">This </span><span style="color: Tomato;"><strong>class</strong></span><span style="color: Tomato;"> is unsafely merged with an </span><span style="color: Tomato;"><strong>interface</strong></span><span style="color: Tomato;">.</span><br />  <br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>5 │ </strong>class Foo &#123;&#125;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>6 │ </strong><br />    <strong>7 │ </strong>const foo = new Foo();<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The </span><span style="color: lightgreen;"><strong>interface</strong></span><span style="color: lightgreen;"> is declared here.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>interface Foo &#123;<br />   <strong>   │ </strong>          <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>    f(): void<br />    <strong>3 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The TypeScript compiler doesn't check whether properties defined in the interface are initialized in the class.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:5:7 <a href=\"https://biomejs.dev/linter/rules/no-unsafe-declaration-merging\">lint/suspicious/noUnsafeDeclarationMerging</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">This </span><span style=\"color: Tomato;\"><strong>class</strong></span><span style=\"color: Tomato;\"> is unsafely merged with an </span><span style=\"color: Tomato;\"><strong>interface</strong></span><span style=\"color: Tomato;\">.</span><br />  <br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>5 │ </strong>class Foo &#123;&#125;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>6 │ </strong><br />    <strong>7 │ </strong>const foo = new Foo();<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The </span><span style=\"color: lightgreen;\"><strong>interface</strong></span><span style=\"color: lightgreen;\"> is declared here.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>interface Foo &#123;<br />   <strong>   │ </strong>          <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>    f(): void<br />    <strong>3 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The TypeScript compiler doesn't check whether properties defined in the interface are initialized in the class.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -78,7 +80,5 @@ enum Baz {}
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_unsafe_declaration_merging.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noUnsafeDeclarationMerging)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noUnsafeDeclarationMerging" category="lint" language="ts" code={"interface Foo {\n    f(): void\n}\n\nclass Foo {}\n\nconst foo = new Foo();\nfoo.f(); // Runtime Error: Cannot read properties of undefined.\n"} />
 

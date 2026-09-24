@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useValidAriaValues
-description: Learn more about useValidAriaValues
+title: useValidAriaValues (JavaScript)
+description: JavaScript (and super languages) documentation for useValidAriaValues
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSX and TSX" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-valid-aria-values/html/"},{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-valid-aria-values/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/a11y/useValidAriaValues`](/reference/diagnostics#diagnostic-category)
@@ -43,25 +45,25 @@ Enforce that ARIA state and property values are valid.
 <span role="checkbox" aria-checked="test">some text</span>
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:1:23 <a href="https://biomejs.dev/linter/rules/use-valid-aria-values">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The value of the ARIA attribute </span><span style="color: Tomato;"><strong>aria-checked</strong></span><span style="color: Tomato;"> is not correct.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;span role=&quot;checkbox&quot; aria-checked=&quot;test&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>                      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The only supported value for the </span><span style="color: lightgreen;"><strong>aria-checked</strong></span><span style="color: lightgreen;"> property one of the following:</span><br />  <br />  - false<br />  - true<br />  - mixed<br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:1:23 <a href=\"https://biomejs.dev/linter/rules/use-valid-aria-values\">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The value of the ARIA attribute </span><span style=\"color: Tomato;\"><strong>aria-checked</strong></span><span style=\"color: Tomato;\"> is not correct.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;span role=&quot;checkbox&quot; aria-checked=&quot;test&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>                      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The only supported value for the </span><span style=\"color: lightgreen;\"><strong>aria-checked</strong></span><span style=\"color: lightgreen;\"> property one of the following:</span><br />  <br />  - false<br />  - true<br />  - mixed<br />  <br /></code></pre>"} />
 
 ```jsx
 <span aria-labelledby="">some text</span>
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:1:7 <a href="https://biomejs.dev/linter/rules/use-valid-aria-values">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The value of the ARIA attribute </span><span style="color: Tomato;"><strong>aria-labelledby</strong></span><span style="color: Tomato;"> is not correct.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;span aria-labelledby=&quot;&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The only supported value is a space-separated list of HTML identifiers.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:1:7 <a href=\"https://biomejs.dev/linter/rules/use-valid-aria-values\">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The value of the ARIA attribute </span><span style=\"color: Tomato;\"><strong>aria-labelledby</strong></span><span style=\"color: Tomato;\"> is not correct.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;span aria-labelledby=&quot;&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The only supported value is a space-separated list of HTML identifiers.</span><br />  <br /></code></pre>"} />
 
 ```jsx
 <span aria-valuemax="hey">some text</span>
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:1:7 <a href="https://biomejs.dev/linter/rules/use-valid-aria-values">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The value of the ARIA attribute </span><span style="color: Tomato;"><strong>aria-valuemax</strong></span><span style="color: Tomato;"> is not correct.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;span aria-valuemax=&quot;hey&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The only supported value is number.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:1:7 <a href=\"https://biomejs.dev/linter/rules/use-valid-aria-values\">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The value of the ARIA attribute </span><span style=\"color: Tomato;\"><strong>aria-valuemax</strong></span><span style=\"color: Tomato;\"> is not correct.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;span aria-valuemax=&quot;hey&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The only supported value is number.</span><br />  <br /></code></pre>"} />
 
 ```jsx
 <span aria-orientation="hey">some text</span>
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:1:7 <a href="https://biomejs.dev/linter/rules/use-valid-aria-values">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The value of the ARIA attribute </span><span style="color: Tomato;"><strong>aria-orientation</strong></span><span style="color: Tomato;"> is not correct.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;span aria-orientation=&quot;hey&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The only supported value for the </span><span style="color: lightgreen;"><strong>aria-orientation</strong></span><span style="color: lightgreen;"> property is one of the following:</span><br />  <br />  - undefined<br />  - horizontal<br />  - vertical<br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:1:7 <a href=\"https://biomejs.dev/linter/rules/use-valid-aria-values\">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The value of the ARIA attribute </span><span style=\"color: Tomato;\"><strong>aria-orientation</strong></span><span style=\"color: Tomato;\"> is not correct.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;span aria-orientation=&quot;hey&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The only supported value for the </span><span style=\"color: lightgreen;\"><strong>aria-orientation</strong></span><span style=\"color: lightgreen;\"> property is one of the following:</span><br />  <br />  - undefined<br />  - horizontal<br />  - vertical<br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -88,79 +90,5 @@ Enforce that ARIA state and property values are valid.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/a11y/use_valid_aria_values.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/a11y/useValidAriaValues)
-
-</TabItem>
-<TabItem label="HTML" icon="seti:html">
-## Summary
-- Rule available since: `v2.5.0`
-- Diagnostic Category: [`lint/a11y/useValidAriaValues`](/reference/diagnostics#diagnostic-category)
-- This rule is **recommended**, meaning it is enabled by default.
-- This rule doesn't have a fix.
-- The default severity of this rule is [**error**](/reference/diagnostics#error).
-- Sources: 
-  - Inspired from [`jsx-a11y/aria-proptypes`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/aria-proptypes.md)
-
-## How to configure
-```json title="biome.json"
-{
-	"linter": {
-		"rules": {
-			"a11y": {
-				"useValidAriaValues": "error"
-			}
-		}
-	}
-}
-
-```
-## Description
-Enforce that ARIA state and property values are valid.
-
-:::note
-In `.html` files, attribute names are matched case-insensitively.
-
-In component-based frameworks (Vue, Svelte, Astro), dynamic bindings
-(e.g., `:aria-checked="expr"`) are skipped because the value is a runtime expression.
-:::
-
-## Examples
-
-### Invalid
-
-```html
-<span aria-checked="test">some text</span>
-```
-
-<pre class="language-text"><code class="language-text">code-block.html:1:7 <a href="https://biomejs.dev/linter/rules/use-valid-aria-values">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The value of the ARIA attribute </span><span style="color: Tomato;"><strong>aria-checked</strong></span><span style="color: Tomato;"> is not correct.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;span aria-checked=&quot;test&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Use a valid value for the </span><span style="color: lightgreen;"><strong>aria-checked</strong></span><span style="color: lightgreen;"> attribute according to the </span><span style="color: lightgreen;"><a href="https://www.w3.org/TR/wai-aria/#states_and_properties">WAI-ARIA specification</a></span><span style="color: lightgreen;">.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The only supported values for the </span><span style="color: lightgreen;"><strong>aria-checked</strong></span><span style="color: lightgreen;"> property are:</span><br />  <br />  - false<br />  - true<br />  - mixed<br />  <br /></code></pre>
-
-```html
-<span aria-labelledby="">some text</span>
-```
-
-<pre class="language-text"><code class="language-text">code-block.html:1:7 <a href="https://biomejs.dev/linter/rules/use-valid-aria-values">lint/a11y/useValidAriaValues</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The value of the ARIA attribute </span><span style="color: Tomato;"><strong>aria-labelledby</strong></span><span style="color: Tomato;"> is not correct.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;span aria-labelledby=&quot;&quot;&gt;some text&lt;/span&gt;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The only supported value is a space-separated list of HTML identifiers.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Use a valid value for the </span><span style="color: lightgreen;"><strong>aria-labelledby</strong></span><span style="color: lightgreen;"> attribute according to the </span><span style="color: lightgreen;"><a href="https://www.w3.org/TR/wai-aria/#states_and_properties">WAI-ARIA specification</a></span><span style="color: lightgreen;">.</span><br />  <br /></code></pre>
-
-### Valid
-
-```html
-<span aria-checked="true">some text</span>
-```
-
-```html
-<span aria-labelledby="fooId barId">some text</span>
-```
-
-## Accessibility guidelines
-
-- [WCAG 4.1.2](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value)
-
-## Related links
-
-- [Disable a rule](/linter/#disable-a-rule)
-- [Configure the code fix](/linter#configure-the-code-fix)
-- [Rule options](/linter/#rule-options)
-- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/a11y/use_valid_aria_values.rs)
-- [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/a11y/useValidAriaValues)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useValidAriaValues" category="lint" language="jsx" code={"<span role=\"checkbox\" aria-checked=\"test\">some text</span>\n"} />
 

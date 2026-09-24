@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noVueDataObjectDeclaration
-description: Learn more about noVueDataObjectDeclaration
+title: noVueDataObjectDeclaration (JavaScript)
+description: JavaScript (and super languages) documentation for noVueDataObjectDeclaration
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-vue-data-object-declaration/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.1.4`
 - Diagnostic Category: [`lint/correctness/noVueDataObjectDeclaration`](/reference/diagnostics#diagnostic-category)
@@ -119,7 +121,4 @@ createApp({
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/no_vue_data_object_declaration.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/correctness/noVueDataObjectDeclaration)
-
-</TabItem>
-</Tabs>
 

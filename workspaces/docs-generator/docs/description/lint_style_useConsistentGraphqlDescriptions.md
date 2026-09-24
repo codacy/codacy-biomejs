@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useConsistentGraphqlDescriptions
-description: Learn more about useConsistentGraphqlDescriptions
+title: useConsistentGraphqlDescriptions (GraphQL)
+description: GraphQL documentation for useConsistentGraphqlDescriptions
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="GraphQL" icon="seti:graphql">
+<RuleLanguageLinks current="graphql" languages={[{"id":"graphql","label":"GraphQL","href":"/linter/rules/use-consistent-graphql-descriptions/graphql/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.6`
 - Diagnostic Category: [`lint/style/useConsistentGraphqlDescriptions`](/reference/diagnostics#diagnostic-category)
@@ -48,7 +50,7 @@ enum EnumValue {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.graphql:2:3 <a href="https://biomejs.dev/linter/rules/use-consistent-graphql-descriptions">lint/style/useConsistentGraphqlDescriptions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Unexpected inline description style.</span><br />  <br />    <strong>1 │ </strong>enum EnumValue &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  &quot;this is a description&quot;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>  DEFAULT<br />    <strong>4 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">To stay consistent within the project, write the description block style.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.graphql:2:3 <a href=\"https://biomejs.dev/linter/rules/use-consistent-graphql-descriptions\">lint/style/useConsistentGraphqlDescriptions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unexpected inline description style.</span><br />  <br />    <strong>1 │ </strong>enum EnumValue &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  &quot;this is a description&quot;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>  DEFAULT<br />    <strong>4 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">To stay consistent within the project, write the description block style.</span><br />  <br /></code></pre>"} />
 
 #### Valid
 
@@ -99,7 +101,7 @@ enum EnumValue {
 }
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.graphql:2:3 <a href=\"https://biomejs.dev/linter/rules/use-consistent-graphql-descriptions\">lint/style/useConsistentGraphqlDescriptions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unexpected block description style.</span><br />  <br />    <strong>1 │ </strong>enum EnumValue &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  &quot;&quot;&quot;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>  this is a description<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>4 │ </strong>  &quot;&quot;&quot;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>5 │ </strong>  DEFAULT<br />    <strong>6 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">To stay consistent within the project, write the description inline style.</span><br />  <br /></code></pre>"} />
 
 ## Related links
 
@@ -108,7 +110,5 @@ enum EnumValue {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_graphql_analyze/src/lint/style/use_consistent_graphql_descriptions.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_graphql_analyze/tests/specs/style/useConsistentGraphqlDescriptions)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useConsistentGraphqlDescriptions" category="lint" language="graphql" code={"enum EnumValue {\n  \"this is a description\"\n  DEFAULT\n}\n"} />
 

@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDescendingSpecificity
-description: Learn more about noDescendingSpecificity
+title: noDescendingSpecificity (CSS)
+description: CSS documentation for noDescendingSpecificity
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-descending-specificity/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.3`
 - Diagnostic Category: [`lint/style/noDescendingSpecificity`](/reference/diagnostics#diagnostic-category)
@@ -56,7 +58,7 @@ b a { color: red; }
 a { color: red; }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:2:1 <a href="https://biomejs.dev/linter/rules/no-descending-specificity">lint/style/noDescendingSpecificity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Descending specificity selector found. This selector specificity is (0, 0, 1)</span><br />  <br />    <strong>1 │ </strong>b a &#123; color: red; &#125;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>a &#123; color: red; &#125;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">This selector specificity is (0, 0, 2)</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>b a &#123; color: red; &#125;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>a &#123; color: red; &#125;<br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Descending specificity selector may not be applied. Consider rearranging the order of the selectors. See </span><span style="color: lightgreen;"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">MDN web docs</a></span><span style="color: lightgreen;"> for more details.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:2:1 <a href=\"https://biomejs.dev/linter/rules/no-descending-specificity\">lint/style/noDescendingSpecificity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Descending specificity selector found. This selector specificity is (0, 0, 1)</span><br />  <br />    <strong>1 │ </strong>b a &#123; color: red; &#125;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>a &#123; color: red; &#125;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This selector specificity is (0, 0, 2)</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>b a &#123; color: red; &#125;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>a &#123; color: red; &#125;<br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Descending specificity selector may not be applied. Consider rearranging the order of the selectors. See </span><span style=\"color: lightgreen;\"><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity\">MDN web docs</a></span><span style=\"color: lightgreen;\"> for more details.</span><br />  <br /></code></pre>"} />
 
 ```css
 a {
@@ -65,7 +67,7 @@ a {
 b { color: red; }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:4:1 <a href="https://biomejs.dev/linter/rules/no-descending-specificity">lint/style/noDescendingSpecificity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Descending specificity selector found. This selector specificity is (0, 0, 1)</span><br />  <br />    <strong>2 │ </strong>  &amp; &gt; b &#123; color: red; &#125;<br />    <strong>3 │ </strong>&#125;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>4 │ </strong>b &#123; color: red; &#125;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>5 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">This selector specificity is (0, 0, 2)</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  &amp; &gt; b &#123; color: red; &#125;<br />   <strong>   │ </strong>  <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong>b &#123; color: red; &#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Descending specificity selector may not be applied. Consider rearranging the order of the selectors. See </span><span style="color: lightgreen;"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">MDN web docs</a></span><span style="color: lightgreen;"> for more details.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:4:1 <a href=\"https://biomejs.dev/linter/rules/no-descending-specificity\">lint/style/noDescendingSpecificity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Descending specificity selector found. This selector specificity is (0, 0, 1)</span><br />  <br />    <strong>2 │ </strong>  &amp; &gt; b &#123; color: red; &#125;<br />    <strong>3 │ </strong>&#125;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>4 │ </strong>b &#123; color: red; &#125;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>5 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This selector specificity is (0, 0, 2)</span><br />  <br />    <strong>1 │ </strong>a &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  &amp; &gt; b &#123; color: red; &#125;<br />   <strong>   │ </strong>  <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong>b &#123; color: red; &#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Descending specificity selector may not be applied. Consider rearranging the order of the selectors. See </span><span style=\"color: lightgreen;\"><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity\">MDN web docs</a></span><span style=\"color: lightgreen;\"> for more details.</span><br />  <br /></code></pre>"} />
 
 ```css
 :root input {
@@ -76,7 +78,23 @@ html input {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:4:1 <a href="https://biomejs.dev/linter/rules/no-descending-specificity">lint/style/noDescendingSpecificity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Descending specificity selector found. This selector specificity is (0, 0, 2)</span><br />  <br />    <strong>2 │ </strong>    color: red;<br />    <strong>3 │ </strong>&#125;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>4 │ </strong>html input &#123;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>5 │ </strong>    color: red;<br />    <strong>6 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">This selector specificity is (0, 1, 1)</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>:root input &#123;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>    color: red;<br />    <strong>3 │ </strong>&#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Descending specificity selector may not be applied. Consider rearranging the order of the selectors. See </span><span style="color: lightgreen;"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">MDN web docs</a></span><span style="color: lightgreen;"> for more details.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:4:1 <a href=\"https://biomejs.dev/linter/rules/no-descending-specificity\">lint/style/noDescendingSpecificity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Descending specificity selector found. This selector specificity is (0, 0, 2)</span><br />  <br />    <strong>2 │ </strong>    color: red;<br />    <strong>3 │ </strong>&#125;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>4 │ </strong>html input &#123;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>5 │ </strong>    color: red;<br />    <strong>6 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This selector specificity is (0, 1, 1)</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>:root input &#123;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>    color: red;<br />    <strong>3 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Descending specificity selector may not be applied. Consider rearranging the order of the selectors. See </span><span style=\"color: lightgreen;\"><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity\">MDN web docs</a></span><span style=\"color: lightgreen;\"> for more details.</span><br />  <br /></code></pre>"} />
+
+```css
+.a th {
+  color: red;
+}
+
+.a .b .c th {
+  color: green;
+}
+
+.a .b th {
+  color: blue;
+}
+```
+
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:9:1 <a href=\"https://biomejs.dev/linter/rules/no-descending-specificity\">lint/style/noDescendingSpecificity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Descending specificity selector found. This selector specificity is (0, 2, 1)</span><br />  <br />     <strong>7 │ </strong>&#125;<br />     <strong>8 │ </strong><br />   <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>9 │ </strong>.a .b th &#123;<br />    <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>10 │ </strong>  color: blue;<br />    <strong>11 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This selector specificity is (0, 3, 1)</span><br />  <br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>5 │ </strong>.a .b .c th &#123;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>6 │ </strong>  color: green;<br />    <strong>7 │ </strong>&#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Descending specificity selector may not be applied. Consider rearranging the order of the selectors. See </span><span style=\"color: lightgreen;\"><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity\">MDN web docs</a></span><span style=\"color: lightgreen;\"> for more details.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -107,6 +125,28 @@ a b {
 }
 ```
 
+```css
+.a th {
+  color: red;
+}
+
+@media print {
+  .a .b .c th {
+    color: green;
+  }
+}
+```
+
+```css
+@layer one {
+  b a { color: green; }
+}
+
+@layer two {
+  a { color: blue; }
+}
+```
+
 ## Related links
 
 - [Disable a rule](/linter/#disable-a-rule)
@@ -114,7 +154,5 @@ a b {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/style/no_descending_specificity.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/style/noDescendingSpecificity)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDescendingSpecificity" category="lint" language="css" code={"b a { color: red; }\na { color: red; }\n"} />
 

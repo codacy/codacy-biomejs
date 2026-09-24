@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useGroupedAccessorPairs
-description: Learn more about useGroupedAccessorPairs
+title: useGroupedAccessorPairs (JavaScript)
+description: JavaScript (and super languages) documentation for useGroupedAccessorPairs
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-grouped-accessor-pairs/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.0.0`
 - Diagnostic Category: [`lint/style/useGroupedAccessorPairs`](/reference/diagnostics#diagnostic-category)
@@ -53,7 +55,7 @@ class User {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:7 <a href="https://biomejs.dev/linter/rules/use-grouped-accessor-pairs">lint/style/useGroupedAccessorPairs</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Getter should be defined right before the setter.</span><br />  <br />    <strong>1 │ </strong>class User &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  get name() &#123; return this.&#95;name; &#125;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>  constructor() &#123;&#125;<br />    <strong>4 │ </strong>  set name(value) &#123; this.&#95;name = value; &#125;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Move this setter after the getter.</span><br />  <br />    <strong>2 │ </strong>  get name() &#123; return this.&#95;name; &#125;<br />    <strong>3 │ </strong>  constructor() &#123;&#125;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>4 │ </strong>  set name(value) &#123; this.&#95;name = value; &#125;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>5 │ </strong>&#125;<br />    <strong>6 │ </strong><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:7 <a href=\"https://biomejs.dev/linter/rules/use-grouped-accessor-pairs\">lint/style/useGroupedAccessorPairs</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Getter should be defined right before the setter.</span><br />  <br />    <strong>1 │ </strong>class User &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  get name() &#123; return this.&#95;name; &#125;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>  constructor() &#123;&#125;<br />    <strong>4 │ </strong>  set name(value) &#123; this.&#95;name = value; &#125;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Move this setter after the getter.</span><br />  <br />    <strong>2 │ </strong>  get name() &#123; return this.&#95;name; &#125;<br />    <strong>3 │ </strong>  constructor() &#123;&#125;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>4 │ </strong>  set name(value) &#123; this.&#95;name = value; &#125;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>5 │ </strong>&#125;<br />    <strong>6 │ </strong><br />  <br /></code></pre>"} />
 
 Getter should go before the setter.
 
@@ -64,7 +66,7 @@ const user = {
 };
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:3:7 <a href="https://biomejs.dev/linter/rules/use-grouped-accessor-pairs">lint/style/useGroupedAccessorPairs</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Getter should be defined right before the setter.</span><br />  <br />    <strong>1 │ </strong>const user = &#123;<br />    <strong>2 │ </strong>  set name(value) &#123; this.&#95;name = value; &#125;,<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>  get name() &#123; return this.&#95;name; &#125;<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong>&#125;;<br />    <strong>5 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Move this setter after the getter.</span><br />  <br />    <strong>1 │ </strong>const user = &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>  set name(value) &#123; this.&#95;name = value; &#125;,<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>  get name() &#123; return this.&#95;name; &#125;<br />    <strong>4 │ </strong>&#125;;<br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:3:7 <a href=\"https://biomejs.dev/linter/rules/use-grouped-accessor-pairs\">lint/style/useGroupedAccessorPairs</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Getter should be defined right before the setter.</span><br />  <br />    <strong>1 │ </strong>const user = &#123;<br />    <strong>2 │ </strong>  set name(value) &#123; this.&#95;name = value; &#125;,<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>  get name() &#123; return this.&#95;name; &#125;<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong>&#125;;<br />    <strong>5 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Move this setter after the getter.</span><br />  <br />    <strong>1 │ </strong>const user = &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>  set name(value) &#123; this.&#95;name = value; &#125;,<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>  get name() &#123; return this.&#95;name; &#125;<br />    <strong>4 │ </strong>&#125;;<br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -87,7 +89,5 @@ Single getters without setters and setters without getters are ignored.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_grouped_accessor_pairs.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useGroupedAccessorPairs)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useGroupedAccessorPairs" category="lint" language="js" code={"class User {\n  get name() { return this._name; }\n  constructor() {}\n  set name(value) { this._name = value; }\n}\n"} />
 

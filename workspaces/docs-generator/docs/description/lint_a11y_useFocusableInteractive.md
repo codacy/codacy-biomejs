@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useFocusableInteractive
-description: Learn more about useFocusableInteractive
+title: useFocusableInteractive (JavaScript)
+description: JavaScript (and super languages) documentation for useFocusableInteractive
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSX and TSX" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-focusable-interactive/html/"},{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-focusable-interactive/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.0`
 - Diagnostic Category: [`lint/a11y/useFocusableInteractive`](/reference/diagnostics#diagnostic-category)
@@ -49,13 +51,13 @@ instead.
 <div role="button" />
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:1:1 <a href="https://biomejs.dev/linter/rules/use-focusable-interactive">lint/a11y/useFocusableInteractive</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The HTML element with the interactive role </span><span style="color: Tomato;"><strong>&quot;button&quot;</strong></span><span style="color: Tomato;"> is not focusable.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;div role=&quot;button&quot; /&gt;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">A non-interactive HTML element that is not focusable may not be reachable for users that rely on keyboard navigation, even with an added role like </span><span style="color: lightgreen;"><strong>&quot;button&quot;</strong></span><span style="color: lightgreen;">.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Add a </span><span style="color: lightgreen;"><strong>tabIndex</strong></span><span style="color: lightgreen;"> attribute to make this element focusable.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:1:1 <a href=\"https://biomejs.dev/linter/rules/use-focusable-interactive\">lint/a11y/useFocusableInteractive</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The HTML element with the interactive role </span><span style=\"color: Tomato;\"><strong>&quot;button&quot;</strong></span><span style=\"color: Tomato;\"> is not focusable.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div role=&quot;button&quot; /&gt;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">A non-interactive HTML element that is not focusable may not be reachable for users that rely on keyboard navigation, even with an added role like </span><span style=\"color: lightgreen;\"><strong>&quot;button&quot;</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Add a </span><span style=\"color: lightgreen;\"><strong>tabIndex</strong></span><span style=\"color: lightgreen;\"> attribute to make this element focusable.</span><br />  <br /></code></pre>"} />
 
 ```jsx
 <div role="tab" />
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:1:1 <a href="https://biomejs.dev/linter/rules/use-focusable-interactive">lint/a11y/useFocusableInteractive</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The HTML element with the interactive role </span><span style="color: Tomato;"><strong>&quot;tab&quot;</strong></span><span style="color: Tomato;"> is not focusable.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;div role=&quot;tab&quot; /&gt;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">A non-interactive HTML element that is not focusable may not be reachable for users that rely on keyboard navigation, even with an added role like </span><span style="color: lightgreen;"><strong>&quot;tab&quot;</strong></span><span style="color: lightgreen;">.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Add a </span><span style="color: lightgreen;"><strong>tabIndex</strong></span><span style="color: lightgreen;"> attribute to make this element focusable.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:1:1 <a href=\"https://biomejs.dev/linter/rules/use-focusable-interactive\">lint/a11y/useFocusableInteractive</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The HTML element with the interactive role </span><span style=\"color: Tomato;\"><strong>&quot;tab&quot;</strong></span><span style=\"color: Tomato;\"> is not focusable.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;div role=&quot;tab&quot; /&gt;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">A non-interactive HTML element that is not focusable may not be reachable for users that rely on keyboard navigation, even with an added role like </span><span style=\"color: lightgreen;\"><strong>&quot;tab&quot;</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Add a </span><span style=\"color: lightgreen;\"><strong>tabIndex</strong></span><span style=\"color: lightgreen;\"> attribute to make this element focusable.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -74,74 +76,5 @@ instead.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/a11y/use_focusable_interactive.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/a11y/useFocusableInteractive)
-
-</TabItem>
-<TabItem label="HTML" icon="seti:html">
-## Summary
-- Rule available since: `v2.5.0`
-- Diagnostic Category: [`lint/a11y/useFocusableInteractive`](/reference/diagnostics#diagnostic-category)
-- This rule is **recommended**, meaning it is enabled by default.
-- This rule doesn't have a fix.
-- The default severity of this rule is [**error**](/reference/diagnostics#error).
-- Sources: 
-  - Inspired from [`jsx-a11y/interactive-supports-focus`](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/interactive-supports-focus.md)
-
-## How to configure
-```json title="biome.json"
-{
-	"linter": {
-		"rules": {
-			"a11y": {
-				"useFocusableInteractive": "error"
-			}
-		}
-	}
-}
-
-```
-## Description
-Elements with an interactive role and interaction handlers must be focusable.
-
-HTML elements with interactive roles must have `tabindex` defined to ensure they are
-focusable. Without `tabindex`, assistive technologies may not recognize these elements as
-interactive.
-You could also consider switching from an interactive role to its semantic HTML element
-instead.
-
-## Examples
-
-### Invalid
-
-```html
-<div role="button"></div>
-```
-
-<pre class="language-text"><code class="language-text">code-block.html:1:1 <a href="https://biomejs.dev/linter/rules/use-focusable-interactive">lint/a11y/useFocusableInteractive</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The HTML element with the interactive role </span><span style="color: Tomato;"><strong>button</strong></span><span style="color: Tomato;"> is not focusable.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;div role=&quot;button&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">A non-interactive HTML element that is not focusable may not be reachable for users that rely on keyboard navigation, even with an added role like </span><span style="color: lightgreen;"><strong>button</strong></span><span style="color: lightgreen;">.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Add a </span><span style="color: lightgreen;"><strong>tabindex</strong></span><span style="color: lightgreen;"> attribute to make this element focusable.</span><br />  <br /></code></pre>
-
-```html
-<div role="tab"></div>
-```
-
-<pre class="language-text"><code class="language-text">code-block.html:1:1 <a href="https://biomejs.dev/linter/rules/use-focusable-interactive">lint/a11y/useFocusableInteractive</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The HTML element with the interactive role </span><span style="color: Tomato;"><strong>tab</strong></span><span style="color: Tomato;"> is not focusable.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>&lt;div role=&quot;tab&quot;&gt;&lt;/div&gt;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">A non-interactive HTML element that is not focusable may not be reachable for users that rely on keyboard navigation, even with an added role like </span><span style="color: lightgreen;"><strong>tab</strong></span><span style="color: lightgreen;">.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Add a </span><span style="color: lightgreen;"><strong>tabindex</strong></span><span style="color: lightgreen;"> attribute to make this element focusable.</span><br />  <br /></code></pre>
-
-### Valid
-
-```html
-<div role="button" tabindex="0"></div>
-```
-
-```html
-<div></div>
-```
-
-## Related links
-
-- [Disable a rule](/linter/#disable-a-rule)
-- [Configure the code fix](/linter#configure-the-code-fix)
-- [Rule options](/linter/#rule-options)
-- [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/a11y/use_focusable_interactive.rs)
-- [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/a11y/useFocusableInteractive)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useFocusableInteractive" category="lint" language="jsx" code={"<div role=\"button\" />\n"} />
 

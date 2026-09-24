@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noValueAtRule
-description: Learn more about noValueAtRule
+title: noValueAtRule (CSS)
+description: CSS documentation for noValueAtRule
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-value-at-rule/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.0`
 - Diagnostic Category: [`lint/style/noValueAtRule`](/reference/diagnostics#diagnostic-category)
@@ -42,7 +44,7 @@ Use of CSS variables is recommended instead of `@value` rule.
 @value red: #FF0000;
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\"><a href=\"file:///example.module.css\">/example.module.css</a>:1:1 <a href=\"https://biomejs.dev/linter/rules/no-value-at-rule\">lint/style/noValueAtRule</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Use of </span><span style=\"color: lightgreen;\"><strong>@value</strong></span><span style=\"color: lightgreen;\"> rule is disallowed</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>@value red: #FF0000;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Using @value is not recommended, consider using CSS variables instead.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">See </span><span style=\"color: lightgreen;\"><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties\">MDN web docs</a></span><span style=\"color: lightgreen;\"> for more details.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -63,7 +65,5 @@ p {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/style/no_value_at_rule.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/style/noValueAtRule)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noValueAtRule" category="lint" language="css" code={"@value red: #FF0000;\n"} />
 

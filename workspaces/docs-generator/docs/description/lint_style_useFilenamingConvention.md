@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useFilenamingConvention
-description: Learn more about useFilenamingConvention
+title: useFilenamingConvention (JavaScript)
+description: JavaScript (and super languages) documentation for useFilenamingConvention
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-filenaming-convention/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.5.0`
 - Diagnostic Category: [`lint/style/useFilenamingConvention`](/reference/diagnostics#diagnostic-category)
@@ -178,7 +180,4 @@ Extensions in lowercase are always allowed regardless of how `filenameCases` is 
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_filenaming_convention.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useFilenamingConvention)
-
-</TabItem>
-</Tabs>
 

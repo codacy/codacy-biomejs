@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDynamicNamespaceImportAccess
-description: Learn more about noDynamicNamespaceImportAccess
+title: noDynamicNamespaceImportAccess (JavaScript)
+description: JavaScript (and super languages) documentation for noDynamicNamespaceImportAccess
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-dynamic-namespace-import-access/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.9.0`
 - Diagnostic Category: [`lint/performance/noDynamicNamespaceImportAccess`](/reference/diagnostics#diagnostic-category)
@@ -50,7 +52,7 @@ import * as foo from "foo"
 foo["bar"]
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:2:1 <a href="https://biomejs.dev/linter/rules/no-dynamic-namespace-import-access">lint/performance/noDynamicNamespaceImportAccess</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Avoid accessing namespace imports dynamically, it can prevent efficient tree shaking and increase bundle size.</span><br />  <br />    <strong>1 │ </strong>import &#42; as foo from &quot;foo&quot;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>foo[&quot;bar&quot;]<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Prefer static property access or use named imports instead.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:2:1 <a href=\"https://biomejs.dev/linter/rules/no-dynamic-namespace-import-access\">lint/performance/noDynamicNamespaceImportAccess</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Avoid accessing namespace imports dynamically, it can prevent efficient tree shaking and increase bundle size.</span><br />  <br />    <strong>1 │ </strong>import &#42; as foo from &quot;foo&quot;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>foo[&quot;bar&quot;]<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Prefer static property access or use named imports instead.</span><br />  <br /></code></pre>"} />
 
 ```js
 import * as foo from "foo"
@@ -58,7 +60,7 @@ const key = "bar"
 foo[key]
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:3:1 <a href="https://biomejs.dev/linter/rules/no-dynamic-namespace-import-access">lint/performance/noDynamicNamespaceImportAccess</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Avoid accessing namespace imports dynamically, it can prevent efficient tree shaking and increase bundle size.</span><br />  <br />    <strong>1 │ </strong>import &#42; as foo from &quot;foo&quot;<br />    <strong>2 │ </strong>const key = &quot;bar&quot;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>3 │ </strong>foo[key]<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Prefer static property access or use named imports instead.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:3:1 <a href=\"https://biomejs.dev/linter/rules/no-dynamic-namespace-import-access\">lint/performance/noDynamicNamespaceImportAccess</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Avoid accessing namespace imports dynamically, it can prevent efficient tree shaking and increase bundle size.</span><br />  <br />    <strong>1 │ </strong>import &#42; as foo from &quot;foo&quot;<br />    <strong>2 │ </strong>const key = &quot;bar&quot;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>3 │ </strong>foo[key]<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Prefer static property access or use named imports instead.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -90,7 +92,5 @@ knownMessagesMap[dynamicKey]
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/performance/no_dynamic_namespace_import_access.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/performance/noDynamicNamespaceImportAccess)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDynamicNamespaceImportAccess" category="lint" language="js" code={"import * as foo from \"foo\"\nfoo[\"bar\"]\n"} />
 

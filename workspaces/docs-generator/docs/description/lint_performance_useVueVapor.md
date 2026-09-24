@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useVueVapor
-description: Learn more about useVueVapor
+title: useVueVapor (HTML)
+description: HTML documentation for useVueVapor
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="HTML" icon="seti:html">
+<RuleLanguageLinks current="html" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-vue-vapor/html/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.11`
 - Diagnostic Category: [`lint/performance/useVueVapor`](/reference/diagnostics#diagnostic-category)
@@ -50,7 +52,7 @@ This rule reports `<script setup>` opening tags that are missing the `vapor` att
 </script>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:1 <a href=\"https://biomejs.dev/linter/rules/use-vue-vapor\">lint/performance/useVueVapor</a> <span style=\"color: #000; background-color: #ddd;\"> FIXABLE </span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">This </span><span style=\"color: Orange;\"><strong>&lt;script setup&gt;</strong></span><span style=\"color: Orange;\"> is missing the </span><span style=\"color: Orange;\"><strong>vapor</strong></span><span style=\"color: Orange;\"> attribute.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;script setup&gt;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>&lt;/script&gt;<br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Add </span><span style=\"color: lightgreen;\"><strong>vapor</strong></span><span style=\"color: lightgreen;\"> to opt in to Vue Vapor mode: </span><span style=\"color: lightgreen;\"><strong>&lt;script setup vapor&gt;</strong></span><span style=\"color: lightgreen;\">.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Unsafe fix</span><span style=\"color: lightgreen;\">: </span><span style=\"color: lightgreen;\">Add the </span><span style=\"color: lightgreen;\"><strong>vapor</strong></span><span style=\"color: lightgreen;\"> attribute.</span><br />  <br />  <strong>  1 │ </strong>&lt;script<span style=\"opacity: 0.8;\">·</span>setup<span style=\"opacity: 0.8;\"><span style=\"color: MediumSeaGreen;\">·</span></span><span style=\"color: MediumSeaGreen;\">v</span><span style=\"color: MediumSeaGreen;\">a</span><span style=\"color: MediumSeaGreen;\">p</span><span style=\"color: MediumSeaGreen;\">o</span><span style=\"color: MediumSeaGreen;\">r</span>&gt;<br />  <strong>    │ </strong>             <span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span><span style=\"color: MediumSeaGreen;\">+</span> <br /></code></pre>"} />
 
 ### Valid
 
@@ -70,7 +72,5 @@ This rule reports `<script setup>` opening tags that are missing the `vapor` att
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/performance/use_vue_vapor.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/performance/useVueVapor)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useVueVapor" category="lint" language="vue" code={"<script setup>\n</script>\n"} />
 

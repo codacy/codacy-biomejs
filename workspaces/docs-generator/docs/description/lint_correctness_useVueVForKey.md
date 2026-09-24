@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useVueVForKey
-description: Learn more about useVueVForKey
+title: useVueVForKey (HTML)
+description: HTML documentation for useVueVForKey
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="HTML" icon="seti:html">
+<RuleLanguageLinks current="html" languages={[{"id":"html","label":"HTML","href":"/linter/rules/use-vue-v-for-key/html/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.11`
 - Diagnostic Category: [`lint/correctness/useVueVForKey`](/reference/diagnostics#diagnostic-category)
@@ -52,7 +54,7 @@ For more information, see the Vue documentation on [list rendering](https://vuej
 <li v-for="item in items">{{ item }}</li>
 ```
 
-<pre class="language-text"><code class="language-text"></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.vue:1:5 <a href=\"https://biomejs.dev/linter/rules/use-vue-v-for-key\">lint/correctness/useVueVForKey</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">This element is using </span><span style=\"color: Tomato;\"><strong>v-for</strong></span><span style=\"color: Tomato;\">, but the </span><span style=\"color: Tomato;\"><strong>key</strong></span><span style=\"color: Tomato;\"> attribute is missing.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>&lt;li v-for=&quot;item in items&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;<br />   <strong>   │ </strong>    <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Using a unique key with </span><span style=\"color: lightgreen;\"><strong>v-for</strong></span><span style=\"color: lightgreen;\"> helps Vue optimize rendering and track elements efficiently. Failing to provide a key can result in unexpected behavior during updates. </span><span style=\"color: lightgreen;\"><a href=\"https://vuejs.org/guide/essentials/list#maintaining-state-with-key\">See the Vue docs for more info</a></span><span style=\"color: lightgreen;\">.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Provide the key using </span><span style=\"color: lightgreen;\"><strong>:key=&quot;value&quot;</strong></span><span style=\"color: lightgreen;\">, and have the value be a unique value from the items you are iterating over. For example: &#96;&lt;li v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;&#96;</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -75,7 +77,5 @@ Related rules:
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/src/lint/correctness/use_vue_v_for_key.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_html_analyze/tests/specs/correctness/useVueVForKey)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useVueVForKey" category="lint" language="vue" code={"<li v-for=\"item in items\">{{ item }}</li>\n"} />
 

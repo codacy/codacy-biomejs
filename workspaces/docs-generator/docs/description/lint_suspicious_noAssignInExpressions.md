@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noAssignInExpressions
-description: Learn more about noAssignInExpressions
+title: noAssignInExpressions (JavaScript)
+description: JavaScript (and super languages) documentation for noAssignInExpressions
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-assign-in-expressions/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/suspicious/noAssignInExpressions`](/reference/diagnostics#diagnostic-category)
@@ -48,7 +50,7 @@ let a, b;
 a = (b = 1) + 1;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:2:6 <a href="https://biomejs.dev/linter/rules/no-assign-in-expressions">lint/suspicious/noAssignInExpressions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The </span><span style="color: Tomato;"><strong>assignment</strong></span><span style="color: Tomato;"> should not be in an </span><span style="color: Tomato;"><strong>expression</strong></span><span style="color: Tomato;">.</span><br />  <br />    <strong>1 │ </strong>let a, b;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>a = (b = 1) + 1;<br />   <strong>   │ </strong>     <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The use of assignments in expressions is confusing.<br /></span>    <span style="color: lightgreen;">Expressions are often considered as side-effect free.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:2:6 <a href=\"https://biomejs.dev/linter/rules/no-assign-in-expressions\">lint/suspicious/noAssignInExpressions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The </span><span style=\"color: Tomato;\"><strong>assignment</strong></span><span style=\"color: Tomato;\"> should not be in an </span><span style=\"color: Tomato;\"><strong>expression</strong></span><span style=\"color: Tomato;\">.</span><br />  <br />    <strong>1 │ </strong>let a, b;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>a = (b = 1) + 1;<br />   <strong>   │ </strong>     <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The use of assignments in expressions is confusing.<br /></span>    <span style=\"color: lightgreen;\">Expressions are often considered as side-effect free.</span><br />  <br /></code></pre>"} />
 
 ```ts
 let a;
@@ -56,7 +58,7 @@ if (a = 1) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:2:5 <a href="https://biomejs.dev/linter/rules/no-assign-in-expressions">lint/suspicious/noAssignInExpressions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The </span><span style="color: Tomato;"><strong>assignment</strong></span><span style="color: Tomato;"> should not be in an </span><span style="color: Tomato;"><strong>expression</strong></span><span style="color: Tomato;">.</span><br />  <br />    <strong>1 │ </strong>let a;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>if (a = 1) &#123;<br />   <strong>   │ </strong>    <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The use of assignments in expressions is confusing.<br /></span>    <span style="color: lightgreen;">Expressions are often considered as side-effect free.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:2:5 <a href=\"https://biomejs.dev/linter/rules/no-assign-in-expressions\">lint/suspicious/noAssignInExpressions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The </span><span style=\"color: Tomato;\"><strong>assignment</strong></span><span style=\"color: Tomato;\"> should not be in an </span><span style=\"color: Tomato;\"><strong>expression</strong></span><span style=\"color: Tomato;\">.</span><br />  <br />    <strong>1 │ </strong>let a;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>if (a = 1) &#123;<br />   <strong>   │ </strong>    <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The use of assignments in expressions is confusing.<br /></span>    <span style=\"color: lightgreen;\">Expressions are often considered as side-effect free.</span><br />  <br /></code></pre>"} />
 
 ```ts
 function f(a) {
@@ -64,7 +66,7 @@ function f(a) {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:2:12 <a href="https://biomejs.dev/linter/rules/no-assign-in-expressions">lint/suspicious/noAssignInExpressions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">The </span><span style="color: Tomato;"><strong>assignment</strong></span><span style="color: Tomato;"> should not be in an </span><span style="color: Tomato;"><strong>expression</strong></span><span style="color: Tomato;">.</span><br />  <br />    <strong>1 │ </strong>function f(a) &#123;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>    return a = 1;<br />   <strong>   │ </strong>           <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">The use of assignments in expressions is confusing.<br /></span>    <span style="color: lightgreen;">Expressions are often considered as side-effect free.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:2:12 <a href=\"https://biomejs.dev/linter/rules/no-assign-in-expressions\">lint/suspicious/noAssignInExpressions</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">The </span><span style=\"color: Tomato;\"><strong>assignment</strong></span><span style=\"color: Tomato;\"> should not be in an </span><span style=\"color: Tomato;\"><strong>expression</strong></span><span style=\"color: Tomato;\">.</span><br />  <br />    <strong>1 │ </strong>function f(a) &#123;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>    return a = 1;<br />   <strong>   │ </strong>           <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong>&#125;<br />    <strong>4 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">The use of assignments in expressions is confusing.<br /></span>    <span style=\"color: lightgreen;\">Expressions are often considered as side-effect free.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -85,7 +87,5 @@ const f = b => a += b;
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/suspicious/no_assign_in_expressions.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/suspicious/noAssignInExpressions)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noAssignInExpressions" category="lint" language="ts" code={"let a, b;\na = (b = 1) + 1;\n"} />
 

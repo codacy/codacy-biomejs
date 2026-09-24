@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noInvalidPositionAtImportRule
-description: Learn more about noInvalidPositionAtImportRule
+title: noInvalidPositionAtImportRule (CSS)
+description: CSS documentation for noInvalidPositionAtImportRule
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="CSS" icon="seti:css">
+<RuleLanguageLinks current="css" languages={[{"id":"css","label":"CSS","href":"/linter/rules/no-invalid-position-at-import-rule/css/"}]} />
+
 ## Summary
 - Rule available since: `v1.8.0`
 - Diagnostic Category: [`lint/correctness/noInvalidPositionAtImportRule`](/reference/diagnostics#diagnostic-category)
@@ -18,6 +20,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 - The default severity of this rule is [**error**](/reference/diagnostics#error).
 - Sources: 
   - Same as [`no-invalid-position-at-import-rule`](https://github.com/stylelint/stylelint/blob/main/lib/rules/no-invalid-position-at-import-rule/README.md)
+  - Inspired from [`css/no-invalid-at-rule-placement`](https://github.com/eslint/css/blob/main/docs/rules/no-invalid-at-rule-placement.md)
 
 ## How to configure
 ```json title="biome.json"
@@ -46,7 +49,7 @@ a {}
 @import 'foo.css';
 ```
 
-<pre class="language-text"><code class="language-text">code-block.css:2:2 <a href="https://biomejs.dev/linter/rules/no-invalid-position-at-import-rule">lint/correctness/noInvalidPositionAtImportRule</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">This </span><span style="color: Tomato;"><strong>@import</strong></span><span style="color: Tomato;"> is in the wrong position.</span><br />  <br />    <strong>1 │ </strong>a &#123;&#125;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>2 │ </strong>@import 'foo.css';<br />   <strong>   │ </strong> <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Any </span><span style="color: lightgreen;"><strong>@import</strong></span><span style="color: lightgreen;"> rules must precede all other valid at-rules and style rules in a stylesheet (ignoring @charset and @layer), or else the </span><span style="color: lightgreen;"><strong>@import</strong></span><span style="color: lightgreen;"> rule is invalid.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Consider moving import position.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.css:2:2 <a href=\"https://biomejs.dev/linter/rules/no-invalid-position-at-import-rule\">lint/correctness/noInvalidPositionAtImportRule</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">This </span><span style=\"color: Tomato;\"><strong>@import</strong></span><span style=\"color: Tomato;\"> is in the wrong position.</span><br />  <br />    <strong>1 │ </strong>a &#123;&#125;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>2 │ </strong>@import 'foo.css';<br />   <strong>   │ </strong> <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>3 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Any </span><span style=\"color: lightgreen;\"><strong>@import</strong></span><span style=\"color: lightgreen;\"> rules must precede all other valid at-rules and style rules in a stylesheet (ignoring @charset and @layer), or else the </span><span style=\"color: lightgreen;\"><strong>@import</strong></span><span style=\"color: lightgreen;\"> rule is invalid.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Consider moving import position.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -62,7 +65,5 @@ a {}
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/src/lint/correctness/no_invalid_position_at_import_rule.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_css_analyze/tests/specs/correctness/noInvalidPositionAtImportRule)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noInvalidPositionAtImportRule" category="lint" language="css" code={"a {}\n@import 'foo.css';\n"} />
 

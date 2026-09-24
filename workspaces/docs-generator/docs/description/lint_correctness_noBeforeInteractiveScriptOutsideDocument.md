@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noBeforeInteractiveScriptOutsideDocument
-description: Learn more about noBeforeInteractiveScriptOutsideDocument
+title: noBeforeInteractiveScriptOutsideDocument (JavaScript)
+description: JavaScript (and super languages) documentation for noBeforeInteractiveScriptOutsideDocument
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JSX and TSX" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-before-interactive-script-outside-document/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.11`
 - Diagnostic Category: [`lint/correctness/noBeforeInteractiveScriptOutsideDocument`](/reference/diagnostics#diagnostic-category)
@@ -62,7 +64,7 @@ export default function Index() {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.jsx:7:7 <a href="https://biomejs.dev/linter/rules/no-before-interactive-script-outside-document">lint/correctness/noBeforeInteractiveScriptOutsideDocument</a> ━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Tomato;">✖</span></strong> <span style="color: Tomato;">Don't use </span><span style="color: Tomato;"><strong>next/script</strong></span><span style="color: Tomato;"> component with the &#96;</span><span style="color: Tomato;"><strong>beforeInteractive</strong></span><span style="color: Tomato;">&#96; strategy outside of </span><span style="color: Tomato;"><strong>pages/&#95;document.js</strong></span><span style="color: Tomato;">.</span><br />  <br />     <strong>5 │ </strong>  return (<br />     <strong>6 │ </strong>    &lt;div&gt;<br />   <strong><span style="color: Tomato;">&gt;</span></strong> <strong>7 │ </strong>      &lt;Script<br />    <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />   <strong><span style="color: Tomato;">&gt;</span></strong> <strong>8 │ </strong>        src=&quot;https://example.com/script.js&quot;<br />   <strong><span style="color: Tomato;">&gt;</span></strong> <strong>9 │ </strong>        strategy=&quot;beforeInteractive&quot;<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>10 │ </strong>      &gt;&lt;/Script&gt;<br />    <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><br />    <strong>11 │ </strong>    &lt;/div&gt;<br />    <strong>12 │ </strong>  )<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">See the </span><span style="color: lightgreen;"><a href="https://nextjs.org/docs/messages/no-before-interactive-script-outside-document">Next.js docs</a></span><span style="color: lightgreen;"> for more details.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.jsx:7:7 <a href=\"https://biomejs.dev/linter/rules/no-before-interactive-script-outside-document\">lint/correctness/noBeforeInteractiveScriptOutsideDocument</a> ━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Tomato;\">✖</span></strong> <span style=\"color: Tomato;\">Don't use </span><span style=\"color: Tomato;\"><strong>next/script</strong></span><span style=\"color: Tomato;\"> component with the &#96;</span><span style=\"color: Tomato;\"><strong>beforeInteractive</strong></span><span style=\"color: Tomato;\">&#96; strategy outside of </span><span style=\"color: Tomato;\"><strong>pages/&#95;document.js</strong></span><span style=\"color: Tomato;\">.</span><br />  <br />     <strong>5 │ </strong>  return (<br />     <strong>6 │ </strong>    &lt;div&gt;<br />   <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>7 │ </strong>      &lt;Script<br />    <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />   <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>8 │ </strong>        src=&quot;https://example.com/script.js&quot;<br />   <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>9 │ </strong>        strategy=&quot;beforeInteractive&quot;<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>10 │ </strong>      &gt;&lt;/Script&gt;<br />    <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>11 │ </strong>    &lt;/div&gt;<br />    <strong>12 │ </strong>  )<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">See the </span><span style=\"color: lightgreen;\"><a href=\"https://nextjs.org/docs/messages/no-before-interactive-script-outside-document\">Next.js docs</a></span><span style=\"color: lightgreen;\"> for more details.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -95,7 +97,5 @@ export default function Document() {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/correctness/no_before_interactive_script_outside_document.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/correctness/noBeforeInteractiveScriptOutsideDocument)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noBeforeInteractiveScriptOutsideDocument" category="lint" language="jsx" code={"// pages/index.jsx\nimport Script from 'next/script'\n\nexport default function Index() {\n  return (\n    <div>\n      <Script\n        src=\"https://example.com/script.js\"\n        strategy=\"beforeInteractive\"\n      ></Script>\n    </div>\n  )\n}\n"} />
 

@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useLiteralEnumMembers
-description: Learn more about useLiteralEnumMembers
+title: useLiteralEnumMembers (JavaScript)
+description: JavaScript (and super languages) documentation for useLiteralEnumMembers
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="TypeScript and TSX" icon="seti:typescript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-literal-enum-members/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/style/useLiteralEnumMembers`](/reference/diagnostics#diagnostic-category)
@@ -54,7 +56,7 @@ enum Computed {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.ts:4:9 <a href="https://biomejs.dev/linter/rules/use-literal-enum-members">lint/style/useLiteralEnumMembers</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">The enum member should be initialized with a literal value such as a number or a string.</span><br />  <br />    <strong>2 │ </strong>enum Computed &#123;<br />    <strong>3 │ </strong>    A,<br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>4 │ </strong>    B = x,<br />   <strong>   │ </strong>        <strong><span style="color: Tomato;">^</span></strong><br />    <strong>5 │ </strong>&#125;<br />    <strong>6 │ </strong><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.ts:4:9 <a href=\"https://biomejs.dev/linter/rules/use-literal-enum-members\">lint/style/useLiteralEnumMembers</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">The enum member should be initialized with a literal value such as a number or a string.</span><br />  <br />    <strong>2 │ </strong>enum Computed &#123;<br />    <strong>3 │ </strong>    A,<br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>4 │ </strong>    B = x,<br />   <strong>   │ </strong>        <strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>5 │ </strong>&#125;<br />    <strong>6 │ </strong><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -96,7 +98,5 @@ enum FileAccess {
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_literal_enum_members.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useLiteralEnumMembers)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useLiteralEnumMembers" category="lint" language="ts" code={"const x = 2;\nenum Computed {\n    A,\n    B = x,\n}\n"} />
 

@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noExcessiveCognitiveComplexity
-description: Learn more about noExcessiveCognitiveComplexity
+title: noExcessiveCognitiveComplexity (JavaScript)
+description: JavaScript (and super languages) documentation for noExcessiveCognitiveComplexity
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-excessive-cognitive-complexity/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v1.0.0`
 - Diagnostic Category: [`lint/complexity/noExcessiveCognitiveComplexity`](/reference/diagnostics#diagnostic-category)
@@ -69,7 +71,7 @@ function tooComplex() {
 }
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:10 <a href="https://biomejs.dev/linter/rules/no-excessive-cognitive-complexity">lint/complexity/noExcessiveCognitiveComplexity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Excessive complexity of 21 detected (max: 15).</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>function tooComplex() &#123;<br />   <strong>   │ </strong>         <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong>    for (let x = 0; x &lt; 10; x++) &#123;<br />    <strong>3 │ </strong>        for (let y = 0; y &lt; 10; y++) &#123;<br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Please refactor this function to reduce its complexity score from 21 to the max allowed complexity 15.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:10 <a href=\"https://biomejs.dev/linter/rules/no-excessive-cognitive-complexity\">lint/complexity/noExcessiveCognitiveComplexity</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Excessive complexity of 21 detected (max: 15).</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>function tooComplex() &#123;<br />   <strong>   │ </strong>         <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong>    for (let x = 0; x &lt; 10; x++) &#123;<br />    <strong>3 │ </strong>        for (let y = 0; y &lt; 10; y++) &#123;<br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Please refactor this function to reduce its complexity score from 21 to the max allowed complexity 15.</span><br />  <br /></code></pre>"} />
 
 ## Options
 
@@ -102,7 +104,5 @@ The allowed values range from 1 through 254. The default is 15.
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/complexity/no_excessive_cognitive_complexity.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/complexity/noExcessiveCognitiveComplexity)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noExcessiveCognitiveComplexity" category="lint" language="js" code={"function tooComplex() {\n    for (let x = 0; x < 10; x++) {\n        for (let y = 0; y < 10; y++) {\n            for (let z = 0; z < 10; z++) {\n                if (x % 2 === 0) {\n                    if (y % 2 === 0) {\n                        console.log(x > y ? `${x} > ${y}` : `${y} > ${x}`);\n                    }\n                }\n            }\n        }\n    }\n}\n"} />
 

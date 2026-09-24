@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: useGlobalThis
-description: Learn more about useGlobalThis
+title: useGlobalThis (JavaScript)
+description: JavaScript (and super languages) documentation for useGlobalThis
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/use-global-this/javascript/"}]} />
+
 ## Summary
 - Rule available since: `v2.3.14`
 - Diagnostic Category: [`lint/style/useGlobalThis`](/reference/diagnostics#diagnostic-category)
@@ -50,13 +52,13 @@ However, there are several exceptions that are allowed:
 window.foo;
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:1 <a href="https://biomejs.dev/linter/rules/use-global-this">lint/style/useGlobalThis</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Prefer </span><span style="color: Orange;"><strong>globalThis</strong></span><span style="color: Orange;"> over </span><span style="color: Orange;"><strong>window</strong></span><span style="color: Orange;">, </span><span style="color: Orange;"><strong>self</strong></span><span style="color: Orange;"> and </span><span style="color: Orange;"><strong>global</strong></span><span style="color: Orange;">.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>window.foo;<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;"><strong>globalThis</strong></span><span style="color: lightgreen;"> is the standard way to access the global object across environments, which improves code portability.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:1 <a href=\"https://biomejs.dev/linter/rules/use-global-this\">lint/style/useGlobalThis</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Prefer </span><span style=\"color: Orange;\"><strong>globalThis</strong></span><span style=\"color: Orange;\"> over </span><span style=\"color: Orange;\"><strong>window</strong></span><span style=\"color: Orange;\">, </span><span style=\"color: Orange;\"><strong>self</strong></span><span style=\"color: Orange;\"> and </span><span style=\"color: Orange;\"><strong>global</strong></span><span style=\"color: Orange;\">.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>window.foo;<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\"><strong>globalThis</strong></span><span style=\"color: lightgreen;\"> is the standard way to access the global object across environments, which improves code portability.</span><br />  <br /></code></pre>"} />
 
 ```js
 window.addEventListener('click', () => {});
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:1 <a href="https://biomejs.dev/linter/rules/use-global-this">lint/style/useGlobalThis</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: Orange;">⚠</span></strong> <span style="color: Orange;">Prefer </span><span style="color: Orange;"><strong>globalThis</strong></span><span style="color: Orange;"> over </span><span style="color: Orange;"><strong>window</strong></span><span style="color: Orange;">, </span><span style="color: Orange;"><strong>self</strong></span><span style="color: Orange;"> and </span><span style="color: Orange;"><strong>global</strong></span><span style="color: Orange;">.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>window.addEventListener('click', () =&gt; &#123;&#125;);<br />   <strong>   │ </strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;"><strong>globalThis</strong></span><span style="color: lightgreen;"> is the standard way to access the global object across environments, which improves code portability.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:1 <a href=\"https://biomejs.dev/linter/rules/use-global-this\">lint/style/useGlobalThis</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: Orange;\">⚠</span></strong> <span style=\"color: Orange;\">Prefer </span><span style=\"color: Orange;\"><strong>globalThis</strong></span><span style=\"color: Orange;\"> over </span><span style=\"color: Orange;\"><strong>window</strong></span><span style=\"color: Orange;\">, </span><span style=\"color: Orange;\"><strong>self</strong></span><span style=\"color: Orange;\"> and </span><span style=\"color: Orange;\"><strong>global</strong></span><span style=\"color: Orange;\">.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>window.addEventListener('click', () =&gt; &#123;&#125;);<br />   <strong>   │ </strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\"><strong>globalThis</strong></span><span style=\"color: lightgreen;\"> is the standard way to access the global object across environments, which improves code portability.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -86,7 +88,5 @@ window.addEventListener('resize', () => {});
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/style/use_global_this.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/style/useGlobalThis)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="useGlobalThis" category="lint" language="js" code={"window.foo;\n"} />
 

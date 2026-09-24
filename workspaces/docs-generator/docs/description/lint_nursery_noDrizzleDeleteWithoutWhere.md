@@ -3,13 +3,15 @@
 # Head to the `biomejs/biome` repository, and modify the source code in there.
 editUrl: false
 
-title: noDrizzleDeleteWithoutWhere
-description: Learn more about noDrizzleDeleteWithoutWhere
+title: noDrizzleDeleteWithoutWhere (JavaScript)
+description: JavaScript (and super languages) documentation for noDrizzleDeleteWithoutWhere
+localized: false
 ---
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import RuleLanguageLinks from "@/components/RuleLanguageLinks.astro";
+import RulePlaygroundLink from "@/components/RulePlaygroundLink.astro";
 
-<Tabs>
-<TabItem label="JavaScript (and super languages)" icon="seti:javascript">
+<RuleLanguageLinks current="javascript" languages={[{"id":"javascript","label":"JavaScript (and super languages)","href":"/linter/rules/no-drizzle-delete-without-where/javascript/"}]} />
+
 :::caution
 This rule is part of the [nursery](/linter/#nursery) group. This means that it is experimental and the behavior can change at any time.
 :::
@@ -75,7 +77,7 @@ ORM instances.
 await db.delete(users);
 ```
 
-<pre class="language-text"><code class="language-text">code-block.js:1:7 <a href="https://biomejs.dev/linter/rules/no-drizzle-delete-without-where">lint/nursery/noDrizzleDeleteWithoutWhere</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;"><strong>.delete()</strong></span><span style="color: lightgreen;"> is used without </span><span style="color: lightgreen;"><strong>.where()</strong></span><span style="color: lightgreen;">. This will delete all rows in the table.</span><br />  <br />  <strong><span style="color: Tomato;">&gt;</span></strong> <strong>1 │ </strong>await db.delete(users);<br />   <strong>   │ </strong>      <strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><strong><span style="color: Tomato;">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">Add a </span><span style="color: lightgreen;"><strong>.where()</strong></span><span style="color: lightgreen;"> clause to delete only the intended rows, or use </span><span style="color: lightgreen;"><strong>.where(sql&#96;1=1&#96;)</strong></span><span style="color: lightgreen;"> to explicitly delete all rows.</span><br />  <br />  <strong><span style="color: lightgreen;">ℹ</span></strong> <span style="color: lightgreen;">This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit </span><span style="color: lightgreen;"><a href="https://biomejs.dev/linter/#nursery">https://biomejs.dev/linter/#nursery</a></span><span style="color: lightgreen;"> for more information.</span><br />  <br /></code></pre>
+<Fragment set:html={"<pre class=\"language-text\"><code class=\"language-text\">code-block.js:1:7 <a href=\"https://biomejs.dev/linter/rules/no-drizzle-delete-without-where\">lint/nursery/noDrizzleDeleteWithoutWhere</a> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<br /><br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\"><strong>.delete()</strong></span><span style=\"color: lightgreen;\"> is used without </span><span style=\"color: lightgreen;\"><strong>.where()</strong></span><span style=\"color: lightgreen;\">. This will delete all rows in the table.</span><br />  <br />  <strong><span style=\"color: Tomato;\">&gt;</span></strong> <strong>1 │ </strong>await db.delete(users);<br />   <strong>   │ </strong>      <strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><strong><span style=\"color: Tomato;\">^</span></strong><br />    <strong>2 │ </strong><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">Add a </span><span style=\"color: lightgreen;\"><strong>.where()</strong></span><span style=\"color: lightgreen;\"> clause to delete only the intended rows, or use </span><span style=\"color: lightgreen;\"><strong>.where(sql&#96;1=1&#96;)</strong></span><span style=\"color: lightgreen;\"> to explicitly delete all rows.</span><br />  <br />  <strong><span style=\"color: lightgreen;\">ℹ</span></strong> <span style=\"color: lightgreen;\">This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit </span><span style=\"color: lightgreen;\"><a href=\"https://biomejs.dev/linter/#nursery\">https://biomejs.dev/linter/#nursery</a></span><span style=\"color: lightgreen;\"> for more information.</span><br />  <br /></code></pre>"} />
 
 ### Valid
 
@@ -90,7 +92,5 @@ await db.delete(users).where(eq(users.id, 1));
 - [Rule options](/linter/#rule-options)
 - [Source Code (Edit this Page)](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/src/lint/nursery/no_drizzle_delete_without_where.rs)
 - [Test Cases](https://github.com/biomejs/biome/blob/main/crates/biome_js_analyze/tests/specs/nursery/noDrizzleDeleteWithoutWhere)
-
-</TabItem>
-</Tabs>
+- <RulePlaygroundLink rule="noDrizzleDeleteWithoutWhere" category="lint" language="js" code={"await db.delete(users);\n"} />
 
